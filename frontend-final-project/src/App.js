@@ -1,8 +1,10 @@
+import { Header } from "./layout/header/Header";
 
 function App() {
   return (
     <div> 
-      Tap Final Project
+      
+      <Header />
 
     </div>
   );
