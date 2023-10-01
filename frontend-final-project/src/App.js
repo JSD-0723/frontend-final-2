@@ -7,7 +7,7 @@ function App() {
     <div> 
       <Header />
       <div>
-          Main Content here 
+          Main Content here . 
       </div>
       <Footer/>
     </div>
