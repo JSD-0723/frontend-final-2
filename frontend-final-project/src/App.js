@@ -1,11 +1,15 @@
-import { Header } from "./layout/header/Header";
+import Footer from "./layout/footer/Footer";
+import  Header  from "./layout/header/Header";
+
 
 function App() {
   return (
     <div> 
-      
       <Header />
-
+      <div>
+          Main Content here 
+      </div>
+      <Footer/>
     </div>
   );
 }
