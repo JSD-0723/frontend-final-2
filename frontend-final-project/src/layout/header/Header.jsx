@@ -17,6 +17,7 @@ export const Header = () => {
           <SearchInputWrapper>
             <SearchIcon/>
           </SearchInputWrapper>
+          <div></div>
         </Search>
         </Toolbar>
     </AppBar>
