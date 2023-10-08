@@ -23,7 +23,7 @@ const About = () => {
             simply dummy text of the printing. Lorem Ipsum is simply dummy text
             of the printing. Lorem Ipsum is simply dummy text of the printing.
             Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum is
-            simply dummy text of the printing.
+            simply dummy text of the printing..
           </p>
         </Grid>
         <Grid container spacing={4}>
