@@ -1,4 +1,3 @@
-
 export const styles = {
   container: {
     display: "flex",
@@ -14,6 +13,7 @@ export const styles = {
     display: "flex",
     flexDirection: "column",
     gap: 1,
+    marginBottom: 3,
   },
   link: {
     color: "#B6B6B6",
@@ -28,6 +28,7 @@ export const styles = {
     backgroundColor: "#FFFFFF",
     marginBottom: 2,
     marginTop: 2,
+    marginLeft: -10,
   },
   location: {
     fontSize: 14,

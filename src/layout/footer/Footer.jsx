@@ -9,6 +9,7 @@ import {
   footerCategories,
   footerIcons,
 } from "../../data/FooterDummyData";
+import Hidden from "@mui/material/Hidden";
 
 const Footer = () => {
   const productsLinks = footerProducts.map((product, index) => (
@@ -24,7 +25,7 @@ const Footer = () => {
   return (
     <Box sx={styles.container}>
       <Grid container>
-        <Grid item xs={12} md={2} spacing={10} sx={styles.gridItem}>
+        <Grid item xs={12} md={2} sx={styles.gridItem}>
           <Box>
             <Stack spacing={1}>
               <Link to="/about" underline="none" style={styles.heading}>
@@ -47,7 +48,9 @@ const Footer = () => {
         </Grid>
 
         <Grid item xs={12} md={2}>
-          <Divider sx={styles.divider} />
+          <Hidden mdUp>
+            <Divider sx={styles.divider} />
+          </Hidden>
           <Box sx={styles.gridItem}>
             <Box sx={{ display: "flex", gap: 1 }}>
               <Link>{footerIcons.facebookIcon}</Link>
