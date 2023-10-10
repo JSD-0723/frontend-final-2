@@ -51,9 +51,12 @@ export default function Header() {
   return (
     <AppBar position="sticky" sx={{ backgroundColor: 'white', boxShadow: 'none' }}>
       <Toolbar>
-        <Grid container alignItems="center" justifyContent="space-between" sx={{ display: { xs: 'none', lg: 'flex'}} }>
+        <Grid container alignItems="center" justifyContent="space-between" 
+        sx={{ display: { xs: 'none', lg: 'flex'}} }
+        >
           <Box item  sm={6}>
-            <Typography variant='h4' sx={{ color: '#17494D', fontFamily: 'Jost, sans-serif', fontWeight: 'bold' }}>
+            <Typography variant='h4' 
+            sx={{ color: '#17494D',marginLeft:4, fontFamily: 'Jost, sans-serif', fontWeight: 'bold' }}>
               CORA'L
             </Typography>
           </Box>
@@ -68,10 +71,10 @@ export default function Header() {
           </Hidden>
           <Box item xs={12} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
             <SearchBar />
-            <Box sx={{ display: 'flex', height: '72px', alignItems: 'center' }}>
-              <FavoriteBorderIcon sx={{ color: '#1B4B66', marginRight: '14px', border: '2px' }} />
-              <PersonOutlineOutlinedIcon sx={{ color: '#1B4B66', marginRight: '14px', border: '2px' }} />
-              <WorkOutlineIcon sx={{ color: '#1B4B66', border: '2px', marginRight: '14px' }} />
+            <Box sx={{ display: 'flex', height: '72px', alignItems: 'center',color: '#1B4B66', border:'2px' }}>
+              <FavoriteBorderIcon sx={{  marginLeft: '10px' }} />
+              <PersonOutlineOutlinedIcon sx={{ marginLeft: '10px' }} />
+              <WorkOutlineIcon sx={{ marginLeft: '10px' }} />
             </Box>
           </Box>
         </Grid>
