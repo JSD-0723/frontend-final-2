@@ -74,7 +74,7 @@ const Footer = () => {
           <Box sx={styles.gridItem}>
             <Hidden mdUp>
               {/* mobile styling  */}
-              <Box sx={{ display: "flex" }}>
+              <Box sx={{ display: "flex", mb: 1 }}>
                 <span style={styles.location}>{footerIcons.locationIcon}</span>
               </Box>
             </Hidden>
