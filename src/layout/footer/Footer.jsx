@@ -23,7 +23,7 @@ const Footer = () => {
   ));
   return (
     <Box sx={styles.container}>
-      <Grid container>
+      <Grid container sx={{ marginRight: 2, marginLeft: 2 }}>
         <Grid item xs={12} md={2} spacing={10} sx={styles.gridItem}>
           <Box>
             <Stack spacing={1}>
@@ -74,7 +74,7 @@ const Footer = () => {
           <Box sx={styles.gridItem}>
             <Hidden mdUp>
               {/* mobile styling  */}
-              <Box sx={{ display: "flex", }}>
+              <Box sx={{ display: "flex" }}>
                 <span style={styles.location}>{footerIcons.locationIcon}</span>
               </Box>
             </Hidden>

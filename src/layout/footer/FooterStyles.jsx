@@ -6,7 +6,7 @@ export const styles = {
     gap: 5,
     backgroundColor: "#1B4B66",
     fontSize: 14,
-    p: 2,
+
     fontFamily: "Inter",
   },
   gridItem: {
@@ -28,6 +28,7 @@ export const styles = {
     mt: 3,
     mb: -1,
   },
+
   iconContainerMobile: {
     display: "flex",
     marginBottom: 1,
