@@ -11,6 +11,7 @@ import {
 } from "../../data/FooterDummyData";
 import Hidden from "@mui/material/Hidden";
 
+
 const Footer = () => {
   const productsLinks = footerProducts.map((product, index) => (
     <Link to="/about" key={index} style={styles.link}>
@@ -23,19 +24,8 @@ const Footer = () => {
     </Link>
   ));
   return (
-    <Box sx={styles.container}>
-      <Grid container>
-        <Grid item xs={12} md={1} spacing={10} sx={styles.gridItem}>
-          <Box>
-            <Stack spacing={1}>
-              <Link to="/about" underline="none" style={styles.heading}>
-                Shop by category
-              </Link>
-              {categoriesLinks}
-            </Stack>
-          </Box>
-        </Grid>
 
+    <div> 
         <Grid item xs={12} md={8} sx={styles.gridItem}>
           <Box>
             <Stack spacing={1}>
