@@ -3,7 +3,7 @@ export const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    gap: 5, // Adds equal spacing between all elements
+    gap: 5,
     backgroundColor: "#1B4B66",
     fontSize: 14,
     p: 3,
@@ -13,7 +13,7 @@ export const styles = {
     display: "flex",
     flexDirection: "column",
     gap: 1,
-    marginBottom: 3, // Controls spacing between the three containers vertically
+    marginBottom: 3,
   },
   link: {
     color: "#B6B6B6",
@@ -24,14 +24,12 @@ export const styles = {
     display: "flex",
     gap: 1,
     justifyContent: "flex-end",
-    // Remove marginBottom here or adjust it as needed
   },
   iconContainerMobile: {
     display: "flex",
     marginBottom: 1,
     gap: 1,
     justifyContent: "flex-start",
-    // Remove marginBottom here or adjust it as needed
   },
   heading: {
     color: "#FFFFFF",
