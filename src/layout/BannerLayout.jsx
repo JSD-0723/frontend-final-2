@@ -1,4 +1,5 @@
 
+
 import { Typography, Box, Grid, Hidden } from "@mui/material";
 
 export function BannerLayout() {
@@ -44,4 +45,5 @@ export function BannerLayout() {
             </Grid>
         </Hidden>
     );
+
 }
