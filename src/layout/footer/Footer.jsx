@@ -1,4 +1,3 @@
-
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
@@ -25,7 +24,7 @@ const Footer = () => {
   return (
     <Box sx={styles.container}>
       <Grid container>
-        <Grid item xs={12} md={1} spacing={10} sx={styles.gridItem}>
+        <Grid item xs={12} md={2} spacing={10} sx={styles.gridItem}>
           <Box>
             <Stack spacing={1}>
               <Link to="/about" underline="none" style={styles.heading}>
@@ -36,7 +35,7 @@ const Footer = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={8} sx={styles.gridItem}>
+        <Grid item xs={12} md={6} sx={styles.gridItem}>
           <Box>
             <Stack spacing={1}>
               <Link to="/about" underline="none" style={styles.heading}>
@@ -47,7 +46,7 @@ const Footer = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={3} >
+        <Grid item xs={12} md={4}>
           <Hidden mdUp>
             <Divider sx={styles.divider} />
           </Hidden>
