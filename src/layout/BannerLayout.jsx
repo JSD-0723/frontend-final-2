@@ -26,7 +26,7 @@ export function BannerLayout() {
                         marginRight: '4px',
                     }}
                 >
-                    We are currently experiencing local customs clearance delays. For the latest updates, please check your order status
+              We are currently experiencing local customs clearance delays. For the latest updates, please check your order status
                 </Typography>
                 <Typography
                     variant="h4"

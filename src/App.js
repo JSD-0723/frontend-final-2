@@ -12,7 +12,7 @@ function App() {
       <Header />
       <HeaderforMobile />
       <BannerLayout />
-      <Carousel/>
+    
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
