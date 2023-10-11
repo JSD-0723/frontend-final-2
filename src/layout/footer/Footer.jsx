@@ -47,7 +47,7 @@ const Footer = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={3} sx={styles.lmao}>
+        <Grid item xs={12} md={3} >
           <Hidden mdUp>
             <Divider sx={styles.divider} />
           </Hidden>
