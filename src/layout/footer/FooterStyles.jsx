@@ -6,13 +6,15 @@ export const styles = {
     gap: 5,
     backgroundColor: "#1B4B66",
     fontSize: 14,
-    p: 3,
+    p: 2,
     fontFamily: "Inter",
   },
   gridItem: {
     display: "flex",
     flexDirection: "column",
     gap: 1,
+    mt: 3,
+    mb: 3,
   },
   link: {
     color: "#B6B6B6",
@@ -23,6 +25,8 @@ export const styles = {
     display: "flex",
     gap: 1,
     justifyContent: "flex-end",
+    mt: 3,
+    mb: -1,
   },
   iconContainerMobile: {
     display: "flex",
