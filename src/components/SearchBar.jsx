@@ -59,7 +59,7 @@ export default function SearchBar() {
           alignItems: 'center',
           width: '362px',
           height: '44px',
-          marginLeft:4,
+          marginRight:4,
           borderColor: 'black',
           borderRadius: '4px',
           color: '#626262',
