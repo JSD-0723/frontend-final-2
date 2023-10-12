@@ -5,21 +5,21 @@ import Home from "./pages/Home";
 import { BannerLayout } from './layout/BannerLayout';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { HeaderforMobile } from "./layout/header/HeaderforMobile";
-import Carousel from '../src/components/Carousel';
+import ImageCarousel from "./components/ImageCarousel";
+import { carouselData } from "./helper/carouselData";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header/>
       <HeaderforMobile />
       <BannerLayout />
-    
+      <ImageCarousel data={carouselData} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      <Footer />
-    </BrowserRouter>
-
+      <Footer/>
+    </BrowserRouter>    
   );
 }
 
