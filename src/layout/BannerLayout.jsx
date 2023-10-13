@@ -1,7 +1,5 @@
-
-
 import { Typography, Box, Grid, Hidden } from "@mui/material";
-
+import { Link } from "react-router-dom";
 export function BannerLayout() {
     return (
         <Hidden mdDown>
@@ -12,7 +10,7 @@ export function BannerLayout() {
                     backgroundColor: '#F0F0F0',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    textAlign: 'center',
+                    textAlign: 'center'
                 }}
             >
                 <Typography
@@ -28,9 +26,9 @@ export function BannerLayout() {
                 >
               We are currently experiencing local customs clearance delays. For the latest updates, please check your order status
                 </Typography>
-                <Typography
+                <Link href="#"
                     variant="h4"
-                    sx={{
+                    style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: '500',
                         fontSize: '14px',
@@ -41,7 +39,7 @@ export function BannerLayout() {
                     }}
                 >
                     here
-                </Typography>
+                </Link>
             </Grid>
         </Hidden>
     );
