@@ -9,11 +9,23 @@ export const HandPickedStyles = {
     minHeight: "286px",
     width: "100%",
   },
-
   textStyles: {
     display: "flex",
     justifyContent: "flex-start",
     color: "#171520",
     p: 2,
+  },
+};
+
+export const GeneralStyles = {
+  container: {
+    backgroundColor: "#1B4B66",
+    paddingTop: 1,
+    paddingBottom: 6,
+    marginBottom: 1,
+  },
+  title: {
+    color: "white",
+    margin: 2,
   },
 };
