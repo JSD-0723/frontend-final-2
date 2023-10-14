@@ -13,7 +13,7 @@ function App() {
       <Header />
       <HeaderforMobile />
       <BannerLayout />
-      {/*      <ImageCarousel data={carouselData} />     */}
+      <ImageCarousel data={carouselData} />
       <Routes>
         <Route path="/frontend-final-2" element={<Home />} />
         <Route path="/about" element={<About />} />
