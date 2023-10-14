@@ -3,26 +3,17 @@ import CardsGrid from "../../../components/CardsGrid";
 import Box from "@mui/material/Box";
 import ImageCarousel from "../../../components/ImageCarousel";
 import { carouselData } from "../../../helper/carouselData";
+import { newArrivasStyles } from "../../../styles/NewArrivalsStyles";
 
 const NewArrivals = () => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "#1B4B66",
-        paddingTop: 1,
-        paddingBottom: 6,
-        marginBottom: 1,
-      }}
-    >
-      <Typography
-        variant="h4"
-        component="h2"
-        sx={{ color: "white", margin: 2 }}
-      >
+    <Box sx={newArrivasStyles.container}>
+      <Typography variant="h4" component="h4" sx={newArrivasStyles.title}>
         New Arrivals
       </Typography>
-
-      <ImageCarousel data={carouselData} />
+      <Typography variant="h6" component="h4" sx={newArrivasStyles.title}>
+        Insert products carousel here
+      </Typography>
     </Box>
   );
 };
