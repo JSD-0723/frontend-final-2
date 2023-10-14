@@ -1,0 +1,12 @@
+/* Default styles for both mobile and desktop */
+.image {
+  height: auto;
+}
+
+.image.mobile {
+  width: 96px;
+}
+
+.image.desktop {
+  width: 160;
+}
