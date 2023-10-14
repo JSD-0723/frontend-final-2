@@ -7,8 +7,9 @@ const HandPicked = () => {
   return (
     <Box sx={HandPickedStyles.container}>
       <Typography variant="h4" component="h4" sx={HandPickedStyles.title}>
-        Hand Picked Collections
+        Hand Picked Collection
       </Typography>
+
       <CardsGrid />
     </Box>
   );
