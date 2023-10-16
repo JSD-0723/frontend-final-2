@@ -1,8 +1,8 @@
 import Typography from "@mui/material/Typography";
 import CardsGrid from "../../../components/CardsGrid";
 import Box from "@mui/material/Box";
-import ImageCarousel from "../../../components/ImageCarousel";
-import { carouselData } from "../../../helper/carouselData";
+import ImageCarousel from "./ImageCarousel";
+import { carouselData } from "../../../data/carouselData";
 import { newArrivasStyles } from "../../../styles/NewArrivalsStyles";
 
 const NewArrivals = () => {
