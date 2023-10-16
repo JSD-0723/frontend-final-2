@@ -8,20 +8,19 @@ import "./styles.css";
 import { useMediaQuery } from "@mui/material";
 
 const BrandsGrid = () => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+
   const logos = [loo1, loo1, loo2, loo3, loo4, loo5];
   return (
-    <Grid container>
-      {logos.map((logo) => (
-        <Grid item xs={4} md={2}>
-          <img
-            className={`image ${isMobile ? "mobile" : "desktop"}`}
-            src={logo}
-            alt=""
-          />
-        </Grid>
-      ))}
-    </Grid>
+    <Box>
+      <Grid container spacing={5}>
+        {logos.map((logo) => (
+          <Grid item xs={4} md={2}>
+            <img className="image" src={logo} alt="" />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+
   );
 };
 
