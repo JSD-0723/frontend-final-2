@@ -8,6 +8,7 @@ import "./styles.css";
 import { useMediaQuery } from "@mui/material";
 
 const BrandsGrid = () => {
+
   const logos = [loo1, loo1, loo2, loo3, loo4, loo5];
   return (
     <Box>
@@ -19,6 +20,7 @@ const BrandsGrid = () => {
         ))}
       </Grid>
     </Box>
+
   );
 };
 
