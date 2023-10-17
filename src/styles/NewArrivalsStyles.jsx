@@ -1,4 +1,4 @@
-import cardImage from "../helper/Assets/image_elyas.png";
+import cardImage from "../data/Assets/image_elyas.png";
 
 export const newArrivasStyles = {
   cardStyles: {
