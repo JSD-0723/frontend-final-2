@@ -11,7 +11,6 @@ import {
 } from "../../data/FooterDummyData";
 import Hidden from "@mui/material/Hidden";
 import { useState } from "react";
-import { getProducts } from "../../api/HomePageController";
 
 const Footer = () => {
   const productsLinks = footerProducts.map((product, index) => (
@@ -24,7 +23,7 @@ const Footer = () => {
       {category}
     </Link>
   ));
-  getProducts();
+
   const [displayDropDown, setDropDown] = useState(true);
   const [showDropUpIcon, setShowDropUpIcon] = useState(true);
 
