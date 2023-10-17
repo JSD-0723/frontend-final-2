@@ -7,20 +7,20 @@ import loo5 from "../../../helper/Assets/logo5.png";
 import "./styles.css";
 import { useMediaQuery } from "@mui/material";
 
-const BrandsGrid = () => {
-
-  const logos = [loo1, loo1, loo2, loo3, loo4, loo5];
+const BrandsGrid = (props) => {
+  console.log("I'm in grid");
+  console.log(props.brands);
+  const logos = props.brands;
   return (
     <Box>
       <Grid container spacing={5}>
-        {logos.map((logo) => (
+        {props.brands.map((item) => (
           <Grid item xs={4} md={2}>
-            <img className="image" src={logo} alt="" />
+            <img className="image" src={item.logo} alt="" />
           </Grid>
         ))}
       </Grid>
     </Box>
-
   );
 };
 
