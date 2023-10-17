@@ -7,13 +7,12 @@ import { newArrivasStyles } from "../../../styles/NewArrivalsStyles";
 
 const NewArrivals = () => {
   return (
-    <Box sx={newArrivasStyles.container}>
+    <Box sx={{ ...newArrivasStyles.container, overflowX: "scroll" }}>
       <Typography variant="h4" component="h4" sx={newArrivasStyles.title}>
         New Arrivals
       </Typography>
-      <Typography variant="h6" component="h4" sx={newArrivasStyles.title}>
-        Insert products carousel here
-      </Typography>
+
+      <CardsGrid />
     </Box>
   );
 };
