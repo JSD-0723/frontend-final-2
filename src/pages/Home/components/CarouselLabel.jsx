@@ -10,6 +10,10 @@ const CarouselLabel = () => {
   return (
     <ThemeProvider theme={theme}>
       <Grid
+      xs={12} 
+      sm={6}  
+      md={4}  
+      lg={3} 
         sx={{
           position: 'absolute',
           top: '45%',
@@ -17,17 +21,17 @@ const CarouselLabel = () => {
           transform: 'translate(-50%, -50%)',
           backgroundColor: 'rgba(222, 222, 222, 0.5)',
           padding: '20px',
-          width: '759px',
+          width: '50%',
           height: '270px',
           borderRadius: '24px',
           marginLeft: 43,
           ...(isSmallScreen && {
             position: 'absolute',
-            width: '211px',
+            width: '70%',
             height: '100px',
             borderRadius: '8px',
-            top:'103px',
-            left:'-130px',
+            top:'20%',
+            left:'-25%',
             paddingLeft:1,
 
           }),
@@ -35,9 +39,10 @@ const CarouselLabel = () => {
       
       >
         <Typography
+     
           sx={{
             fontWeight: 800,
-            fontSize: '60px',
+            fontSize: ' 3.75rem',
             lineHeight: '84px',
             textAlign: 'left',
             letterSpacing: '0em',
@@ -47,7 +52,7 @@ const CarouselLabel = () => {
               height: '52px',
               marginTop: '-17px',
               left: '147px',
-              fontSize: '24px',
+              fontSize: '1.5rem',
               lineHeight: '26px'
 
             }),
@@ -55,9 +60,11 @@ const CarouselLabel = () => {
           }}>
           Carry your Funk
         </Typography>
-        <Typography sx={{
+        <Typography 
+     
+         sx={{
           fontFamily: 'Inter, sans-serif',
-          fontSize: '28px',
+          fontSize: '1.75rem',
           fontWeight: 500,
           letterSpacing: '0em',
           textAlign: 'left',
@@ -70,14 +77,15 @@ const CarouselLabel = () => {
             height: '32px',
             top: '69px',
             left: '147px',
-            fontSize: '12px',
+            fontSize: '0.75rem',
             lineHeight: '16px'
 
           }),
         }}>
           Trendy handbags collection for your party animal
         </Typography>
-        <Grid sx={{
+        <Grid 
+         sx={{
           alignItems: 'center',
           justifyContent: 'center'
         }}>
@@ -112,14 +120,15 @@ const CarouselLabel = () => {
 
             </svg>
 
-            <Typography sx={{ fontSize: '16px' }}>
+            <Typography 
+             sx={{ fontSize: '0.75rem' }}>
               See more
             </Typography>
           </Button>
           )}
         </Grid>
       </Grid>
-    </ThemeProvider>
+    // </ThemeProvider>
   )
 
 }
