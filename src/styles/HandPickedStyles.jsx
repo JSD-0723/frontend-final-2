@@ -1,22 +1,22 @@
-import cardImage from "../data/Assets/image_elyas.png";
-
 export const HandPickedStyles = {
   cardStyles: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
-    background: `url(${cardImage}) center/cover no-repeat`,
     minHeight: "286px",
     borderRadius: "20px",
-
     width: "100%",
+    overflow: "hidden",
   },
+
+  
   textStyles: {
     display: "flex",
     justifyContent: "flex-start",
     color: "#171520",
     fontFamily: "Inter",
     fontWeight: 600,
+
     p: 2,
   },
 

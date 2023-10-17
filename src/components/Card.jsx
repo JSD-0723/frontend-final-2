@@ -1,14 +1,23 @@
 import { Box, Paper, Typography } from "@mui/material";
+import "./cardsStyles.css";
 
 const Card = (props) => {
   const { cardStyles, textStyles, categoryText } = props.styles;
-  console.log(categoryText);
+  const productData = props.productData;
+
+  const backgroundStyles = {
+    backgroundImage: `url(${productData.img})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "100%",
+  };
+
   return (
     <Box>
-      <Paper sx={cardStyles}>
+      <Paper sx={{ ...cardStyles, ...backgroundStyles }}>
         <Box sx={textStyles}>
-          <Typography variant="h6" sx={categoryText}>
-            Personal Care
+          <Typography variant="h7" sx={categoryText}>
+            {productData.name}
           </Typography>
         </Box>
       </Paper>
