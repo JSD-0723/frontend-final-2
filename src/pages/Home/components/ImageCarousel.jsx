@@ -4,9 +4,9 @@ import { Paper, Typography, Box, Button, useMediaQuery, ThemeProvider } from '@m
 import CarouselLabel from './CarouselLabel';
 import { Grid } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
+ const theme = createTheme();
 
-const theme = createTheme();
-const ImageCarousel = ({ data }) => {
+ const ImageCarousel = ({ data }) => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
@@ -15,18 +15,23 @@ const ImageCarousel = ({ data }) => {
       <Carousel indicators={false} autoPlay={true} animation="slide"
         sx=
         {{
-          width: isSmallScreen ? '280px' : '1300px',
+          width: isSmallScreen ? '90%' : '97%',
           overflow: isSmallScreen ? 'hidden' : 'hidden',
           justifyContent: 'center',
           alignItems: 'center',
-          marginLeft: 4
+          marginLeft: 3
         }}
 
       >
 
         {data.map((item) => (
 
-          <Grid item xs={12} key={item.id}
+          <Grid item key={item.id}
+          xs={12} // Full width on small screens
+          sm={6}  // Half width on medium screens
+          md={4}  // One-third width on large screens
+          lg={3} 
+
             sx=
             {{
               position: 'relative',
@@ -39,7 +44,7 @@ const ImageCarousel = ({ data }) => {
               alt={item.title}
 
               style={{
-                width: '1300px',
+                width: '100%',
                 height: '400px',
                 borderRadius: 24,
                 justifyContent: 'center',
@@ -49,11 +54,11 @@ const ImageCarousel = ({ data }) => {
                 top: '230px',
                 transform: 'translate(-50%, -50%)',
                 ...(isSmallScreen && {
-                  width: '280px',
-                  left: '140px',
+                  width: '100%',
+                  left: '50%',
                   height: '120px',
                   top: '20%',
-                  borderRadius: '9px',
+                  borderRadius: '8px',
                   
                 }),
               }}
@@ -63,10 +68,8 @@ const ImageCarousel = ({ data }) => {
           </Grid>
         ))}
       </Carousel>
-    </ThemeProvider>
-                                    
+             </ThemeProvider>                       
   );
 };
 
 export default ImageCarousel;
-
