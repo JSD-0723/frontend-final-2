@@ -11,7 +11,6 @@ const Home = () => {
     "https://estore-doxn.onrender.com/eStore/shopByCollection";
   const newArrivalsUrl = "https://estore-doxn.onrender.com/eStore/newArrival";
   const brandsUrl = "https://estore-doxn.onrender.com/eStore/shopByBrand";
-
   const getHandPickedData = () => {
     setIsLoading(true);
     axios
@@ -19,7 +18,12 @@ const Home = () => {
       .then((res) => {
         setHandPickedCollectionData(res.data);
       })
-      .finally(setIsLoading(false));
+      .catch((error) => {
+        console.error("Error fetching hand-picked section: ", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const getNewArrivalsData = () => {
@@ -29,7 +33,12 @@ const Home = () => {
       .then((res) => {
         setNewArrivalsData(res.data);
       })
-      .finally(setIsLoading(false));
+      .catch((error) => {
+        console.error("Error fetching new arrivals section: ", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const getBrandsData = () => {
@@ -39,7 +48,12 @@ const Home = () => {
       .then((res) => {
         setShopByBrandsData(res.data);
       })
-      .finally(setIsLoading(false));
+      .catch((error) => {
+        console.error("Error fetching brands section: ", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {

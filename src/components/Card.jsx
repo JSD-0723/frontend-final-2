@@ -1,5 +1,4 @@
 import { Box, Paper, Typography } from "@mui/material";
-import image from "../helper/Assets/image_elyas.png";
 import "./cardsStyles.css";
 
 const Card = (props) => {
