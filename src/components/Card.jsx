@@ -1,11 +1,13 @@
 import { Box, Paper, Typography } from "@mui/material";
 import image from "../helper/Assets/image_elyas.png";
 import "./cardsStyles.css";
+
 const Card = (props) => {
-  const { cardStyles, textStyles, categoryText, cardImage } = props.styles;
+  const { cardStyles, textStyles, categoryText } = props.styles;
+  const productData = props.productData;
 
   const backgroundStyles = {
-    backgroundImage: `url(${image})`,
+    backgroundImage: `url(${productData.img})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "100%",
@@ -15,8 +17,8 @@ const Card = (props) => {
     <Box>
       <Paper sx={{ ...cardStyles, ...backgroundStyles }}>
         <Box sx={textStyles}>
-          <Typography variant="h6" sx={categoryText}>
-            Personal Care
+          <Typography variant="h7" sx={categoryText}>
+            {productData.name}
           </Typography>
         </Box>
       </Paper>
