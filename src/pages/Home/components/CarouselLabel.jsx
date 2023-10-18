@@ -10,10 +10,6 @@ const CarouselLabel = () => {
   return (
     <ThemeProvider theme={theme}>
       <Grid
-      xs={12} 
-      sm={6}  
-      md={4}  
-      lg={3} 
         sx={{
           position: 'absolute',
           top: '45%',
@@ -54,14 +50,11 @@ const CarouselLabel = () => {
               left: '147px',
               fontSize: '1.5rem',
               lineHeight: '26px'
-
             }),
-
           }}>
           Carry your Funk
         </Typography>
         <Typography 
-     
          sx={{
           fontFamily: 'Inter, sans-serif',
           fontSize: '1.75rem',

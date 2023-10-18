@@ -35,6 +35,9 @@ export const fetchData = async (
     setShopByBrandsData(brandsResponse.data);
   } catch (error) {
     console.log("Error fetching data: ", error);
+
+
+
   } finally {
     setIsLoading(false);
   }

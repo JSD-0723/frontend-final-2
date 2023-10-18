@@ -10,20 +10,30 @@ const Home = () => {
   const [shopByBrandsData, setShopByBrandsData] = useState([]);
 
   useEffect(() => {
-    fetchData(setIsLoading, setHandPickedCollectionData, setNewArrivalsData, setShopByBrandsData);
+   // fetchData(setIsLoading, setHandPickedCollectionData, setNewArrivalsData, setShopByBrandsData);
   }, []);
-
+  const storage = [
+    {
+    name:"Elyas",
+    },
+    {
+    name:"Raya",
+    },
+    {
+    name:"Ahmad",
+    },
+    ]
   if (isLoading) {
     return <p>Loading...</p>;
   } else {
     return (
       <Box>
-        <NewArrivals products={handPickedCollectionData} />
-        <HandPicked products={newArrivalsData} />
-        <ShopByBrand brands={shopByBrandsData} />
+        <NewArrivals products={storage} />
+        <HandPicked products={storage} />
+        <ShopByBrand brands={storage} />
       </Box>
     );
   }
-};
+}; 
 
 export default Home;
