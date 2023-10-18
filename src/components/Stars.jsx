@@ -11,10 +11,15 @@ export default function TextRating(props) {
       sx={{
         display: "flex",
         alignItems: "center",
+        color: "#FF8C4B",
       }}
     >
-      <Rating name="text-feedback" value={value} readOnly />
-      <Box sx={{ ml: 2 }}>43</Box>
+      <Rating name="text-feedback" value={value} readOnly color="red" />
+      <Box
+        sx={{ ml: 2, color: "#1B4B66", fontWeight: "500", fontFamily: "inter" }}
+      >
+        43 Ratings
+      </Box>
     </Box>
   );
 }
