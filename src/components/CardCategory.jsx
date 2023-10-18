@@ -1,10 +1,13 @@
 import { Paper, Typography, Box } from "@mui/material";
 import BasicRating from "./Stars";
 import BojeeBag from "../data/Assets/BoujeeBag.png";
-const CardCategory = () => {
+const CardCategory = (props) => {
+  const productsData = props.products;
+  console.log(productsData);
+
   return (
     <Paper elevation={0} sx={{ fontFamily: "inter" }}>
-      <img src={BojeeBag} alt="" />
+      <img src={productsData.img} alt="" />
       <Box
         sx={{
           backGroundColor: "white",
@@ -15,7 +18,7 @@ const CardCategory = () => {
       >
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography sx={{ color: "black", fontWeight: "700" }}>
-            Booujee
+            {productsData.name}
           </Typography>
           <Typography>
             <svg
@@ -36,10 +39,10 @@ const CardCategory = () => {
           </Typography>
         </Box>
         <Typography sx={{ color: "#626262" }}> Black bag </Typography>
-        <BasicRating rating={4} />
+        <BasicRating rating={productsData.rating} />
         <Box sx={{ display: "flex", gap: 1 }}>
           <Typography sx={{ fontWeight: "700", color: "#171520" }}>
-            $56.49
+            ${productsData.price}
           </Typography>
           <Typography
             sx={{
