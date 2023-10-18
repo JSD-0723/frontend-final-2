@@ -8,8 +8,7 @@ const CategoryPage = () => {
   const [data, setData] = useState([]);
   const { categoryName } = useParams();
 
-  const url =
-    `https://estore-doxn.onrender.com/eStore/viewProductByCategory?name=${categoryName}`;
+  const url = `https://estore-doxn.onrender.com/eStore/viewProductByCategory?name=${categoryName}`;
   const items = data;
   useEffect(() => {
     axios.get(url).then((res) => {
