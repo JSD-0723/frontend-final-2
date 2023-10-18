@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HeaderforMobile } from "./layout/header/HeaderforMobile";
 import ImageCarousel from "./pages/Home/components/ImageCarousel";
 import { carouselData } from "./data/carouselData";
-import MakeupAndSkinCare  from "../src/pages/Home/components/MakeupAndSkinCare";
+import MakeupAndSkinCare from "../src/pages/Home/components/MakeupAndSkinCare";
 import CategoryPage from "./pages/Category/Category";
 
 function App() {
@@ -14,11 +14,14 @@ function App() {
     <BrowserRouter>
       <Header />
       <HeaderforMobile />
-     
+
       <Routes>
         <Route path="/frontend-final-2" element={<Home />} />
         <Route path="/frontend-final-2/about" element={<About />} />
-        <Route path="/frontend-final-2/category" element={<CategoryPage />} />
+        <Route
+          path="/frontend-final-2/category/:categoryName"
+          element={<CategoryPage />}
+        />
       </Routes>
 
       <Footer />
