@@ -21,7 +21,7 @@ const HandPicked = (props) => {
   return (
     <Section
       title="Hand Picked Collection"
-      gridComponent={<CardsGrid products={props.products} />}
+      gridComponent={<CardsGrid products={props.products} isHandPicked={true} />}
       styles={HandPickedStyles}
     />
   );
