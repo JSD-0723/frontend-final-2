@@ -28,8 +28,8 @@ const Home = () => {
       <Box>
         <ImageCarousel data={carouselData} />
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-          <NewArrivals products={handPickedCollectionData} />
-          <HandPicked products={newArrivalsData} />
+          <NewArrivals products={newArrivalsData} />
+          <HandPicked products={handPickedCollectionData} />
           <ShopByBrand brands={shopByBrandsData} />
         </Box>
         <Box>
