@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import CardsGrid from "../../../components/CardsGrid";
-import BrandsGrid from "./BrandsGridy";
+import BrandsGrid from "./BrandsGrid";
 import { HandPickedStyles } from "../../../styles/HandPickedStyles";
 import { newArrivasStyles } from "../../../styles/NewArrivalsStyles";
 
@@ -29,11 +29,13 @@ const HandPicked = (props) => {
 
 const NewArrivals = (props) => {
   return (
-    <Section
-      title="New Arrivals"
-      gridComponent={<CardsGrid products={props.products} />}
-      styles={{newArrivasStyles}}
-    />
+    <Box>
+      <Section
+        title="New Arrivals"
+        gridComponent={<CardsGrid products={props.products} />}
+        styles={newArrivasStyles}
+      />
+    </Box>
   );
 };
 

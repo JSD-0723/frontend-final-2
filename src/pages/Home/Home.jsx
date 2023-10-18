@@ -10,14 +10,19 @@ const Home = () => {
   const [shopByBrandsData, setShopByBrandsData] = useState([]);
 
   useEffect(() => {
-    fetchData(setIsLoading, setHandPickedCollectionData, setNewArrivalsData, setShopByBrandsData);
+    fetchData(
+      setIsLoading,
+      setHandPickedCollectionData,
+      setNewArrivalsData,
+      setShopByBrandsData
+    );
   }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;
   } else {
     return (
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
         <NewArrivals products={handPickedCollectionData} />
         <HandPicked products={newArrivalsData} />
         <ShopByBrand brands={shopByBrandsData} />

@@ -11,7 +11,6 @@ function App() {
     <BrowserRouter>
       <Header />
       <HeaderforMobile />
- carouselFeature
       <ImageCarousel data={carouselData} />
 
       <Routes>

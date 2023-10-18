@@ -10,17 +10,38 @@ import {
   footerIcons,
 } from "../../data/FooterDummyData";
 import Hidden from "@mui/material/Hidden";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getCategories } from "../../api/FooterAPI";
+import axios from "axios";
 
 const Footer = () => {
+  const [categoriesData, setCategoriesData] = useState([]);
+  const [loadingScreen, setLoadingScreen] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("https://estore-doxn.onrender.com/eStore/viewCategoryName")
+      .then((res) => {
+        console.log("Data here");
+        console.log(res.data);
+        setCategoriesData(res.data);
+      })
+      .finally(setLoadingScreen(false));
+  }, []);
+
   const productsLinks = footerProducts.map((product, index) => (
     <Link to="/about" key={index} style={styles.link}>
       {product}
     </Link>
   ));
-  const categoriesLinks = footerCategories.map((category, index) => (
-    <Link to="/about" style={styles.link} key={index}>
-      {category}
+
+  const categoriesLinks = categoriesData.map((category, index) => (
+    <Link
+      to={`/frontend-final-2/${category.name.replace(/ /g, "")}`}
+      style={styles.link}
+      key={index}
+    >
+      {category.name}
     </Link>
   ));
 
