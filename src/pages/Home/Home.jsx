@@ -6,6 +6,7 @@ import ImageCarousel from "./components/ImageCarousel";
 import MakeupAndSkinCare from "./components/MakeupAndSkinCare";
 import { carouselData } from '../../data/carouselData';
 import Shortcut from "../Home/components/Shortcut";
+import TopCategory from "../Home/components/TopCategory";
 const Home = () => {
   const [handPickedCollectionData, setHandPickedCollectionData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +28,7 @@ const Home = () => {
     return (
       <Box>
         <ImageCarousel data={carouselData} />
+        <TopCategory/>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           <NewArrivals products={newArrivalsData} />
           <HandPicked products={handPickedCollectionData} />
