@@ -35,9 +35,11 @@ const Footer = () => {
     </Link>
   ));
 
+  
+
   const categoriesLinks = categoriesData.map((category, index) => (
     <Link
-      to={`/frontend-final-2/${category.name.replace(/ /g, "")}`}
+      to={`/frontend-final-2/category/${category.name.replace(/ /g, "")}`}
       style={styles.link}
       key={index}
     >
