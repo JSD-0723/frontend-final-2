@@ -6,19 +6,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HeaderforMobile } from "./layout/header/HeaderforMobile";
 import ImageCarousel from "./pages/Home/components/ImageCarousel";
 import { carouselData } from "./data/carouselData";
-// import MakeupAndSkinCare  from "../src/pages/Home/components/MakeupAndSkinCare";
+import MakeupAndSkinCare  from "../src/pages/Home/components/MakeupAndSkinCare";
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <HeaderforMobile />
       <ImageCarousel data={carouselData} />
-      {/* <MakeupAndSkinCare/> */}
+      <MakeupAndSkinCare/>
       <Routes>
         <Route path="/frontend-final-2" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
-     
       <Footer />
     </BrowserRouter>
   );
