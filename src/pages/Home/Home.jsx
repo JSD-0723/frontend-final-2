@@ -2,7 +2,10 @@ import Box from "@mui/material/Box";
 import { useState, useEffect } from "react";
 import { HandPicked, NewArrivals, ShopByBrand } from "./components/Section";
 import { fetchData } from "../../api/HomeAPI";
-
+import ImageCarousel from "./components/ImageCarousel";
+import MakeupAndSkinCare from "./components/MakeupAndSkinCare";
+import { carouselData } from '../../data/carouselData';
+import Shortcut from "../Home/components/Shortcut";
 const Home = () => {
   const [handPickedCollectionData, setHandPickedCollectionData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -22,10 +25,17 @@ const Home = () => {
     return <p>Loading...</p>;
   } else {
     return (
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <NewArrivals products={newArrivalsData} />
-        <HandPicked products={handPickedCollectionData} />
-        <ShopByBrand brands={shopByBrandsData} />
+      <Box>
+        <ImageCarousel data={carouselData} />
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+          <NewArrivals products={newArrivalsData} />
+          <HandPicked products={handPickedCollectionData} />
+          <ShopByBrand brands={shopByBrandsData} />
+        </Box>
+        <Box>
+          <Shortcut/>
+          <MakeupAndSkinCare />
+        </Box>
       </Box>
     );
   }
