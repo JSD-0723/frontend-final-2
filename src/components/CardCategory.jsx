@@ -14,9 +14,10 @@ const CardCategory = () => {
         }}
       >
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography sx={{ color: "#171520" }}> Booujee </Typography>
+          <Typography sx={{ color: "black", fontWeight: "700" }}>
+            Booujee
+          </Typography>
           <Typography>
-            {" "}
             <svg
               width="22"
               height="20"
@@ -38,8 +39,7 @@ const CardCategory = () => {
         <BasicRating rating={4} />
         <Box sx={{ display: "flex", gap: 1 }}>
           <Typography sx={{ fontWeight: "700", color: "#171520" }}>
-            {" "}
-            $56.49{" "}
+            $56.49
           </Typography>
           <Typography
             sx={{
@@ -48,8 +48,7 @@ const CardCategory = () => {
               color: "#626262",
             }}
           >
-            {" "}
-            $78.66{" "}
+            $78.66
           </Typography>
           <Typography sx={{ color: "red" }}> 50% OFF </Typography>
         </Box>
