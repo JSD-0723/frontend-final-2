@@ -10,27 +10,21 @@ const Home = () => {
   const [shopByBrandsData, setShopByBrandsData] = useState([]);
 
   useEffect(() => {
-   // fetchData(setIsLoading, setHandPickedCollectionData, setNewArrivalsData, setShopByBrandsData);
+   fetchData(setIsLoading, setHandPickedCollectionData, setNewArrivalsData, setShopByBrandsData);
   }, []);
-  const storage = [
-    {
-    name:"Elyas",
-    },
-    {
-    name:"Raya",
-    },
-    {
-    name:"Ahmad",
-    },
-    ]
+ 
   if (isLoading) {
     return <p>Loading...</p>;
   } else {
     return (
       <Box>
+         <ImageCarousel data={carouselData} />
         <NewArrivals products={storage} />
         <HandPicked products={storage} />
         <ShopByBrand brands={storage} />
+        <MakeupAndSkinCare/>
+
+
       </Box>
     );
   }

@@ -12,8 +12,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <HeaderforMobile />
-      <ImageCarousel data={carouselData} />
-      <MakeupAndSkinCare/>
+     
       <Routes>
         <Route path="/frontend-final-2" element={<Home />} />
         <Route path="/about" element={<About />} />
