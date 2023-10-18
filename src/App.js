@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HeaderforMobile } from "./layout/header/HeaderforMobile";
 import ImageCarousel from "./pages/Home/components/ImageCarousel";
 import { carouselData } from "./data/carouselData";
+import CategoryPage from "./pages/Category/Category";
 // import MakeupAndSkinCare  from "../src/pages/Home/components/MakeupAndSkinCare";
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
       {/* <MakeupAndSkinCare/> */}
       <Routes>
         <Route path="/frontend-final-2" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/frontend-final-2/about" element={<About />} />
+        <Route path="/frontend-final-2/category" element={<CategoryPage />} />
       </Routes>
-     
+
       <Footer />
     </BrowserRouter>
   );
