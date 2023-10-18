@@ -27,10 +27,7 @@ import { createTheme } from '@mui/material/styles';
         {data.map((item) => (
 
           <Grid item key={item.id}
-          xs={12} // Full width on small screens
-          sm={6}  // Half width on medium screens
-          md={4}  // One-third width on large screens
-          lg={3} 
+         
 
             sx=
             {{
