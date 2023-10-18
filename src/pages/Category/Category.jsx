@@ -13,10 +13,10 @@ const CategoryPage = () => {
     { name: "Item7" },
   ];
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="lg">
       <Box>Category Page Works!</Box>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {items.map((x) => {
           return (
             <Grid item>
