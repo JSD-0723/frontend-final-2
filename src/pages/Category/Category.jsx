@@ -12,6 +12,7 @@ const CategoryPage = () => {
     { name: "Item7" },
     { name: "Item7" },
   ];
+  
   return (
     <Container maxWidth="lg">
       <Box>Category Page Works!</Box>
