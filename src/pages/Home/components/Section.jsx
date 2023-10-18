@@ -21,7 +21,9 @@ const HandPicked = (props) => {
   return (
     <Section
       title="Hand Picked Collection"
-      gridComponent={<CardsGrid products={props.products} isHandPicked={true} />}
+      gridComponent={
+        <CardsGrid products={props.products} isHandPicked={true} />
+      }
       styles={HandPickedStyles}
     />
   );
@@ -29,13 +31,18 @@ const HandPicked = (props) => {
 
 const NewArrivals = (props) => {
   return (
-    <Box>
-      <Section
-        title="New Arrivals"
-        gridComponent={<CardsGrid products={props.products} />}
-        styles={newArrivasStyles}
-      />
-    </Box>
+    <Section
+      title="New Arrivals"
+      gridComponent={<CardsGrid products={props.products} />}
+      styles={{
+        ...newArrivasStyles,
+        container: {
+          ...newArrivasStyles.container,
+          overflowX: "auto",
+          whiteSpace: "nowrap",
+        },
+      }}
+    />
   );
 };
 

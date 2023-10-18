@@ -13,11 +13,14 @@ const CardsGrid = (props) => {
 
   for (let index = 0; index < loopTimes; index++) {
     const product = products[index];
-
+    const categoryNavigationLink = `/frontend-final-2/category/${product.name.replace(
+      / /g,
+      ""
+    )}`;
     gridToRender.push(
       <Grid item xs={6} sm={6} md={3} key={index}>
         {isHandPicked ? (
-          <Link to="/frontend-final-2/category">
+          <Link to={categoryNavigationLink}>
             <Card styles={cardStyles} productData={product} />
           </Link>
         ) : (

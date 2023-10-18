@@ -1,6 +1,9 @@
 import { Box, Container, Grid } from "@mui/material";
 import CardCategory from "../../components/CardCategory";
 const CategoryPage = () => {
+
+  
+
   const items = [
     { name: "Item1" },
     { name: "Item2" },
