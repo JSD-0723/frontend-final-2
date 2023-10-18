@@ -5,7 +5,7 @@ import { fetchData } from "../../api/HomeAPI";
 import ImageCarousel from "./components/ImageCarousel";
 import MakeupAndSkinCare from "./components/MakeupAndSkinCare";
 import { carouselData } from '../../data/carouselData';
-
+import Shortcut from "../Home/components/Shortcut";
 const Home = () => {
   const [handPickedCollectionData, setHandPickedCollectionData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +33,7 @@ const Home = () => {
           <ShopByBrand brands={shopByBrandsData} />
         </Box>
         <Box>
+          <Shortcut/>
           <MakeupAndSkinCare />
         </Box>
       </Box>
