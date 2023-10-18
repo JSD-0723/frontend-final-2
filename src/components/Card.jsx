@@ -16,7 +16,7 @@ const Card = (props) => {
     <Box>
       <Paper sx={{ ...cardStyles, ...backgroundStyles }}>
         <Box sx={textStyles}>
-          <Typography variant="h7" sx={categoryText}>
+          <Typography variant="h5" sx={categoryText}>
             {productData.name}
           </Typography>
         </Box>
