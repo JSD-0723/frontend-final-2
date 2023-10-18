@@ -42,7 +42,7 @@ import { createTheme } from '@mui/material/styles';
 
               style={{
                 width: '100%',
-                height: '400px',
+                height: 'auto',
                 borderRadius: 24,
                 justifyContent: 'center',
                 alignItems: 'center',

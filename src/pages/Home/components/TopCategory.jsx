@@ -23,6 +23,7 @@ const TopCategory = () => {
 
 
   return (
+    <Hidden mdUp >
     <Carousel>
       {image.map((image, index) => (
         <Paper key={index} sx={{width:'100%', height:'82px'}}>
@@ -36,6 +37,7 @@ const TopCategory = () => {
         </Paper>
       ))}
     </Carousel>
+    </Hidden>
   );
 };
 

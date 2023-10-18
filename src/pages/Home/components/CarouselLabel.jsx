@@ -121,7 +121,7 @@ const CarouselLabel = () => {
           )}
         </Grid>
       </Grid>
-    // </ThemeProvider>
+     </ThemeProvider>
   )
 
 }
