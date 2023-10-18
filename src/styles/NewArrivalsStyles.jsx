@@ -25,6 +25,8 @@ export const newArrivasStyles = {
   title: {
     color: "#13101E",
     margin: 2,
+    marginBottom: 3,
+
     fontFamily: "Inter",
     fontWeight: 600,
   },

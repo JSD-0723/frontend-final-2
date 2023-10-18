@@ -9,14 +9,12 @@ export const HandPickedStyles = {
     overflow: "hidden",
   },
 
-  
   textStyles: {
     display: "flex",
     justifyContent: "flex-start",
     color: "#171520",
     fontFamily: "Inter",
     fontWeight: 600,
-
     p: 2,
   },
 
@@ -35,7 +33,7 @@ export const HandPickedStyles = {
   title: {
     color: "white",
     margin: 2,
-    paddingBottom: 1,
+
     fontFamily: "Inter",
     fontWeight: 600,
   },
