@@ -1,13 +1,12 @@
 import { Paper, Typography, Box } from "@mui/material";
-import BasicRating from "./Stars";
-import BojeeBag from "../data/Assets/BoujeeBag.png";
-const CardCategory = (props) => {
-  const productsData = props.products;
-  console.log(productsData);
+import BojeeBag from "../../../data/Assets/BoujeeBag.png";
+import "../../Home/components/styles.css";
+const NewArrivalsCard = (props) => {
+  const productData = props.productData;
 
   return (
     <Paper elevation={0} sx={{ fontFamily: "inter" }}>
-      <img src={productsData.img} alt="" />
+      <img className="card-new-arrivals-image" src={productData.img} alt="" />
       <Box
         sx={{
           backGroundColor: "white",
@@ -18,7 +17,7 @@ const CardCategory = (props) => {
       >
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography sx={{ color: "black", fontWeight: "700" }}>
-            {productsData.name}
+            {productData.name}
           </Typography>
           <Typography>
             <svg
@@ -39,25 +38,14 @@ const CardCategory = (props) => {
           </Typography>
         </Box>
         <Typography sx={{ color: "#626262" }}> Black bag </Typography>
-        <BasicRating rating={productsData.rating} />
         <Box sx={{ display: "flex", gap: 1 }}>
           <Typography sx={{ fontWeight: "700", color: "#171520" }}>
-            ${productsData.price}
+            $56.49
           </Typography>
-          <Typography
-            sx={{
-              textDecoration: "line-through",
-              fontWeight: "400",
-              color: "#626262",
-            }}
-          >
-            $78.66
-          </Typography>
-          <Typography sx={{ color: "red" }}> 50% OFF </Typography>
         </Box>
       </Box>
     </Paper>
   );
 };
 
-export default CardCategory;
+export default NewArrivalsCard;

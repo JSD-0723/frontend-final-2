@@ -16,7 +16,10 @@ function App() {
       <Routes>
         <Route path="/frontend-final-2" element={<Home />} />
         <Route path="/frontend-final-2/about" element={<About />} />
-        <Route path="/frontend-final-2/category" element={<CategoryPage />} />
+        <Route
+          path="/frontend-final-2/category/:categoryName"
+          element={<CategoryPage />}
+        />
       </Routes>
 
       <Footer />

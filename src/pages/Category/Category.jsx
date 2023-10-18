@@ -1,26 +1,29 @@
 import { Box, Container, Grid } from "@mui/material";
 import CardCategory from "../../components/CardCategory";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
 const CategoryPage = () => {
-  const items = [
-    { name: "Item1" },
-    { name: "Item2" },
-    { name: "Item3" },
-    { name: "Item4" },
-    { name: "Item5" },
-    { name: "Item6" },
-    { name: "Item7" },
-    { name: "Item7" },
-    { name: "Item7" },
-  ];
+  const [data, setData] = useState([]);
+  const { categoryName } = useParams();
+
+  const url = `https://estore-doxn.onrender.com/eStore/viewProductByCategory?name=${categoryName}`;
+  const items = data;
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setData(res.data);
+    });
+  }, []);
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="lg">
       <Box>Category Page Works!</Box>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {items.map((x) => {
           return (
             <Grid item>
-              <p> {<CardCategory />} </p>
+              <p> {<CardCategory products={x} />} </p>
             </Grid>
           );
         })}
