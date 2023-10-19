@@ -1,16 +1,31 @@
 {
   "files": {
-    "main.css": "/frontend-final-2/static/css/main.a3b95427.css",
-    "main.js": "/frontend-final-2/static/js/main.38b37fd9.js",
-    "static/media/image3.jpg": "/frontend-final-2/static/media/image3.15acb824bff477d61d20.jpg",
-    "static/media/image1.jpg": "/frontend-final-2/static/media/image1.7ee05ab2398416e94d75.jpg",
-    "static/media/image4.jpg": "/frontend-final-2/static/media/image4.1276ae8b140ca7505434.jpg",
+    "main.css": "/frontend-final-2/static/css/main.4983e5f0.css",
+    "main.js": "/frontend-final-2/static/js/main.dedf2a30.js",
+    "static/media/image1.png": "/frontend-final-2/static/media/image1.50b56aa43775e5bb6dac.png",
+    "static/media/banner.png": "/frontend-final-2/static/media/banner.e3f694f2732087de2dee.png",
+    "static/media/hero1.png": "/frontend-final-2/static/media/hero1.df95df80333105fec569.png",
+    "static/media/bags.png": "/frontend-final-2/static/media/bags.d6a0cb4444f788f02c8b.png",
+    "static/media/image8.jpg": "/frontend-final-2/static/media/image8.acfe681b4bf3472a15ea.jpg",
+    "static/media/glasses.png": "/frontend-final-2/static/media/glasses.4331bf90a7d285ef3d22.png",
+    "static/media/image4.jpg": "/frontend-final-2/static/media/image4.014290113d948c4cafa8.jpg",
+    "static/media/smartwatch.png": "/frontend-final-2/static/media/smartwatch.14eef7cf94ac3ba93ad7.png",
+    "static/media/hero3.png": "/frontend-final-2/static/media/hero3.cd247e64b731c7bcc8f6.png",
+    "static/media/image6.jpg": "/frontend-final-2/static/media/image6.3a3174fe456235289631.jpg",
+    "static/media/hero2.png": "/frontend-final-2/static/media/hero2.ea11bf320ad7542601a8.png",
+    "static/media/BoujeeBag.png": "/frontend-final-2/static/media/BoujeeBag.85be41feb9f79faa14a1.png",
+    "static/media/image_elyas.png": "/frontend-final-2/static/media/image_elyas.aeb6f29db7a8be6b8eb6.png",
+    "static/media/image7.jpg": "/frontend-final-2/static/media/image7.18dacd56fd1fc7707ca1.jpg",
+    "static/media/hero.png": "/frontend-final-2/static/media/hero.327cf4be2eedbd75aa54.png",
+    "static/media/image3.jpg": "/frontend-final-2/static/media/image3.60f999892ad146c6851a.jpg",
+    "static/media/image9.jpg": "/frontend-final-2/static/media/image9.780e13aa2e928a51c933.jpg",
+    "static/media/image2.jpg": "/frontend-final-2/static/media/image2.aa47a324877c8071eff1.jpg",
     "index.html": "/frontend-final-2/index.html",
-    "main.a3b95427.css.map": "/frontend-final-2/static/css/main.a3b95427.css.map",
-    "main.38b37fd9.js.map": "/frontend-final-2/static/js/main.38b37fd9.js.map"
+    "main.4983e5f0.css.map": "/frontend-final-2/static/css/main.4983e5f0.css.map",
+    "main.dedf2a30.js.map": "/frontend-final-2/static/js/main.dedf2a30.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3b95427.css",
-    "static/js/main.38b37fd9.js"
+    "static/css/main.4983e5f0.css",
+    "static/js/main.dedf2a30.js"
   ]
 }
