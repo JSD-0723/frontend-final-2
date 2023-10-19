@@ -21,6 +21,7 @@ export const newArrivasStyles = {
     paddingTop: 1,
     paddingBottom: 6,
     marginBottom: 1,
+    
   },
   title: {
     color: "#13101E",
