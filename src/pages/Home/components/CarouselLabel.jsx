@@ -2,6 +2,7 @@ import { ThemeProvider } from "@emotion/react";
 import { Grid, Typography, useMediaQuery } from "@mui/material";
 import { Button } from "@mui/material";
 import { createTheme } from "@mui/material";
+import {Box} from "@mui/material";
 
 const theme = createTheme();
 const CarouselLabel = () => {
@@ -9,10 +10,10 @@ const CarouselLabel = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid
+      <Box
         sx={{
           position: 'absolute',
-          top: '45%',
+          top: '55%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           backgroundColor: 'rgba(222, 222, 222, 0.5)',
@@ -21,6 +22,7 @@ const CarouselLabel = () => {
           height: '270px',
           borderRadius: '24px',
           marginLeft: 43,
+
           ...(isSmallScreen && {
             position: 'absolute',
             width: '70%',
@@ -35,7 +37,6 @@ const CarouselLabel = () => {
       
       >
         <Typography
-     
           sx={{
             fontWeight: 800,
             fontSize: ' 3.75rem',
@@ -120,7 +121,7 @@ const CarouselLabel = () => {
           </Button>
           )}
         </Grid>
-      </Grid>
+      </Box>
      </ThemeProvider>
   )
 

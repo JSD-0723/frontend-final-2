@@ -19,21 +19,20 @@ import { createTheme } from '@mui/material/styles';
           overflow: isSmallScreen ? 'hidden' : 'hidden',
           justifyContent: 'center',
           alignItems: 'center',
-          marginLeft: 3
+          marginLeft: 3,
+          marginRight:3,
+          borderRadius:'8px'
         }}
 
       >
 
         {data.map((item) => (
-
           <Grid item key={item.id}
-         
-
             sx=
             {{
               position: 'relative',
               overflow: 'hidden',
-              height: '514px'
+              height: '400px'
             }}>
 
             <img
@@ -42,7 +41,7 @@ import { createTheme } from '@mui/material/styles';
 
               style={{
                 width: '100%',
-                height: 'auto',
+                height: '400px',
                 borderRadius: 24,
                 justifyContent: 'center',
                 alignItems: 'center',

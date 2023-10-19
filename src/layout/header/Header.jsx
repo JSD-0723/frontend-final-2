@@ -63,11 +63,11 @@ export default function Header() {
           <Hidden smDown>
           <Box item sm={6} sx={{ display: 'flex', color: '#171520', marginRight:10 ,gap: 2}}>
               {categoryName &&
-              categoryName.slice(0, 5).map((categoryName, index) => (
+              categoryName.slice(0, 5).map((category, index) => (
                   <Link 
-                  to={`/frontend-final-2/categoryName/${categoryName.name.replace(/ /g, "")}`} 
+                  to={`/frontend-final-2/category/${category.name.replace(/ /g, "")}`} 
                   key={index}
-                  style={{ fontFamily: 'Inter, sans-serif', color: '#171520', textDecoration:'none' }}>{categoryName.name}
+                  style={{ fontFamily: 'Inter, sans-serif', color: '#171520', textDecoration:'none' }}>{category.name}
                   </Link>
                   ))}
                 </Box>

@@ -23,7 +23,7 @@ const MakeupAndSkinCare = () => {
                 <Grid item xs={12}
                     sx={{
                         justifyContent: 'space-between', alignItems: 'center', position: 'absolute',
-                        padding: '2px', marginLeft:2, marginRight:2
+                         marginLeft:2, marginRight:2
                     }}>
                     <img
                         src={image1}
