@@ -38,8 +38,6 @@ const NewArrivals = (props) => {
         ...newArrivasStyles,
         container: {
           ...newArrivasStyles.container,
-          overflowX: "auto",
-          whiteSpace: "nowrap",
         },
       }}
     />
