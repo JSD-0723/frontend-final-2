@@ -6,31 +6,40 @@
   import IconButton from '@mui/material/IconButton';
   import SearchIcon from '@mui/icons-material/Search';
   import Grid from '@mui/material/Grid'; 
+  import axios from 'axios';
+  import { useState , useEffect} from 'react';
   
   export default function SearchBar() {
-    // const[search, setSearch]= useState('');
-// const[searchResult,setSearchResult]=useState([]);
-// const[categories, setCategories]=useState([]);
+     const[search, setSearch]= useState('');
+     const[searchResult,setSearchResult]=useState([]);
+     const[categories, setCategories]=useState([]);
+    
+    const searchProduct = async (search)=>{
+      try{
+     const response =   await axios.get(`https://estore-doxn.onrender.com/eStore/searchProduct?name=${search}`)
+     .then((res)=>
+    setSearch( res.data))
+    }catch(error){
+        console.log('Error Fetching the Product or Brands');
+        throw error;
+      }
+    
+    };
 
+  useEffect(()=>{
+  searchProduct ()
+}, []);
 
+  const handleSearch = ()=>{
+   if(search){
+     searchProduct(search)
+     .then((data)=> setSearchResult(data))
+     .catch((error)=> console.error('Error searching Product or Brand'));
+   }else{
+    setSearchResult([]);
+   }
 
-// useEffect(()=>{
-//  fetchCategories()
-//  .then((data)=>setCategories(data))
-//  .catch((error)=>console.error('error fetching categories', error));
-
-// }, []);
-
-//   const handleSearch = ()=>{
-//    if(search){
-//      searchProduct(search)
-//      .then((data)=> setSearchResult(data))
-//      .catch((error)=> console.error('Error searching Product or Brand'));
-//    }else{
-//     setSearchResult([]);
-//    }
-
-//    };
+   };
 
     return (
       <Grid container justifyContent="flex-end" sx={{ display: { xs: 'none', lg: 'flex' } }}>
@@ -63,7 +72,13 @@
               height: '18px',
             }}
             placeholder="Search for products or brands...."
-            inputProps={{ 'aria-label': 'Search for products or brands....' }}
+            inputProps={{ 'aria-label': 'Search for products or brands....', 
+          }}
+          onChange={event=>{  
+            if(search)                            
+            setSearch(event.target.value)
+
+          }}
           />
         </Paper>
           {/* <card>
