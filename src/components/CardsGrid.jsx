@@ -20,7 +20,7 @@ const CardsGrid = (props) => {
     gridToRender.push(
       <Grid item xs={6} sm={6} md={3} key={index}>
         {isHandPicked ? (
-          <Link to={categoryNavigationLink}>
+          <Link to={categoryNavigationLink} style={{ textDecoration: "none" }}>
             <Card styles={cardStyles} productData={product} />
           </Link>
         ) : (
