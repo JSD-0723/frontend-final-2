@@ -15,7 +15,13 @@ const NewArrivalsCard = (props) => {
           gap: 0.5,
         }}
       >
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+      
+          }}
+        >
           <Typography sx={{ color: "black", fontWeight: "700" }}>
             {productData.name}
           </Typography>

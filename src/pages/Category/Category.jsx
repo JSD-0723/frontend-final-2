@@ -3,7 +3,8 @@ import { Box, Container, Grid, Pagination } from "@mui/material";
 import CardCategory from "../../components/CardCategory";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import heroImage from "../../helper/Assets/hero.png";
+import "./styles.css";
 const ITEMS_PER_PAGE = 9;
 
 const CategoryPage = () => {
@@ -27,32 +28,34 @@ const CategoryPage = () => {
   };
 
   return (
-    <Container maxWidth="lg">
-      <Box>Category Page Works!</Box>
+    <Box>
+      <img src={heroImage} alt="" className="image" />
 
-      <Grid container spacing={2}>
-        {currentItems.map((categoryItem) => (
-          <Grid item key={categoryItem.id}>
-            <CardCategory products={categoryItem} />
-          </Grid>
-        ))}
-      </Grid>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "flex-start",
-          marginTop: 3,
-          marginBottom: 10,
-        }}
-      >
-        <Pagination
-          count={Math.ceil(data.length / ITEMS_PER_PAGE)}
-          page={currentPage}
-          onChange={handlePageChange}
-          nextButtonText="next"
-        />
-      </Box>
-    </Container>
+      <Container maxWidth="lg">
+        <Grid container spacing={15}>
+          {currentItems.map((categoryItem) => (
+            <Grid item key={categoryItem.id}>
+              <CardCategory products={categoryItem} />
+            </Grid>
+          ))}
+        </Grid>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-start",
+            marginTop: 3,
+            marginBottom: 10,
+          }}
+        >
+          <Pagination
+            count={Math.ceil(data.length / ITEMS_PER_PAGE)}
+            page={currentPage}
+            onChange={handlePageChange}
+            nextButtonText="next"
+          />
+        </Box>
+      </Container>
+    </Box>
   );
 };
 
