@@ -31,26 +31,30 @@ const HandPicked = (props) => {
 
 const NewArrivals = (props) => {
   return (
-    <Section
-      title="New Arrivals"
-      gridComponent={<CardsGrid products={props.products} />}
-      styles={{
-        ...newArrivasStyles,
-        container: {
-          ...newArrivasStyles.container,
-        },
-      }}
-    />
+    <Box sx={{ overflowX: "scroll" }}>
+      <Section
+        title="New Arrivals"
+        gridComponent={<CardsGrid products={props.products} />}
+        styles={{
+          ...newArrivasStyles,
+          container: {
+            ...newArrivasStyles.container,
+          },
+        }}
+      />
+    </Box>
   );
 };
 
 const ShopByBrand = (props) => {
   return (
-    <Section
-      title="Shop By Brands"
-      gridComponent={<BrandsGrid brands={props.brands} />}
-      styles={newArrivasStyles}
-    />
+    <Box>
+      <Section
+        title="Shop By Brands"
+        gridComponent={<BrandsGrid brands={props.brands} />}
+        styles={newArrivasStyles}
+      />
+    </Box>
   );
 };
 
