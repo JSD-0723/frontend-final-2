@@ -10,8 +10,7 @@ return(
        >
 <img 
 style={{width:'100%', height:'auto', alignItems: 'center',
-padding: '2px', marginLeft:2, marginRight:'5px'}}
-
+padding: '2px', marginLeft:2, marginRight:2}}
 src={shortcut}
 alt="shortcut image"
 >

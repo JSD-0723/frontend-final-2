@@ -6,7 +6,6 @@ export const styles = {
     gap: 5,
     backgroundColor: "#1B4B66",
     fontSize: 14,
-
     fontFamily: "Inter",
   },
   gridItem: {
