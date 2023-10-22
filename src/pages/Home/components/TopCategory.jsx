@@ -23,8 +23,6 @@ const TopCategory = () => {
       
      
   },[]);
-
-
   return (
     <Hidden mdUp>
     <Carousel 

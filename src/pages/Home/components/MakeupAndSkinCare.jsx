@@ -8,7 +8,9 @@ import { Hidden } from '@mui/material';
 
 const MakeupAndSkinCare = () => {
     return (
-        <Grid spacing={1} sx={{ width: '100%', top: '100%' }}>
+        <Grid spacing={1} sx={{
+            width: '100%',
+        }}>
             {/* <Hidden smUp>
                 <Box
                     sx=
@@ -22,8 +24,10 @@ const MakeupAndSkinCare = () => {
 
                 <Grid item xs={12}
                     sx={{
-                        justifyContent: 'space-between', alignItems: 'center', position: 'absolute',
-                         marginLeft:2, marginRight:2
+                        alignItems: 'center',
+                        marginLeft: 2,
+                        marginRight: 2,
+
                     }}>
                     <img
                         src={image1}
@@ -49,6 +53,7 @@ const MakeupAndSkinCare = () => {
                     </Grid>
                 </Grid>
             </Grid>
+            <Box sx={{width:'100%', height:'30px'}}></Box>
         </Grid>
     );
 }

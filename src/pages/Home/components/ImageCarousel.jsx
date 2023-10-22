@@ -4,18 +4,28 @@ import { Paper, Typography, Box, Button, useMediaQuery, ThemeProvider } from '@m
 import CarouselLabel from './CarouselLabel';
 import { Grid } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
- const theme = createTheme();
+ const theme = createTheme({
+  breakpoints:{
+    value:{
+     xs:0,
+     sm:600,
+     md:900,
+     lg:1200
+
+    }
+  }
+ });
 
  const ImageCarousel = ({ data }) => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
+  const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <ThemeProvider theme={theme}>
-
+      <Grid container xs={12} md={12} >
       <Carousel indicators={false} autoPlay={true} animation="slide"
         sx=
         {{
-          width: isSmallScreen ? '90%' : '97%',
+          width: isSmallScreen ? '100%' : '100%',
           overflow: isSmallScreen ? 'hidden' : 'hidden',
           justifyContent: 'center',
           alignItems: 'center',
@@ -23,11 +33,9 @@ import { createTheme } from '@mui/material/styles';
           marginRight:3,
           borderRadius:'8px'
         }}
-
       >
-
         {data.map((item) => (
-          <Grid item key={item.id}
+          <Grid item  xs={12} md={12} key={item.id}
             sx=
             {{
               position: 'relative',
@@ -41,7 +49,7 @@ import { createTheme } from '@mui/material/styles';
 
               style={{
                 width: '100%',
-                height: '400px',
+                height: '400px', 
                 borderRadius: 24,
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -52,19 +60,32 @@ import { createTheme } from '@mui/material/styles';
                 ...(isSmallScreen && {
                   width: '100%',
                   left: '50%',
-                  height: '120px',
-                  top: '20%',
+                  height: '160px',
                   borderRadius: '8px',
+                  top:'40%',
+                  marginLeft:3,
+                  marginRight:3
                   
                 }),
+                ...(isTabletScreen && {
+                   height:'250px',
+                   left:'50%',
+                   top:'50%',
+
+                   
+
+                  })
               }}
             />
+            <Grid container xs={12} md={12}>
             <CarouselLabel />
+            </Grid>
 
           </Grid>
         ))}
       </Carousel>
-             </ThemeProvider>                       
+      </Grid>
+     </ThemeProvider>                       
   );
 };
 

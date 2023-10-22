@@ -4,12 +4,23 @@ import { Button } from "@mui/material";
 import { createTheme } from "@mui/material";
 import {Box} from "@mui/material";
 
-const theme = createTheme();
+const theme = createTheme({
+  breakpoints:{
+    values:{
+      xs:0,
+      sm:600,
+      md:900,
+      lg:1200
+    }
+  }
+});
 const CarouselLabel = () => {
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <ThemeProvider theme={theme}>
+      <Grid container xs={12} md={12}>
       <Box
         sx={{
           position: 'absolute',
@@ -25,17 +36,25 @@ const CarouselLabel = () => {
 
           ...(isSmallScreen && {
             position: 'absolute',
-            width: '70%',
+            width: '50%',
             height: '100px',
             borderRadius: '8px',
-            top:'20%',
-            left:'-25%',
-            paddingLeft:1,
-
+            justifyContent:'center',
+            alignItems:'center',
+            top:'40%',
+            marginLeft:'37%'
           }),
+          ...(isTabletScreen && {
+              width:'50%',
+              height:'170px',
+              top:'50%',
+              left:'35%'
+
+          })
         }}
       
       >
+        <Grid container xs={12} md={12} >
         <Typography
           sx={{
             fontWeight: 800,
@@ -45,16 +64,29 @@ const CarouselLabel = () => {
             letterSpacing: '0em',
             color: "#1B4B66",
             ...(isSmallScreen && {
-              width: '177px',
+              width: '50%',
               height: '52px',
-              marginTop: '-17px',
-              left: '147px',
+              marginTop: '10%',
+              left: '10%',
               fontSize: '1.5rem',
-              lineHeight: '26px'
+              lineHeight: '40px',
             }),
+           ...(isTabletScreen && {
+              width:'250px',
+              letterSpacing: '0em',
+              fontSize:'2rem',
+              height:'70px',
+              lineHeight:'26px',
+              
+
+
+           }),
+
           }}>
           Carry your Funk
         </Typography>
+        </Grid>
+        <Grid container xs={12} md={12}>
         <Typography 
          sx={{
           fontFamily: 'Inter, sans-serif',
@@ -68,17 +100,25 @@ const CarouselLabel = () => {
           left: '610px',
           ...(isSmallScreen && {
             width: '162px',
-            height: '32px',
-            top: '69px',
-            left: '147px',
+            height: '50px',
+            left: '10%',
             fontSize: '0.75rem',
-            lineHeight: '16px'
+            lineHeight: '16px',
+            marginTop:'2%'
+
+          }),
+          ...(isTabletScreen &&{
+            fontSize:'1rem',
+            height:'80px',
+            width:'250px',
+            lineHeight:'26px'
 
           }),
         }}>
           Trendy handbags collection for your party animal
         </Typography>
-        <Grid 
+        </Grid>
+        <Grid  md={12}
          sx={{
           alignItems: 'center',
           justifyContent: 'center'
@@ -96,7 +136,13 @@ const CarouselLabel = () => {
             textAlign: 'center',
             textTransform: 'none',
             height: '44px',
-            top: '20px'
+            top: '20px',
+
+            ...(isTabletScreen &&{
+              height:'38px',
+              top:'-10px',
+
+            })
 
           }}>
             <svg
@@ -122,6 +168,7 @@ const CarouselLabel = () => {
           )}
         </Grid>
       </Box>
+      </Grid>
      </ThemeProvider>
   )
 
