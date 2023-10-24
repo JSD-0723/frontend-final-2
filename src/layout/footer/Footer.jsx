@@ -11,7 +11,7 @@ import {
 } from "../../data/FooterDummyData";
 import Hidden from "@mui/material/Hidden";
 import { useEffect, useState } from "react";
-import { getCategories } from "../../api/FooterAPI";
+
 import axios from "axios";
 
 const Footer = () => {
@@ -34,8 +34,6 @@ const Footer = () => {
       {product}
     </Link>
   ));
-
-  
 
   const categoriesLinks = categoriesData.map((category, index) => (
     <Link
