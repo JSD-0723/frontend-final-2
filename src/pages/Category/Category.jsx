@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Box, Container, Grid, Pagination } from "@mui/material";
-import CardCategory from "../../components/CardCategory";
+import CardCategory from "./CardCategory";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import heroImage from "../../helper/Assets/hero.png";
 import "./styles.css";
 const ITEMS_PER_PAGE = 9;
@@ -35,7 +35,14 @@ const CategoryPage = () => {
         <Grid container spacing={15}>
           {currentItems.map((categoryItem) => (
             <Grid item key={categoryItem.id}>
-              <CardCategory products={categoryItem} />
+              <Link
+                to={`/frontend-final-2/category/${categoryItem.name.replace(
+                  / /g,
+                  ""
+                )}/${categoryItem.id}`}
+              >
+                <CardCategory products={categoryItem} />
+              </Link>
             </Grid>
           ))}
         </Grid>
