@@ -1,10 +1,26 @@
+import { useEffect, useState } from "react";
 import ProductDescription from "./ProductDescription";
-
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { Box } from "@mui/material";
 const ProductPage = () => {
+  const [productDetails, setProductData] = useState([]);
+  const params = useParams();
+
+  const url = `https://estore-doxn.onrender.com/eStore/productDetail?id=${params.id}`;
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setProductData(res.data);
+    });
+  }, [url]);
+
   return (
-    <div>
-      <ProductDescription />
-    </div>
+    <Box>
+      {/*Upper Section of the page is the productDescription component */}
+      <ProductDescription productData={productDetails} />
+      {/*Raya put your component for the lower section here */}
+    </Box>
   );
 };
 

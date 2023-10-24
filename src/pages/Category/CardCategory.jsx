@@ -1,8 +1,8 @@
 import { Paper, Typography, Box } from "@mui/material";
 import BasicRating from "../../components/Stars";
 
-const CardCategory = (props) => {
-  const productsData = props.products;
+const CardCategory = ( {product }) => {
+  const productsData = product;
   console.log(productsData);
 
   return (
