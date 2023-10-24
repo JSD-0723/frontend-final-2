@@ -1,9 +1,9 @@
+import ProductDescription from "./ProductDescription";
+
 const ProductPage = () => {
   return (
     <div>
-      {" "}
-      console.log("ROFL")
-      <p> LOL </p>
+      <ProductDescription />
     </div>
   );
 };
