@@ -1,6 +1,6 @@
 import { Paper, Typography, Box } from "@mui/material";
-import BasicRating from "./Stars";
-import BojeeBag from "../data/Assets/BoujeeBag.png";
+import BasicRating from "../../components/Stars";
+
 const CardCategory = (props) => {
   const productsData = props.products;
   console.log(productsData);
