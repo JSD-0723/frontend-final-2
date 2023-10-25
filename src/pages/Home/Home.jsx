@@ -7,6 +7,8 @@ import MakeupAndSkinCare from "./components/MakeupAndSkinCare";
 import { carouselData } from '../../data/carouselData';
 import Shortcut from "../Home/components/Shortcut";
 import TopCategory from "../Home/components/TopCategory";
+
+
 const Home = () => {
   const [handPickedCollectionData, setHandPickedCollectionData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +35,9 @@ const Home = () => {
           <NewArrivals products={newArrivalsData} />
           <HandPicked products={handPickedCollectionData} />
           <ShopByBrand brands={shopByBrandsData} />
+
+       
+
         </Box>
         <Box>
           <Shortcut/>
