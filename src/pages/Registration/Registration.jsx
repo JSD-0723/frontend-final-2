@@ -37,18 +37,14 @@ function SignUp() {
         formData
       );
 
-      // Handle success (e.g., show a success message)
       console.log("Signup successful:", response.data);
 
-      // You can reset the form or navigate to another page after successful signup
-      // Resetting the form:
       setFormData({
         name: "",
         email: "",
         password: "",
       });
     } catch (error) {
-      // Handle error (e.g., show an error message)
       console.error("Signup failed:", error);
     }
   };
@@ -78,6 +74,7 @@ function SignUp() {
             sx={{ mt: 3 }}
           >
             <TextField
+              sx={{ m: 1 }}
               required
               fullWidth
               id="name"
@@ -89,6 +86,7 @@ function SignUp() {
               onChange={handleChange}
             />
             <TextField
+              sx={{ m: 1 }}
               required
               fullWidth
               id="email"
@@ -100,6 +98,7 @@ function SignUp() {
               onChange={handleChange}
             />
             <TextField
+              sx={{ m: 1 }}
               required
               fullWidth
               name="password"
