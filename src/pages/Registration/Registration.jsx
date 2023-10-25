@@ -18,6 +18,7 @@ const theme = createTheme();
 
 function SignUp() {
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -42,6 +43,7 @@ function SignUp() {
       // You can reset the form or navigate to another page after successful signup
       // Resetting the form:
       setFormData({
+        name: "",
         email: "",
         password: "",
       });
@@ -75,6 +77,17 @@ function SignUp() {
             onSubmit={handleSubmit}
             sx={{ mt: 3 }}
           >
+            <TextField
+              required
+              fullWidth
+              id="name"
+              label="Name"
+              name="name"
+              autoComplete="name"
+              variant="outlined"
+              value={formData.name}
+              onChange={handleChange}
+            />
             <TextField
               required
               fullWidth
