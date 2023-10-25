@@ -21,7 +21,6 @@ const ProductPage = () => {
     <Box>
       {/*Upper Section of the page is the productDescription component */}
       <ProductDescription productData={productDetails} />
-      
 
       {/*Raya put your component for the lower section here */}
     </Box>
