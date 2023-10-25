@@ -1,8 +1,34 @@
-import { Paper, Typography, Box, CssBaseline } from "@mui/material";
+import { Paper, Typography, Box, CssBaseline, Grid } from "@mui/material";
 import BasicRating from "../../../components/Stars";
 import { productDetailsStyles } from "./ProductDetailsStyles";
+import { Divider } from "@mui/material";
+import QuantityInput from "./Quantity";
+import { Button } from "@mui/base/Button";
+import ButtonWithIcon from "./ButtonWithIcon";
+import { svgIcons } from "./Icons";
 
 const ProductDetails = ({ product }) => {
+  const buttonStyle1 = {
+    color: "#FFFFFF",
+    border: "2px solid #1B4B66",
+    background: "#1B4B66",
+    borderRadius: "5px",
+    textTransform: "none",
+  };
+
+  const buttonStyle2 = {
+    color: "#1B4B66",
+    border: "2px solid #1B4B66",
+    background: "#FFFFFF",
+    borderRadius: "5px",
+    textTransform: "none",
+  };
+
+  const fontStylingForButtons = {
+    fontFamily: "inter",
+    fontWeight: "600",
+    fotSize: "14px",
+  };
   const productsData = product;
   console.log(productsData);
 
@@ -28,6 +54,39 @@ const ProductDetails = ({ product }) => {
           <Typography sx={productDetailsStyles.discount}>50% OFF</Typography>
         </Box>
       </Box>
+      <Box sx={{ marginTop: 3 }}>
+        <Divider orientation="horizontal" variant="middle" />
+      </Box>
+
+      <Grid container spacing={5}>
+        <Grid item>
+          <Typography sx={productDetailsStyles.quantity}>Quanitity:</Typography>
+        </Grid>
+
+        <Grid item sx={{ marginTop: 1.5 }}>
+          <QuantityInput />
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2} sx={{ marginTop: 3 }}>
+        <Grid item md={8} lg={7}>
+          <ButtonWithIcon
+            icon={svgIcons.basketIcon}
+            text="Add to Bag"
+            style={buttonStyle1}
+            fontStyles={fontStylingForButtons}
+          />
+        </Grid>
+        <Grid item md={4} lg={5}>
+          <ButtonWithIcon
+            svgIcons
+            icon={svgIcons.heartIcon}
+            text="Add to Wishlist"
+            style={buttonStyle2}
+            fontStyles={fontStylingForButtons}
+          />
+        </Grid>
+      </Grid>
     </Paper>
   );
 };
