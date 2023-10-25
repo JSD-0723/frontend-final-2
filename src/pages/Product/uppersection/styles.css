@@ -1,6 +1,7 @@
 .small-image {
-  width: 40px;
-  margin: 0 auto;
+  width: 70px;
+  margin-left: 10px;
+  display: inline-block;
 }
 
 .big-image {

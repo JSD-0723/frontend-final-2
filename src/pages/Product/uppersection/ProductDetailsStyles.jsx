@@ -24,6 +24,7 @@ export const productDetailsStyles = {
     color: "#626262",
     fontSize: "20px",
     marginBottom: 3,
+    fontWeight: "600",
     fontFamily: "inter",
   },
   priceBox: {
@@ -49,6 +50,12 @@ export const productDetailsStyles = {
   discount: {
     color: "red",
     fontSize: "20px",
+    fontFamily: "inter",
+    lineHeight: "55px",
+  },
+  quantity: {
+    fontSize: "20px",
+    fontWeight: "600",
     fontFamily: "inter",
     lineHeight: "55px",
   },
