@@ -8,7 +8,7 @@ import ImageCarousel from "./pages/Home/components/ImageCarousel";
 import { carouselData } from "./data/carouselData";
 import MakeupAndSkinCare from "../src/pages/Home/components/MakeupAndSkinCare";
 import CategoryPage from "./pages/Category/Category";
-import ProductPage from "./pages/Product/uppersection/Product";
+import ProductPage from "./pages/Product/Product";
 import "./App.css";
 function App() {
   return (

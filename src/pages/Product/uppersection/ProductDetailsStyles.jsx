@@ -1,9 +1,7 @@
-import { Paper, Typography, Box, CssBaseline } from "@mui/material";
-import BasicRating from "../../components/Stars";
-
-const styles = {
+export const productDetailsStyles = {
   container: {
     fontFamily: "inter",
+    marginBottom: 3,
   },
   contentBox: {
     backgroundColor: "white",
@@ -55,29 +53,3 @@ const styles = {
     lineHeight: "55px",
   },
 };
-
-const ProductDetails = ({ product }) => {
-  const productsData = product;
-  console.log(productsData);
-
-  return (
-    <Paper elevation={0} sx={styles.container}>
-      <Box sx={styles.contentBox}>
-        <Box sx={styles.header}>
-          <Typography sx={styles.title}>{productsData.name}</Typography>
-        </Box>
-        <Typography sx={styles.ratingText}>
-          {productsData.short_description}
-        </Typography>
-        <BasicRating rating={productsData.rating} />
-        <Box sx={styles.priceBox}>
-          <Typography sx={styles.price}>${productsData.price}</Typography>
-          <Typography sx={styles.originalPrice}>$78.66</Typography>
-          <Typography sx={styles.discount}>50% OFF</Typography>
-        </Box>
-      </Box>
-    </Paper>
-  );
-};
-
-export default ProductDetails;
