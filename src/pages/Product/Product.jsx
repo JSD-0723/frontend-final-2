@@ -8,7 +8,6 @@ import { Divider } from "@mui/material";
 const ProductPage = () => {
   const [productDetails, setProductData] = useState([]);
   const params = useParams();
-
   const url = `https://estore-doxn.onrender.com/eStore/productDetail?id=${params.id}`;
 
   useEffect(() => {
