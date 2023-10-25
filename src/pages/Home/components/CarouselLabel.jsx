@@ -17,6 +17,7 @@ const theme = createTheme({
 const CarouselLabel = () => {
 const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
+const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,15 +43,19 @@ const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
             justifyContent:'center',
             alignItems:'center',
             top:'40%',
-            marginLeft:'37%'
+            marginLeft:'30%',
           }),
           ...(isTabletScreen && {
               width:'50%',
               height:'170px',
               top:'50%',
-              left:'35%'
+              left:'50%'
 
-          })
+          }),
+          ...(isLaptopScreen && {
+             left:'50%',
+
+          }),
         }}
       
       >
@@ -72,15 +77,21 @@ const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
               lineHeight: '40px',
             }),
            ...(isTabletScreen && {
-              width:'250px',
+              width:'200px',
               letterSpacing: '0em',
               fontSize:'2rem',
               height:'70px',
               lineHeight:'26px',
               
-
-
+              
            }),
+           ...(isLaptopScreen &&{
+              width:'250px',
+              fontSize:'1.85rem'  ,
+              height:'80px',
+              lineHeight:'26px' ,     
+      
+           })
 
           }}>
           Carry your Funk
@@ -111,9 +122,18 @@ const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
             fontSize:'1rem',
             height:'80px',
             width:'250px',
-            lineHeight:'26px'
+            lineHeight:'26px',
 
           }),
+
+          ...(isLaptopScreen && {
+           fontSize:'1.5rem',
+           width:'350px',
+           height:'90px',
+           lineHeight:'26px'
+
+
+          })
         }}>
           Trendy handbags collection for your party animal
         </Typography>
@@ -123,7 +143,7 @@ const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
           alignItems: 'center',
           justifyContent: 'center'
         }}>
-          {isSmallScreen?null: ( 
+          {isSmallScreen || isTabletScreen ?null: ( 
           <Button disableRipple={true} sx={{
             '&:hover': {
               backgroundColor: '#1B4B66',
@@ -138,9 +158,9 @@ const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
             height: '44px',
             top: '20px',
 
-            ...(isTabletScreen &&{
-              height:'38px',
-              top:'-10px',
+          
+            ...(isLaptopScreen &&{
+              height:'45px',
 
             })
 

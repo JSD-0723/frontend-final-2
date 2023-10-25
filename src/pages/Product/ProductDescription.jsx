@@ -17,7 +17,6 @@ const ProductDescription = ({ productData }) => {
         <Box> Images underneath </Box>
       </Box>
       <Box> Product Details Section </Box>
-
       <CardCategory product={productData} />
     </Box>
   );
