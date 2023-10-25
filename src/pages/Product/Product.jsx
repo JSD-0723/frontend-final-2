@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import ProductDescription from "./ProductDescription";
+import ProductDescription from "./uppersection/ProductDescription";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
+import { Divider } from "@mui/material";
+
 const ProductPage = () => {
   const [productDetails, setProductData] = useState([]);
   const params = useParams();
@@ -19,6 +21,7 @@ const ProductPage = () => {
     <Box>
       {/*Upper Section of the page is the productDescription component */}
       <ProductDescription productData={productDetails} />
+
       {/*Raya put your component for the lower section here */}
     </Box>
   );
