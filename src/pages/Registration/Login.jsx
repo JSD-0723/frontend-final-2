@@ -1,112 +1,127 @@
-// import React, { useState } from 'react';
-// import TextField from '@mui/material/TextField';
-// import Button from '@mui/material/Button';
+import React, { useState } from "react";
+import axios from "axios";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
-// const Login = () => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
+const theme = createTheme();
 
-//   const handleLogin = () => {
-//     if (!username || !password) {
-//       console.log('Please enter both username and password.');
-//       return;
-//     }
+function Login({ setIsLoggedIn,setUserName }) {
+  const navigate = useNavigate();
 
-//     fetch('https://estore-doxn.onrender.com/eStore/login', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({ username, password }),
-//     })
-//       .then((response) => {
-//         if (response.ok) {
-//           console.log('Login successful');
-//         } else {
-//           console.log('Login failed. Please check your credentials.');
-//         }
-//       })
-//       .catch((error) => {
-//         console.error('Error:', error);
-//       });
-//   };
-  
+  const [formData, setFormData] = useState({
+    name: "",
+    password: "",
+  });
 
-//   return (
-//     <div>
-//       <form>
-//         <TextField
-//           label="Username"
-//           variant="outlined"
-//           value={username}
-//           onChange={(e) => setUsername(e.target.value)}
-//         />
-//         <TextField
-//           label="Password"
-//           type="password"
-//           variant="outlined"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//         />
-//         <Button variant="contained" color="primary" onClick={handleLogin}>
-//           Login
-//         </Button>
-//       </form>
-//     </div>
-//   );
-// };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-// export default Login;
-import React, { useState } from 'react';
-import { Button, TextField, Typography, Paper } from '@mui/material';
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [loginError, setLoginError] = useState(false);
-  const[loading, setLoading]=useState(false);
+    try {
+      const response = await axios.post(
+        "https://estore-doxn.onrender.com/eStore/login",
+        formData
+      );
 
-  const handleLogin = () => {
-    setLoading(true); 
+      console.log("Login successful:", response.data);
 
-    setTimeout(() => {
-      setLoading(false); 
+      setIsLoggedIn(true);
+      setUserName(formData.name); 
 
-      if (username === 'elias' && password === 'Aoh123456') {
-      
-        setLoggedIn(true);
-      } else {
-       
-        setLoginError(true); 
-      }
-    }, 1500); 
+      setFormData({
+        name: "",
+        password: "",
+      });
+      navigate("/frontend-final-2");
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
 
   return (
-    <div>
-      <Paper elevation={3} style={{marginTop:'10px',justifyContent:'center', marginLeft:'400px', marginRight:'400px', alignItems:'center' ,padding: '40px', maxWidth: '400px' }}>
-        <TextField
-          label="Username"
-          fullWidth
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <TextField sx={{marginTop:'20px'}}
-          label="Password"
-          type="password"
-          fullWidth
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button sx={{justifyContent:'center', marginTop:'10px', width:'150px', height:'50px', alignItems:'center', marginLeft:'120px', marginRight:'120px'}} variant="contained" color="primary" onClick={handleLogin}>
-          Login
-        </Button>
-      </Paper>
-      {loggedIn && <Typography  variant="h6" sx={{marginLeft:'550px', marginRight:'550px'}}>Login successful!</Typography>}
-      {loginError && <Typography variant="h6" sx={{marginLeft:'550px', marginRight:'550px'}}>Login failed. Please check your credentials.</Typography>}
-    </div>
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Login
+          </Typography>
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 3 }}
+          >
+            <TextField
+              sx={{ m: 1 }}
+              required
+              fullWidth
+              id="name"
+              label="Name"
+              name="name"
+              autoComplete="name"
+              variant="outlined"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <TextField
+              sx={{ m: 1 }}
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              variant="outlined"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Login
+            </Button>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="/frontend-final-2/signup" variant="body2">
+                  Don't have an account? Sign up
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
-};
+}
 
 export default Login;
