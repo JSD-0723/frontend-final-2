@@ -9,6 +9,8 @@ import LowerSection from "./LowerSection/LowerSection";
 const ProductPage = () => {
   const [productDetails, setProductData] = useState([]);
   const params = useParams();
+  const id = params.id;
+
 
   const url = `https://estore-doxn.onrender.com/eStore/productDetail?id=${params.id}`;
 
@@ -23,7 +25,7 @@ const ProductPage = () => {
       {/*Upper Section of the page is the productDescription component */}
       <ProductDescription productData={productDetails} />
 
-      <LowerSection productData={productDetails}/>      
+      <LowerSection productData={productDetails} productId={id}  />      
 
     </Box>
   );

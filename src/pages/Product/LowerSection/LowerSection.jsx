@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import Product from '../Product';
 
 
-const LowerSection = ({productData}) => {
+const LowerSection = ({productData , productId}) => {
     const [showDescLower, setShowDescLower] = useState(false);
     const [showRelatedProduct, setShowRelatedProduct] = useState(false)
 
@@ -94,7 +94,7 @@ const LowerSection = ({productData}) => {
                
             }}>
                 {showDescLower && <DescLower  productData={productData}/>}
-                {showRelatedProduct && <RelatedProducts />}
+                {showRelatedProduct && <RelatedProducts  id={productId}/>}
             </Box>
         </Grid>
 
