@@ -1,6 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 import ImagesSlider from "./ImagesSlider";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
@@ -27,7 +27,7 @@ const ProductDescription = ({ productData }) => {
         <ArrowBackIosNewIcon />
         <Link to="/frontend-final-2">Handbag</Link>
         <ArrowBackIosNewIcon />
-        <Link to="/frontend-final-2">Label</Link>
+        <Link to="">Label</Link>
       </Box>
       <Grid container spacing={2}>
         <Grid item sm={12} md={6}>
