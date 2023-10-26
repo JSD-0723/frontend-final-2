@@ -22,7 +22,9 @@ const ProductPage = () => {
     <Box>
       {/*Upper Section of the page is the productDescription component */}
       <ProductDescription productData={productDetails} />
+
       <LowerSection productData={productDetails}/>      
+
 
 
     </Box>
