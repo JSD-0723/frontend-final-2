@@ -11,6 +11,7 @@ import CategoryPage from "./pages/Category/Category";
 import ProductPage from "./pages/Product/Product";
 // import SearchResult from "./components/SearchResult";
 import SignUp from "./pages/Registration/Registration";
+import Login from "./pages/Registration/Login";
 import "./App.css";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/frontend-final-2" element={<Home />} />
         <Route path="/frontend-final-2/about" element={<About />} />
         <Route path="/frontend-final-2/signup" element={<SignUp />} />
+        <Route path="/frontend-final-2/login" element={<Login/>} />
         <Route
           path="/frontend-final-2/category/:categoryName/:id"
           element={<ProductPage />}
