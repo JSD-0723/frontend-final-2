@@ -7,7 +7,8 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import SearchResult from '../../components/SearchResult';
+import {Switch} from '@mui/material';
 export default function Header() {
 
   const fetchDataFromAPI = () => {
@@ -39,6 +40,7 @@ export default function Header() {
 
 
   return (
+   
     <AppBar position="sticky" sx={{ backgroundColor: 'white', boxShadow: 'none' }}>
       <Toolbar>
         <Grid container alignItems="center" justifyContent="space-between"

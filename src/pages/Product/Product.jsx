@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Divider } from "@mui/material";
+import LowerSection from "./LowerSection/LowerSection";
 
 const ProductPage = () => {
   const [productDetails, setProductData] = useState([]);
@@ -22,7 +23,8 @@ const ProductPage = () => {
       {/*Upper Section of the page is the productDescription component */}
       <ProductDescription productData={productDetails} />
 
-      {/*Raya put your component for the lower section here */}
+      <LowerSection productData={productDetails}/>      
+
     </Box>
   );
 };

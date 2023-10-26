@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper } from "@mui/material";
 import {Hidden} from "@mui/material";
 import { Grid } from "@mui/material";
 import {Typography , Box} from "@mui/material";

@@ -1,96 +1,135 @@
+import * as React from 'react';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+import Grid from '@mui/material/Grid';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { SearchBarStyles } from '../styles/SearchBarStyles';
+import { Typography } from '@mui/material';
+import SearchResult from './SearchResult';
+import { useNavigate } from 'react-router-dom';
 
 
-  import * as React from 'react';
-  import Paper from '@mui/material/Paper';
-  import InputBase from '@mui/material/InputBase';
-  import IconButton from '@mui/material/IconButton';
-  import SearchIcon from '@mui/icons-material/Search';
-  import Grid from '@mui/material/Grid'; 
-  import axios from 'axios';
-  import { useState , useEffect} from 'react';
+export default function SearchBar() {
+  const [searchResult, setSearchResult] = useState([]);
+  const [search, setSearch] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+
   
-  export default function SearchBar() {
-     const[search, setSearch]= useState('');
-     const[searchResult,setSearchResult]=useState([]);
-     const[categories, setCategories]=useState([]);
-    
-    const searchProduct = async (search)=>{
-      try{
-     const response =   await axios.get(`https://estore-doxn.onrender.com/eStore/searchProduct?name=${search}`)
-     .then((res)=>
-    setSearch( res.data))
-    }catch(error){
-        console.log('Error Fetching the Product or Brands');
-        throw error;
-      }
-    
-    };
-
-  useEffect(()=>{
-  searchProduct ()
-}, []);
-
-  const handleSearch = ()=>{
-   if(search){
-     searchProduct(search)
-     .then((data)=> setSearchResult(data))
-     .catch((error)=> console.error('Error searching Product or Brand'));
-   }else{
-    setSearchResult([]);
-   }
-
-   };
-
-    return (
-      <Grid container justifyContent="flex-end" sx={{ display: { xs: 'none', lg: 'flex' } }}>
-        <Paper
-          component="form"
-          sx={{
-            p: '2px 4px',
-            display: 'flex',
-            alignItems: 'center',
-            width: '362px',
-            height: '44px',
-            marginRight:4,
-            borderColor: 'black',
-            borderRadius: '4px',
-            color: '#626262',
-            backgroundColor: '#F1F1F1',
-            boxShadow: 'none',
-          }}
-        >
-          <IconButton type="button" aria-label="search">
-            <SearchIcon />
-          </IconButton>
-          <InputBase
-            sx={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '14px',
-              fontWeight: '500',
-              lineHeight: '18px',
-              width: '221px',
-              height: '18px',
-            }}
-            placeholder="Search for products or brands...."
-            inputProps={{ 'aria-label': 'Search for products or brands....', 
-          }}
-          onChange={event=>{  
-            if(search)                            
-            setSearch(event.target.value)
-
-          }}
-          />
-        </Paper>
-          {/* <card>
-        {searchResult>0
-        ? searchResult.map((categories)=>(
-          <card key={category.id}
-        ))
-      }
-
-
-
-      </card> */}
-      </Grid>
-    );
+  const handleSearch = () => {
+    if (search) {    
+      setLoading(true);
+      navigate('/frontend-final-2/SearchResult');
+    }
   }
+
+  useEffect(() => {
+    if(search){
+    const apiUrl = 'https://estore-doxn.onrender.com/eStore/searchProduct?name=ZARA';
+
+    axios.get(apiUrl)
+      .then((response) => {
+        const filteredResults = response.data.filter(item=>
+          item.name.toLowerCase().includes(search.toLowerCase())
+          );
+          console.log("hello new raya djkkkkkkkkkkkkkkkkkkkksaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaallllllllllllllllllllllld")
+        console.log(filteredResults);
+        return setSearchResult(filteredResults);
+        setSearchResult(response.data);
+        console.log("raya kjkdjs;ldjsf")        
+      })
+      .catch((error) => {
+        console.error('Error fetching Category data:', error);
+        setLoading(false);
+      });
+    } 
+    else {
+      setSearchResult([]);
+    }
+  }, [search]);
+  
+  // const filterData=()=>{
+  //   if(!search){
+  //     setSearchResult([]);
+  //   }
+  // }
+
+  
+
+  return (
+    <Grid container justifyContent="flex-end" sx={SearchBarStyles.containerGrid}>
+      <Paper
+        component="form"
+        sx={SearchBarStyles.paper}
+      >
+        <IconButton type="button" aria-label="search">
+          <SearchIcon/>
+        </IconButton>
+        <InputBase
+          sx={SearchBarStyles.inputBase}
+          placeholder="Search for products or brands...."
+          inputProps={{
+            'aria-label': 'Search for products or brands....',
+          }}
+          onChange={(event) => {
+            console.log(event.target.value)
+          }}
+          onKeyDown={(event) => {
+            if (event.key == 'Enter') {
+              handleSearch();
+            }
+          }}
+        />
+      </Paper>
+      {loading ? (
+        <Typography>loading....</Typography>
+
+      ) : (
+        <SearchResult raya={searchResult} />
+
+      )
+      }
+
+    </Grid>
+  );
+}
+
+// SearchBar.js
+// SearchBar.js
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
+// export default function SearchBar() {
+//   const [search, setSearch] = useState('');
+//   const navigate = useNavigate();
+
+//   const handleSearch = () => {
+//     if (search) {
+//       navigate(`/searchResult?query=${search}`);
+//     }
+//   }
+
+//   const handleKeyDown = (event) => {
+//     if (event.key === 'Enter') {
+//       handleSearch();
+//     }
+//   }
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         value={search}
+//         onChange={(e) => setSearch(e.target.value)}
+//         onKeyDown={handleKeyDown}
+//         placeholder="Search for products or brands..."
+//       />
+//       <button onClick={handleSearch}>Search</button>
+//     </div>
+//   );
+// }

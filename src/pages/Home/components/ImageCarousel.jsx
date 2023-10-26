@@ -72,9 +72,8 @@ import { createTheme } from '@mui/material/styles';
                    left:'50%',
                    top:'50%',
 
-                   
-
-                  })
+                  }),
+              
               }}
             />
             <Grid container xs={12} md={12}>
