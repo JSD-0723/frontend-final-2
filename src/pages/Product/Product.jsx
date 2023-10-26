@@ -24,9 +24,6 @@ const ProductPage = () => {
       <ProductDescription productData={productDetails} />
 
       <LowerSection productData={productDetails}/>      
-
-
-
     </Box>
   );
 };
