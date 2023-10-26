@@ -27,6 +27,7 @@ const MakeupAndSkinCare = () => {
                         alignItems: 'center',
                         marginLeft: 2,
                         marginRight: 2,
+                        position:'absolute'
 
                     }}>
                     <img
