@@ -10,44 +10,45 @@ import { SearchBarStyles } from '../styles/SearchBarStyles';
 import { Typography } from '@mui/material';
 import SearchResult from './SearchResult';
 import { useNavigate } from 'react-router-dom';
+
+
 export default function SearchBar() {
-  const [searchResult, setSearchResult] = useState([]);
+  // const [searchResult, setSearchResult] = useState([]);
   const [search, setSearch] = useState([]);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
 
-  
-  
+  const navigate = useNavigate();
   const handleSearch = () => {
     if (search) {    
       setLoading(true);
-      navigate('/frontend-final-2/searchResult?name=ZARA');
-      setSearchResult([]);
+      navigate(`/frontend-final-2/searchresult/${search}`);
     }
   }
 
-  useEffect(() => {
-    if(search){
-    const apiUrl = 'https://estore-doxn.onrender.com/eStore/searchProduct?name=ZARA';
+  // useEffect(() => {
+  //   if(search){
+  //   const apiUrl = 'https://estore-doxn.onrender.com/eStore/searchProduct?name=ZARA';
 
-    axios.get(apiUrl)
-      .then((response) => {
-        const filteredResults = response.data.filter(item=>
-          item.name.toLowerCase().includes(search.toLowerCase())
-          );
-
-        return setSearchResult(filteredResults);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching Category data:', error);
-        setLoading(false);
-      });
-    } else {
-      setSearchResult([]);
-    }
-  }, [search]);
-
+  //   axios.get(apiUrl)
+  //     .then((response) => {
+  //       const filteredResults = response.data.filter(item=>
+  //         item.name.toLowerCase().includes(search.toLowerCase())
+  //         );
+  //       console.log(filteredResults);
+  //       return setSearchResult(filteredResults);
+  //       setSearchResult(response.data);
+  //       console.log("raya kjkdjs;ldjsf")        
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching Category data:', error);
+  //       setLoading(false);
+  //     });
+  //   } 
+  //   else {
+  //     setSearchResult([]);
+  //   }
+  // }, [search]);
+  
   // const filterData=()=>{
   //   if(!search){
   //     setSearchResult([]);
@@ -71,8 +72,10 @@ export default function SearchBar() {
           inputProps={{
             'aria-label': 'Search for products or brands....',
           }}
+          value={search}
           onChange={(event) => {
             setSearch(event.target.value)
+
           }}
           onKeyDown={(event) => {
             if (event.key == 'Enter') {
@@ -85,11 +88,13 @@ export default function SearchBar() {
         <Typography>loading....</Typography>
 
       ) : (
-        <SearchResult searchResults={searchResult} />
+        <SearchResult/>
+
       )
       }
 
     </Grid>
   );
 }
+
 
