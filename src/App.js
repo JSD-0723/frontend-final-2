@@ -12,6 +12,7 @@ import Login from "./pages/Registration/Login";
 import "./App.css";
 import SearchResult from "./components/SearchResult";
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userDetails, setUserName] = useState(null);
@@ -38,6 +39,7 @@ function App() {
           path="/frontend-final-2/searchresult/:search"
           element={<SearchResult />}
         />
+
         <Route
           path="/frontend-final-2/category/:categoryName"
           element={<CategoryPage />}

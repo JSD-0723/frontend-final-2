@@ -48,15 +48,37 @@ export default function SearchBar() {
   //     setSearchResult([]);
   //   }
   // }, [search]);
-  
-  // const filterData=()=>{
-  //   if(!search){
-  //     setSearchResult([]);
-  //   }
-  // }
 
-  
+  const navigate = useNavigate();
+  const handleSearch = () => {
+    if (search) {    
+      setLoading(true);
+      navigate('/frontend-final-2/SearchResult');
+    }
+  }
 
+  useEffect(() => {
+    if(search){
+    const apiUrl = 'https://estore-doxn.onrender.com/eStore/searchProduct?name=ZARA';
+
+    axios.get(apiUrl)
+      .then((response) => {
+        const filteredResults = response.data.filter(item=>
+          item.name.toLowerCase().includes(search.toLowerCase())
+          );
+        console.log(filteredResults);
+        return setSearchResult(filteredResults);
+        setSearchResult(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching Category data:', error);
+        setLoading(false);
+      });
+    } 
+    else {
+      setSearchResult([]);
+    }
+  }, [search]);
   return (
     <Grid container justifyContent="flex-end" sx={SearchBarStyles.containerGrid}>
       <Paper
@@ -76,6 +98,7 @@ export default function SearchBar() {
           onChange={(event) => {
             setSearch(event.target.value)
 
+
           }}
           onKeyDown={(event) => {
             if (event.key == 'Enter') {
@@ -89,6 +112,7 @@ export default function SearchBar() {
 
       ) : (
         <SearchResult/>
+
 
       )
       }

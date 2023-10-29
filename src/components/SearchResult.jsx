@@ -46,8 +46,6 @@ const SearchResult = () => {
           </Grid>
 
 
-
-
         ))
       )}
     </div>

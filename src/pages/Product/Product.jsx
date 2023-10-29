@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Divider } from "@mui/material";
 import LowerSection from "../Product/LoweSection/LowerSection";
-
 const ProductPage = () => {
   const [productDetails, setProductData] = useState([]);
   const params = useParams();
