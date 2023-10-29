@@ -13,14 +13,43 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function SearchBar() {
-  const [searchResult, setSearchResult] = useState([]);
+  // const [searchResult, setSearchResult] = useState([]);
   const [search, setSearch] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const handleSearch = () => {
+    if (search) {    
+      setLoading(true);
+      navigate(`/frontend-final-2/searchresult/${search}`);
+    }
+  }
 
+  // useEffect(() => {
+  //   if(search){
+  //   const apiUrl = 'https://estore-doxn.onrender.com/eStore/searchProduct?name=ZARA';
 
-  
+  //   axios.get(apiUrl)
+  //     .then((response) => {
+  //       const filteredResults = response.data.filter(item=>
+  //         item.name.toLowerCase().includes(search.toLowerCase())
+  //         );
+  //       console.log(filteredResults);
+  //       return setSearchResult(filteredResults);
+  //       setSearchResult(response.data);
+  //       console.log("raya kjkdjs;ldjsf")        
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching Category data:', error);
+  //       setLoading(false);
+  //     });
+  //   } 
+  //   else {
+  //     setSearchResult([]);
+  //   }
+  // }, [search]);
+
+  const navigate = useNavigate();
   const handleSearch = () => {
     if (search) {    
       setLoading(true);
@@ -37,11 +66,9 @@ export default function SearchBar() {
         const filteredResults = response.data.filter(item=>
           item.name.toLowerCase().includes(search.toLowerCase())
           );
-          console.log("hello new raya djkkkkkkkkkkkkkkkkkkkksaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaallllllllllllllllllllllld")
         console.log(filteredResults);
         return setSearchResult(filteredResults);
         setSearchResult(response.data);
-        console.log("raya kjkdjs;ldjsf")        
       })
       .catch((error) => {
         console.error('Error fetching Category data:', error);
@@ -52,15 +79,6 @@ export default function SearchBar() {
       setSearchResult([]);
     }
   }, [search]);
-  
-  // const filterData=()=>{
-  //   if(!search){
-  //     setSearchResult([]);
-  //   }
-  // }
-
-  
-
   return (
     <Grid container justifyContent="flex-end" sx={SearchBarStyles.containerGrid}>
       <Paper
@@ -76,8 +94,11 @@ export default function SearchBar() {
           inputProps={{
             'aria-label': 'Search for products or brands....',
           }}
+          value={search}
           onChange={(event) => {
-            console.log(event.target.value)
+            setSearch(event.target.value)
+
+
           }}
           onKeyDown={(event) => {
             if (event.key == 'Enter') {
@@ -90,7 +111,8 @@ export default function SearchBar() {
         <Typography>loading....</Typography>
 
       ) : (
-        <SearchResult raya={searchResult} />
+        <SearchResult/>
+
 
       )
       }
@@ -99,37 +121,4 @@ export default function SearchBar() {
   );
 }
 
-// SearchBar.js
-// SearchBar.js
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 
-// export default function SearchBar() {
-//   const [search, setSearch] = useState('');
-//   const navigate = useNavigate();
-
-//   const handleSearch = () => {
-//     if (search) {
-//       navigate(`/searchResult?query=${search}`);
-//     }
-//   }
-
-//   const handleKeyDown = (event) => {
-//     if (event.key === 'Enter') {
-//       handleSearch();
-//     }
-//   }
-
-//   return (
-//     <div>
-//       <input
-//         type="text"
-//         value={search}
-//         onChange={(e) => setSearch(e.target.value)}
-//         onKeyDown={handleKeyDown}
-//         placeholder="Search for products or brands..."
-//       />
-//       <button onClick={handleSearch}>Search</button>
-//     </div>
-//   );
-// }

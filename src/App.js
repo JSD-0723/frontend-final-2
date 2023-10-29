@@ -10,6 +10,8 @@ import ProductPage from "./pages/Product/Product";
 import SignUp from "./pages/Registration/Registration";
 import Login from "./pages/Registration/Login";
 import "./App.css";
+import SearchResult from "./components/SearchResult";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,6 +35,11 @@ function App() {
           path="/frontend-final-2/category/:categoryName/:id"
           element={<ProductPage />}
         />
+        <Route
+          path="/frontend-final-2/searchresult/:search"
+          element={<SearchResult />}
+        />
+
         <Route
           path="/frontend-final-2/category/:categoryName"
           element={<CategoryPage />}
