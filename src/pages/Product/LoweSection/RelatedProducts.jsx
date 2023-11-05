@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel"
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
-import {Card} from "@mui/material";
+import { Card } from "@mui/material";
 import { Grid } from "@mui/material";
 import { TopCategoryStyles } from "../../../styles/TopCategoryStyles";
 import TextRating from "../../../components/Stars";
 const RelatedProducts = ({ id }) => {
   const [related, setRelated] = useState([]);
   const [loading, setLoading] = useState(true);
-  const[currentIndex , setCurrentIndex]= useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const params = useParams();
   useEffect(() => {
 
@@ -28,20 +28,20 @@ const RelatedProducts = ({ id }) => {
 
 
   }, []);
-  // const handlePrevious = () => {
-  //   setCurrentIndex((prevIndex) =>
-  //     prevIndex === 0 ? related.length - 1 : prevIndex - 1
-  //   );
-  //   console.log("previous image");
+  const handlePrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? related.length - 1 : prevIndex - 1
+    );
+    console.log("previous image");
 
-  // };
-  // const handleNext = () => {
-  //   setCurrentIndex((prevIndex) =>
-  //     prevIndex === related.length - 1 ? 0 : prevIndex + 1
-  //   );
-  //   console.log("next image");
-  // };
-   
+  };
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === related.length - 1 ? 0 : prevIndex + 1
+    );
+    console.log("next image");
+  };
+
   return (
     // <div style={{ display: 'flex' , width:'100%', gap:'32px' }}>
     //   <ArrowBack onClick={handlePrevious} />
@@ -58,44 +58,45 @@ const RelatedProducts = ({ id }) => {
     //   <ArrowForward onClick={handleNext} />
 
     // </div>
-    <Box sx={{ 
-    display:'block',
-    justifyContent:'center',
-    alignItems:'center',
-    marginTop:'50px',
-    height:'250px'}}>
+    <Box sx={{
+      display: 'block',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: '50px',
+      height: '250px'
+    }}>
 
-    {/* <Carousel
+      {/* <Carousel
       animation="slider"
       autoPlay={true}
       interval={1000}
     > */}
-      <Grid container spacing={2} 
-      sx={{ 
-         flexWrap: "nowrap",
-         overflowX: "scroll",
-         whiteSpace: "nowrap",
-         overflowY:'hidden'
-         }}
-         >
+      <Grid container spacing={2}
+        sx={{
+          flexWrap: "nowrap",
+          overflowX: "scroll",
+          whiteSpace: "nowrap",
+          overflowY: 'hidden'
+        }}
+      >
         {related.map((item, index) => (
-          
+
           <Box
             sx={{
-               display: "flex",
-               width: "100%",
-               justifyContent: "center",
-               alignItems: "center",
-               marginLeft: 2,
-               marginRight: 2,
-               height: "125px",
-               flexDirection: 'row',
-               whiteSpace: "nowrap",
-               marginTop:'100px',
-               
-          }}
+              display: "flex",
+              width: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+              marginLeft: 2,
+              marginRight: 2,
+              height: "125px",
+              flexDirection: 'row',
+              whiteSpace: "nowrap",
+              marginTop: '100px',
+
+            }}
           >
-            
+
             <Box
               sx={{
                 justifyContent: 'center',
@@ -104,45 +105,46 @@ const RelatedProducts = ({ id }) => {
             >
               <img
                 src={item.img}
-                style={{  
+                style={{
                   width: "150px",
                   height: "150px",
-                  borderRadius:"8px",
-                  marginTop:'-90px'
+                  borderRadius: "8px",
+                  marginTop: '-90px'
                 }}
               />
-              <Typography variant="caption" 
-              sx={{ display: 'flex',
-                    flexDirection: 'column',
-                    }}>
+              <Typography variant="caption"
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}>
                 {item.name}
               </Typography>
-              <Typography variant="caption" 
-                sx={{ 
-                    display: 'flex',
-                    flexDirection: 'column',
-                  
-                    }}>
+              <Typography variant="caption"
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+
+                }}>
                 {item.price}
               </Typography>
-              <Typography variant="caption" sx={{ 
+              <Typography variant="caption" sx={{
                 display: 'flex',
                 flexDirection: 'column',
-           
-                }}>
-              <TextRating rating={item.rating} />
+
+              }}>
+                <TextRating rating={item.rating} />
               </Typography>
 
-             
+
             </Box>
-           
+
           </Box>
-        
+
         ))}
-        
+
       </Grid>
-   {/* </Carousel> */}
-</Box>
+      {/* </Carousel> */}
+    </Box>
   )
 };
 export default RelatedProducts;
