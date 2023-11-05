@@ -1,14 +1,13 @@
 export const SearchBarStyles = {
     containerGrid: {
-        display: { xs: 'none', lg: 'flex' },
+        display: { xs: 'none', md: 'flex' },
     },
     paper: {
         p: '2px 4px',
-        display: 'flex',
         alignItems: 'center',
-        width: '362px',
+        width: '55vh',
         height: '44px',
-        marginRight: 4,
+        marginLeft: '2vh',
         borderColor: 'black',
         borderRadius: '4px',
         color: '#626262',
@@ -20,15 +19,7 @@ export const SearchBarStyles = {
         fontSize: '14px',
         fontWeight: '500',
         lineHeight: '18px',
-        width: '221px',
+        width: '40vhpx',
         height: '18px',
     }
-
-
-
-
-
-
-
-
 }
