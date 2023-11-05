@@ -28,11 +28,13 @@ const Home = () => {
     return <p>Loading...</p>;
   } else {
     return (
+
       <Box>
         <Box sx={{ display: "flex", gap: 2 }}>
           <Link to="/frontend-final-2/signup">Sign Up</Link>
           <Link to="/frontend-final-2/login">Login</Link>{" "}
         </Box>
+
         <ImageCarousel data={carouselData} />
         <TopCategory />
 
