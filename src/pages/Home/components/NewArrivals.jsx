@@ -11,7 +11,6 @@ const NewArrivals = () => {
       <Typography variant="h4" component="h4" sx={newArrivasStyles.title}>
         New Arrivals
       </Typography>
-
       <CardsGrid />
     </Box>
   );

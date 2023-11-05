@@ -1,9 +1,9 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowBack';
-const ArrowForward =({onclick})=>{
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+const ArrowForward =({onClick})=>{
 
 
 return(
-<ArrowForwardIcon onclick={onclick}/>
+<ArrowForwardIcon onClick={onClick}/>
 
 )};
 export default ArrowForward;
