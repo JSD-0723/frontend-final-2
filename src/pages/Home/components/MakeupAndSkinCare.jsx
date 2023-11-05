@@ -20,7 +20,6 @@ const MakeupAndSkinCare = () => {
                             alignItems:'center',
                             marginLeft: 2,
                             marginRight: 2,
-
                         }}>
                        <Hidden mdUp>
                     <Box
@@ -56,6 +55,7 @@ const MakeupAndSkinCare = () => {
                                     style={MakeupStyles.herosStyles}
                                 />
                             </Grid>
+
                         </Grid>
                     </Grid>
                 </Grid>

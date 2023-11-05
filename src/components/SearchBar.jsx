@@ -1,15 +1,13 @@
-import * as React from 'react';
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import Grid from '@mui/material/Grid';
-import {Box} from '@mui/material';
 import { useState, useEffect } from 'react';
 import { SearchBarStyles } from '../styles/SearchBarStyles';
 import { Typography } from '@mui/material';
 import SearchResult from './SearchResult';
 import { useNavigate } from 'react-router-dom';
+import {Grid, Box} from '@mui/material';
+import {InputBase} from '@mui/material';
+import {Paper} from '@mui/material';
 
 
 export default function SearchBar() {
@@ -23,6 +21,39 @@ export default function SearchBar() {
       navigate(`/frontend-final-2/searchresult/${search}`);
     }
   }
+
+  // useEffect(() => {
+  //   if(search){
+  //   const apiUrl = 'https://estore-doxn.onrender.com/eStore/searchProduct?name=ZARA';
+
+  //   axios.get(apiUrl)
+  //     .then((response) => {
+  //       const filteredResults = response.data.filter(item=>
+  //         item.name.toLowerCase().includes(search.toLowerCase())
+  //         );
+  //       console.log(filteredResults);
+  //       return setSearchResult(filteredResults);
+  //       setSearchResult(response.data);
+  //       console.log("raya kjkdjs;ldjsf")        
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching Category data:', error);
+  //       setLoading(false);
+  //     });
+  //   } 
+  //   else {
+  //     setSearchResult([]);
+  //   }
+  // }, [search]);
+  
+  // const filterData=()=>{
+  //   if(!search){
+  //     setSearchResult([]);
+  //   }
+  // }
+
+  
+
   return (
     <Grid container  justifyContent="flex-end" sx={SearchBarStyles.containerGrid}>
       <Paper
@@ -42,6 +73,7 @@ export default function SearchBar() {
           onChange={(event) => {
             setSearch(event.target.value)
 
+
           }}
           onKeyDown={(event) => {
             if (event.key == 'Enter') {
@@ -55,6 +87,7 @@ export default function SearchBar() {
 
       ) : (
         <SearchResult/>
+
       )
       }
 
