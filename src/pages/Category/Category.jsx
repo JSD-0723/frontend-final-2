@@ -28,7 +28,7 @@ const CategoryPage = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{ m: 2 }}>
       <img src={heroImage} alt="" className="image" />
 
       <Container maxWidth="lg">

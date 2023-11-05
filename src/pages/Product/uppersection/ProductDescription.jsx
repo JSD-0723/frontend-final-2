@@ -12,6 +12,24 @@ const ProductDescription = ({ productData }) => {
     productData.img,
     productData.img,
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentImage, setCurrentImage] = useState(imagesForSlider[currentIndex]);
+
+  const nextImage = () => {
+    setCurrentIndex(currentIndex+1);
+    setCurrentImage(imagesForSlider[currentIndex+1]);
+    console.log("Next image Displayed!");
+  };
+
+  const previousImage = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex+1);
+      console.log("Previous Image activated");
+      setCurrentImage(imagesForSlider[currentIndex-1]);
+    }
+  };
+
   return (
     <Box sx={{ margin: 2 }}>
       <Box
@@ -32,7 +50,11 @@ const ProductDescription = ({ productData }) => {
       <Grid container spacing={2}>
         <Grid item sm={12} md={6}>
           <img className="big-image" src={productData.img} alt="" />
-          <ImagesSlider images={imagesForSlider} />
+          <ImagesSlider
+            images={imagesForSlider}
+            next={previousImage}
+            prev={nextImage}
+          />
         </Grid>
         <Grid item sm={12} md={6}>
           <ProductDetails product={productData} />

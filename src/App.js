@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { HeaderforMobile } from "./layout/header/HeaderforMobile";
 import Footer from "./layout/footer/Footer";
 import Header from "./layout/header/Header";
@@ -20,6 +20,7 @@ function App() {
     <BrowserRouter>
       <Header />
       {isLoggedIn ? `${userDetails} is Logged in!` : `User is not logged in`}
+
       <HeaderforMobile />
       <Routes>
         <Route path="/frontend-final-2" element={<Home />} />
