@@ -8,6 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import CardCategory from '../pages/Category/CardCategory';
 import NewArrivalsCard from '../pages/Home/components/NewArrivalsCard';
 import TextRating from './Stars';
+import {Box} from '@mui/material';
 const SearchResult = () => {
   const navigate = useNavigate();
   const { search } = useParams();
@@ -32,11 +33,13 @@ const SearchResult = () => {
   }, [search]);
   return (
     <Grid>
-      <Typography variant='h5'> Search Results for: {search}</Typography>
+      <Box>
+      {/* <Typography variant='h5'> Search Results for: {search}</Typography> */}
     <div style={{ display: 'flex', gap: '32px' }}>
       {searchResult.length === 0 ? (
 
         <Typography>No results found</Typography>
+  
       ) : (
         searchResult.map((result, index) => (
           <Grid sx={{ width: '284px', gap: '32px', height: '412px' }}>
@@ -46,11 +49,10 @@ const SearchResult = () => {
           </Grid>
 
 
-
-
         ))
       )}
     </div>
+    </Box>
     </Grid>
   );
 };

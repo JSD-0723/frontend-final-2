@@ -26,7 +26,7 @@ const Home = () => {
     return <p>Loading...</p>;
   } else {
     return (
-      <Box>
+      <Box sx={{margin:'0px', padding:'0px'}}>
         <ImageCarousel data={carouselData} />
         <TopCategory/>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>

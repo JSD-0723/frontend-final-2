@@ -3,7 +3,6 @@ import { Grid, Typography, useMediaQuery } from "@mui/material";
 import { Button } from "@mui/material";
 import { createTheme } from "@mui/material";
 import {Box} from "@mui/material";
-
 const theme = createTheme({
   breakpoints:{
     values:{
@@ -15,11 +14,11 @@ const theme = createTheme({
   }
 });
 const CarouselLabel = () => {
-const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
-const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
+// const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+// const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
+// const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
 
-  return (
+//   return (
     <ThemeProvider theme={theme}>
       <Grid container xs={12} md={12}>
       <Box
@@ -35,27 +34,27 @@ const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
           borderRadius: '24px',
           marginLeft: 43,
 
-          ...(isSmallScreen && {
-            position: 'absolute',
-            width: '50%',
-            height: '100px',
-            borderRadius: '8px',
-            justifyContent:'center',
-            alignItems:'center',
-            top:'40%',
-            marginLeft:'30%',
-          }),
-          ...(isTabletScreen && {
-              width:'50%',
-              height:'170px',
-              top:'50%',
-              left:'50%'
+          // ...(isSmallScreen && {
+          //   position: 'absolute',
+          //   width: '50%',
+          //   height: '100px',
+          //   borderRadius: '8px',
+          //   justifyContent:'center',
+          //   alignItems:'center',
+          //   top:'40%',
+          //   marginLeft:'30%',
+          // }),
+          // ...(isTabletScreen && {
+          //     width:'50%',
+          //     height:'170px',
+          //     top:'50%',
+          //     left:'50%'
 
-          }),
-          ...(isLaptopScreen && {
-             left:'50%',
+          // }),
+          // ...(isLaptopScreen && {
+          //    left:'50%',
 
-          }),
+          // }),
         }}
       
       >
@@ -68,30 +67,30 @@ const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
             textAlign: 'left',
             letterSpacing: '0em',
             color: "#1B4B66",
-            ...(isSmallScreen && {
-              width: '50%',
-              height: '52px',
-              marginTop: '10%',
-              left: '10%',
-              fontSize: '1.5rem',
-              lineHeight: '40px',
-            }),
-           ...(isTabletScreen && {
-              width:'200px',
-              letterSpacing: '0em',
-              fontSize:'2rem',
-              height:'70px',
-              lineHeight:'26px',
+          //   ...(isSmallScreen && {
+          //     width: '50%',
+          //     height: '52px',
+          //     marginTop: '10%',
+          //     left: '10%',
+          //     fontSize: '1.5rem',
+          //     lineHeight: '40px',
+          //   }),
+          //  ...(isTabletScreen && {
+          //     width:'200px',
+          //     letterSpacing: '0em',
+          //     fontSize:'2rem',
+          //     height:'70px',
+          //     lineHeight:'26px',
               
               
-           }),
-           ...(isLaptopScreen &&{
-              width:'250px',
-              fontSize:'1.85rem'  ,
-              height:'80px',
-              lineHeight:'26px' ,     
+          //  }),
+          //  ...(isLaptopScreen &&{
+          //     width:'250px',
+          //     fontSize:'1.85rem'  ,
+          //     height:'80px',
+          //     lineHeight:'26px' ,     
       
-           })
+          //  })
 
           }}>
           Carry your Funk
@@ -109,31 +108,31 @@ const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
           height: '80px',
           color: '#1B4B66',
           left: '610px',
-          ...(isSmallScreen && {
-            width: '162px',
-            height: '50px',
-            left: '10%',
-            fontSize: '0.75rem',
-            lineHeight: '16px',
-            marginTop:'2%'
+          // ...(isSmallScreen && {
+          //   width: '162px',
+          //   height: '50px',
+          //   left: '10%',
+          //   fontSize: '0.75rem',
+          //   lineHeight: '16px',
+          //   marginTop:'2%'
 
-          }),
-          ...(isTabletScreen &&{
-            fontSize:'1rem',
-            height:'80px',
-            width:'250px',
-            lineHeight:'26px',
+          // }),
+          // ...(isTabletScreen &&{
+          //   fontSize:'1rem',
+          //   height:'80px',
+          //   width:'250px',
+          //   lineHeight:'26px',
 
-          }),
+          // }),
 
-          ...(isLaptopScreen && {
-           fontSize:'1.5rem',
-           width:'350px',
-           height:'90px',
-           lineHeight:'26px'
+          // ...(isLaptopScreen && {
+          //  fontSize:'1.5rem',
+          //  width:'350px',
+          //  height:'90px',
+          //  lineHeight:'26px'
 
 
-          })
+          // })
         }}>
           Trendy handbags collection for your party animal
         </Typography>
@@ -143,7 +142,7 @@ const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
           alignItems: 'center',
           justifyContent: 'center'
         }}>
-          {isSmallScreen || isTabletScreen ?null: ( 
+          {/* {isSmallScreen || isTabletScreen ?null: (  */}
           <Button disableRipple={true} sx={{
             '&:hover': {
               backgroundColor: '#1B4B66',
@@ -159,10 +158,10 @@ const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
             top: '20px',
 
           
-            ...(isLaptopScreen &&{
-              height:'45px',
+            // ...(isLaptopScreen &&{
+            //   height:'45px',
 
-            })
+            // })
 
           }}>
             <svg
@@ -185,12 +184,12 @@ const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
               See more
             </Typography>
           </Button>
-          )}
+          {/* )} */}
         </Grid>
       </Box>
       </Grid>
      </ThemeProvider>
-  )
+  // )
 
 }
 export default CarouselLabel;

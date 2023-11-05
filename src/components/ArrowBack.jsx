@@ -1,9 +1,9 @@
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-const ArrowBack =({onclick})=>{
+const ArrowBack =({onClick})=>{
 
 
 return(
-<ArrowBackIcon onclick={onclick}/>
+<ArrowBackIcon onClick={onClick}/>
 
 )};
 export default ArrowBack;
