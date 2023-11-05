@@ -19,15 +19,13 @@ export const newArrivasStyles = {
   container: {
     backgroundColor: "white",
     paddingTop: 1,
-    paddingBottom: 6,
+    paddingBottom: 1,
     marginBottom: 1,
-    
   },
   title: {
     color: "#13101E",
     margin: 2,
     marginBottom: 3,
-
     fontFamily: "Inter",
     fontWeight: 600,
   },

@@ -2,9 +2,11 @@
   width: 70px;
   margin-left: 10px;
   display: inline-block;
+  object-fit: cover;
 }
 
 .big-image {
   width: 100%;
   height: 605px;
+  object-fit: cover;
 }

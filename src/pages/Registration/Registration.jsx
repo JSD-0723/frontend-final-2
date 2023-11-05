@@ -13,10 +13,12 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
 function SignUp() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,6 +40,7 @@ function SignUp() {
       );
 
       console.log("Signup successful:", response.data);
+      navigate("/frontend-final-2");
 
       setFormData({
         name: "",

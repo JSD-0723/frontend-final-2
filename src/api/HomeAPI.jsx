@@ -25,19 +25,20 @@ export const fetchData = async (
 ) => {
   setIsLoading(true);
   try {
-    const handPickedResponse = await getHandPickedData();
-    setHandPickedCollectionData(handPickedResponse.data);
+    const handPickedResponse = getHandPickedData();
+    const handPickData = await handPickedResponse;
 
-    const newArrivalsResponse = await getNewArrivalsData();
-    setNewArrivalsData(newArrivalsResponse.data);
+    setHandPickedCollectionData(handPickData.data);
 
-    const brandsResponse = await getBrandsData();
-    setShopByBrandsData(brandsResponse.data);
+    const newArrivalsResponse = getNewArrivalsData();
+    const newArrivalsData = await newArrivalsResponse;
+    setNewArrivalsData(newArrivalsData.data);
+
+    const brandsResponse = getBrandsData();
+    const brandsData = await brandsResponse;
+    setShopByBrandsData(brandsData.data);
   } catch (error) {
     console.log("Error fetching data: ", error);
-
-
-
   } finally {
     setIsLoading(false);
   }
