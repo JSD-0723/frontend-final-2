@@ -4,7 +4,7 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const ImagesSlider = ({ images }) => {
+const ImagesSlider = ({ images, next, prev }) => {
   return (
     <Box
       sx={{
@@ -14,7 +14,10 @@ const ImagesSlider = ({ images }) => {
         marginTop: 3,
       }}
     >
-      <KeyboardArrowLeftIcon />
+      <button onClick={next}>
+        <KeyboardArrowLeftIcon />{" "}
+      </button>
+
       <Box
         sx={{
           display: "flex",
@@ -26,7 +29,9 @@ const ImagesSlider = ({ images }) => {
           return <img className="small-image" src={image} alt="" />;
         })}
       </Box>
-      <KeyboardArrowRightIcon />
+      <button onClick={prev}>
+        <KeyboardArrowRightIcon />
+      </button>
     </Box>
   );
 };
