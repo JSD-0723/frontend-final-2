@@ -15,7 +15,7 @@ const CategoryPage = () => {
 
   useEffect(() => {
     axios.get(url).then((res) => {
-      setData(res.data);
+      setData(res.data.products);
     });
   }, [url]);
 
