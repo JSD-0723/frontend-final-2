@@ -43,10 +43,11 @@ const NewArrivalsCard = (props) => {
             </svg>
           </Typography>
         </Box>
-        <Typography sx={{ color: "#626262" }}> Black bag </Typography>
+        <Typography sx={{ color: "#626262" }}> 
+        {productData.short_description}</Typography>
         <Box sx={{ display: "flex", gap: 1 }}>
           <Typography sx={{ fontWeight: "700", color: "#171520" }}>
-            $56.49
+            {productData.price}
           </Typography>
         </Box>
       </Box>
