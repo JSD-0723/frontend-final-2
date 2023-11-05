@@ -22,38 +22,6 @@ export default function SearchBar() {
     }
   }
 
-  // useEffect(() => {
-  //   if(search){
-  //   const apiUrl = 'https://estore-doxn.onrender.com/eStore/searchProduct?name=ZARA';
-
-  //   axios.get(apiUrl)
-  //     .then((response) => {
-  //       const filteredResults = response.data.filter(item=>
-  //         item.name.toLowerCase().includes(search.toLowerCase())
-  //         );
-  //       console.log(filteredResults);
-  //       return setSearchResult(filteredResults);
-  //       setSearchResult(response.data);
-  //       console.log("raya kjkdjs;ldjsf")        
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching Category data:', error);
-  //       setLoading(false);
-  //     });
-  //   } 
-  //   else {
-  //     setSearchResult([]);
-  //   }
-  // }, [search]);
-  
-  // const filterData=()=>{
-  //   if(!search){
-  //     setSearchResult([]);
-  //   }
-  // }
-
-  
-
   return (
     <Grid container  justifyContent="flex-end" sx={SearchBarStyles.containerGrid}>
       <Paper

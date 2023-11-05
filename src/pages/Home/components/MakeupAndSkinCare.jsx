@@ -63,5 +63,4 @@ const MakeupAndSkinCare = () => {
         </div>
     );
 }
-
 export default MakeupAndSkinCare;

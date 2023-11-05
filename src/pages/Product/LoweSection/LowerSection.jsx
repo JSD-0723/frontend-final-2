@@ -2,7 +2,7 @@ import axios from "axios";
 import RelatedProducts from "./RelatedProducts";
 import DescLower from "./DescLower";
 import { Box, Grid, Paper } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import Product from '../Product';
 
@@ -20,7 +20,9 @@ const LowerSection = ({productData}) => {
         setShowRelatedProduct(true);
         setShowDescLower(false);
     }
-
+   useEffect(()=>{
+     setShowDescLower(true);
+   },[])
     return (
         <Grid item sm={12} md={6}
              sx={{
