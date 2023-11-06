@@ -5,7 +5,7 @@ export const SearchBarStyles = {
     paper: {
         p: '2px 4px',
         alignItems: 'center',
-        width: '55vh',
+        width: '60vm',
         height: '44px',
         marginLeft: '2vh',
         borderColor: 'black',
@@ -18,8 +18,9 @@ export const SearchBarStyles = {
         fontFamily: 'Inter, sans-serif',
         fontSize: '14px',
         fontWeight: '500',
-        lineHeight: '18px',
-        width: '40vhpx',
+        width: '40vm',
         height: '18px',
+        justifyContent:'center',
+        alignItems:'center'
     }
 }

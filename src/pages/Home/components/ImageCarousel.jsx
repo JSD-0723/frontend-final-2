@@ -78,7 +78,7 @@ import { createTheme } from '@mui/material/styles';
               
               }}
             />
-            <Grid container xs={6} md={6} sm={6} lg={6}>
+            <Grid container >
             <CarouselLabel />
             </Grid>
           </Grid>

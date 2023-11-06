@@ -1,12 +1,13 @@
 import { Box } from "@mui/material";
 import LeftSection from "./LeftSection/LeftSection";
+import RightSection from "./RightSection/RightSection";
 
 const Checkout = () => {
   return (
     <Box>
-      <Box>Right Section</Box>
+      <LeftSection />
       <Box>
-        <LeftSection />
+      <RightSection/>
       </Box>
     </Box>
   );

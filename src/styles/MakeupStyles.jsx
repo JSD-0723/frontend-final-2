@@ -1,14 +1,17 @@
 export const MakeupStyles = {
 
     makeupContainer: {
-        flexGrow: 1,
         width: "100%",
         justifyContent: 'center',
         alignItems: 'center',
         position:'relative',
-        height:'600px'
+        height:'auto'
     },
-    MakeupText: {
+    MakeupText: {  
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 800,
+        fontSize: '25px',
+        color: '#171520',
        
     },
     hero1Styles: {
@@ -20,7 +23,6 @@ export const MakeupStyles = {
     imagesGrid: {
         display: 'flex',
         height: 'auto',
-      
 
     },
     herosStyles: {

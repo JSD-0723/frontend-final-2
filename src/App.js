@@ -26,6 +26,8 @@ function App() {
         <Route path="/frontend-final-2" element={<Home />} />
         <Route path="/frontend-final-2/about" element={<About />} />
         <Route path="/frontend-final-2/signup" element={<SignUp />} />
+        <Route path="/frontend-final-2/checkout" element={<Checkout />} />
+
         <Route
           path="/frontend-final-2/login"
           element={
