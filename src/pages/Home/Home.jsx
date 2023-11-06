@@ -8,6 +8,7 @@ import { carouselData } from "../../data/carouselData";
 import Shortcut from "../Home/components/Shortcut";
 import TopCategory from "../Home/components/TopCategory";
 import { Link } from "react-router-dom";
+import SideScroller from "../../components/SideScrollCards";
 
 const Home = () => {
   const [handPickedCollectionData, setHandPickedCollectionData] = useState([]);
@@ -28,7 +29,6 @@ const Home = () => {
     return <p>Loading...</p>;
   } else {
     return (
-
       <Box>
         <Box sx={{ display: "flex", gap: 2 }}>
           <Link to="/frontend-final-2/signup">Sign Up</Link>
@@ -42,6 +42,7 @@ const Home = () => {
           <NewArrivals products={newArrivalsData} />
           <HandPicked products={handPickedCollectionData} />
           <ShopByBrand brands={shopByBrandsData} />
+          <SideScroller products={newArrivalsData} />
         </Box>
         <Box>
           <Shortcut />

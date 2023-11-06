@@ -11,7 +11,7 @@ import SignUp from "./pages/Registration/Registration";
 import Login from "./pages/Registration/Login";
 import "./App.css";
 import SearchResult from "./components/SearchResult";
-
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -45,6 +45,8 @@ function App() {
           path="/frontend-final-2/category/:categoryName"
           element={<CategoryPage />}
         />
+
+        <Route path="/frontend-final-2/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </BrowserRouter>
