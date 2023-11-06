@@ -8,10 +8,13 @@ import { Hidden } from '@mui/material';
 
 const MakeupAndSkinCare = () => {
     return (
-        <div style={{zIndex:'0px'}}>
-            <Grid spacing={1} sx={{
-                width: '100%',
-            }}>
+            // <Grid spacing={1} 
+            // sx={{
+            //     width: '100%',
+            //     backgroundColor:'red',
+            //     height:'300px'
+            // }}
+            // >
                 
                 <Grid container sx={MakeupStyles.makeupContainer}>
                 
@@ -24,23 +27,29 @@ const MakeupAndSkinCare = () => {
                        <Hidden mdUp>
                     <Box
                         sx=
-                        {{ width: '200px', height: '50px' }}>
-                        <Typography sx={{fontFamily: 'Inter, sans-serif',
-                                          fontWeight: 600,
-                                           fontSize: '18px',
-                                          color: '#171520'}}>
+                        {{
+                             width: '350px',
+                             height: '50px',
+                             alignItems:'center',
+                             justifyContent:'center'
+                              }}>
+                        <Typography 
+                          sx=
+                          {{...MakeupStyles.MakeupText,  lineHeight:'70px',  alignItems:'center',
+                          justifyContent:'center'}}
+                            >
                             Makeup & Skincare
                         </Typography>
-                  </Box>
-                </Hidden>
+                   </Box>
+                    </Hidden>
                       
                         <img
                             src={image1}
                             alt="hero 1"
                             style={{ ...MakeupStyles.hero1Styles }}
                         />
-                        <Box sx={{ width: '10px', height: '10px' }}></Box>
-                        <Grid container spacing={2}>
+                          <Box sx={{ width: '10px', height: '10px' }}></Box>
+                           <Grid container spacing={2}>
                             <Grid item xs={6} >  
                                 <img
                                     src={image2}
@@ -59,8 +68,8 @@ const MakeupAndSkinCare = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
-        </div>
+            // </Grid>
+     
     );
 }
 export default MakeupAndSkinCare;
