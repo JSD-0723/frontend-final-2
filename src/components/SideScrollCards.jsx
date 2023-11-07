@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "./SideScrollerStyles.css";
 import { Link } from "react-router-dom";
 import NewArrivalsCard from "../pages/Home/components/NewArrivalsCard";
@@ -11,12 +11,19 @@ const SideScroller = (props) => {
       id="slider"
       className=" w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
     >
+      <Box sx={{ marginRight: 2, marginLeft: 2 }}>
+        <Typography variant="h4" component="h4">
+          New Arrivals
+        </Typography>
+      </Box>
+
       <Box
         sx={{
           display: "flex",
           gap: 4,
           marginRight: 2,
           marginLeft: 2,
+          marginTop: 2,
         }}
       >
         {products1.map((product) => {

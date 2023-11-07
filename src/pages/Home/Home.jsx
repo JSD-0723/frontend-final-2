@@ -39,10 +39,9 @@ const Home = () => {
         <TopCategory />
 
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-          <NewArrivals products={newArrivalsData} />
+          <SideScroller products={newArrivalsData} />
           <HandPicked products={handPickedCollectionData} />
           <ShopByBrand brands={shopByBrandsData} />
-          <SideScroller products={newArrivalsData} />
         </Box>
         <Box>
           <Shortcut />

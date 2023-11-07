@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { HandPickedStyles } from "../styles/HandPickedStyles";
 import { Link } from "react-router-dom";
 import NewArrivalsCard from "../pages/Home/components/NewArrivalsCard";
-import SideScroller from "./SideScrollCards";
+
 const CardsGrid = (props) => {
   const { products, isHandPicked } = props;
   const cardStyles = HandPickedStyles;

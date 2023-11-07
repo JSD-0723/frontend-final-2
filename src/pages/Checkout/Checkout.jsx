@@ -5,9 +5,8 @@ import RightSection from "./RightSection/RightSection";
 const Checkout = () => {
   return (
     <Box>
-      <LeftSection />
       <Box>
-      <RightSection/>
+        <RightSection />
       </Box>
     </Box>
   );
