@@ -2,12 +2,15 @@ import { Paper, Typography, Box, CssBaseline, Grid } from "@mui/material";
 import BasicRating from "../../../components/Stars";
 import { productDetailsStyles } from "./ProductDetailsStyles";
 import { Divider } from "@mui/material";
-import QuantityInput from "./Quantity";
+import QuantityInput from "./Quantity"; 
 import { Button } from "@mui/base/Button";
 import ButtonWithIcon from "./ButtonWithIcon";
 import { svgIcons } from "./Icons";
+import { useParams } from "react-router-dom";
 
 const ProductDetails = ({ product }) => {
+    //added by rayah
+  const id= useParams();
   const buttonStyle1 = {
     color: "#FFFFFF",
     border: "2px solid #1B4B66",

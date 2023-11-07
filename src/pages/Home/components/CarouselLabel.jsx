@@ -227,11 +227,11 @@ const isBigScreen = useMediaQuery('(min-width:1600px)');
         sx={{
           position: 'absolute',
           objectFit:'cover',
-          top: '55%',
+          top: '50%',
           left: '50%',
           justifyContent:'end',
           transform: 'translate(-50%, -50%)',
-          backgroundColor: 'rgba(222, 222, 222, 0.5)',
+          backgroundColor: 'rgba(225, 225, 225, 0.7)',
           padding: '20px',
           width: '100%',
           height: '270px',
@@ -241,25 +241,30 @@ const isBigScreen = useMediaQuery('(min-width:1600px)');
           ...(isSmallScreen && {
             width:'100%',
             flexWrap:'wrap',
-            height: '100px',
+            height: '80px',
             borderRadius: '8px',
-            // justifyContent:'center',
-            // alignItems:'center',
-            top:'40%',
+            justifyContent:'center',
+            alignItems:'center',
             marginRight:'-100%',
           }),
           ...(isTabletScreen && {
               width:'100%',
               height:'170px',
-              top:'50%',
-              marginLeft:'40%'
+              marginLeft:'40%',
+            
 
           }),
           ...(isLaptopScreen && {
              left:'50%',
              marginLeft:'40%',
+             marginTop:'2%'
+            
 
           }),
+          ...(isXLScreen &&{
+            left:'50%',
+            marginTop:'1.5%'
+          })
         }}
       
       >
@@ -270,44 +275,12 @@ const isBigScreen = useMediaQuery('(min-width:1600px)');
           fontSize: isBigScreen ? '4rem' : isSmallScreen ? '1.5rem' :isTabletScreen?'2rem':isLaptopScreen?'2.5rem':'3.75rem',
           lineHeight: isXLScreen ? '30px' : isLaptopScreen ? '26px' : '84px',
           marginLeft:isBigScreen?'3%':isXLScreen?'2%':'0%',
-          marginTop:isBigScreen?'.5%':isXLScreen?'1%':'0%',
+          marginTop:isBigScreen?'.5%':isXLScreen?'2%':'0%',
           textAlign: 'left',
           letterSpacing: '0em',
           color: '#1B4B66',
         }}
-          // sx={{
-          //   fontWeight: 800,
-          //   fontSize: ' 3.75rem',
-          //   lineHeight: '84px',
-          //   textAlign: 'left',
-          //   letterSpacing: '0em',
-          //   color: "#1B4B66",
-          //   ...(isSmallScreen && {
-          //     width: '50%',
-          //     height: '52px',
-          //     marginTop: '10%',
-          //     left: '10%',
-          //     fontSize: '1.5rem',
-          //     lineHeight: '40px',
-          //   }),
-          //  ...(isTabletScreen && {
-          //     width:'200px',
-          //     letterSpacing: '0em',
-          //     fontSize:'2rem',
-          //     height:'70px',
-          //     lineHeight:'26px',
-              
-              
-          //  }),
-          //  ...(isLaptopScreen &&{
-          //     width:'250px',
-          //     fontSize:'1.85rem'  ,
-          //     height:'80px',
-          //     lineHeight:'26px' ,     
-      
-          //  })
-
-          // }}
+        
           >
           Carry your Funk
         </Typography>
@@ -324,80 +297,17 @@ const isBigScreen = useMediaQuery('(min-width:1600px)');
           flexWrap:'wrap',
           lineHeight:1,
           width:isBigScreen?'900px':isSmallScreen?'250px':isTabletScreen?'400px':'500px',
-          fontSize: isSmallScreen ? '1.5rem' : isBigScreen ? '3rem':isTabletScreen?'2rem':'1.75rem',
-          marginLeft:isBigScreen?'3%':isXLScreen?'2%':isLaptopScreen? '3%':'0%',
+          fontSize: isSmallScreen ? '1.5rem' : isBigScreen ? '2.75rem':isTabletScreen?'2rem':'1.75rem',
+          marginLeft:isBigScreen?'3%':isXLScreen?'2.5%':isLaptopScreen? '3%':'0%',
           marginTop:isXLScreen?'3%':'0%',
           textAlign: 'left',
          
         
           
       
-          // ...(isSmallScreen && {
-          //   width: '162px',
-          //   height: '50px',
-          //   left: '10%', 
-          //   fontSize: '0.75rem',
-          //   lineHeight: '16px',
-          //   marginTop: '2%'
-          // }),
-      
-          // ...(isTabletScreen &&{
-          //   fontSize: '1rem',
-          //   height: '80px',
-          //   width: '250px',
-          //   lineHeight: '26px'
-          // }),
-      
-          // ...(isLaptopScreen && {
-          //   fontSize: '1.5rem',
-          //   width: '350px',
-          //   height: '90px',
-          //   lineHeight: '26px'
-          // }),
-      
-          // ...(isXLScreen && {
-          //   fontSize: '2.2rem', // يمكنك ضبط حجم الخط للشاشات الكبيرة بحجم الـ XL
-          //   width: '500px', // يمكنك ضبط عرض النص للشاشات الكبيرة بحجم الـ XL
-          //   height: '120px', // يمكنك ضبط ارتفاع النص للشاشات الكبيرة بحجم الـ XL
-          //   lineHeight: '50px' // يمكنك ضبط ارتفاع الخط للشاشات الكبيرة بحجم الـ XL
-          // })
+          
         }} 
-        //  sx={{
-        //   fontFamily: 'Inter, sans-serif',
-        //   fontSize: '1.75rem',
-        //   fontWeight: 500,
-        //   letterSpacing: '0em',
-        //   textAlign: 'left',
-        //   width: "530px",
-        //   height: '80px',
-        //   color: '#1B4B66',
-        //   left: '610px',
-        //   ...(isSmallScreen && {
-        //     width: '162px',
-        //     height: '50px',
-        //     left: '10%',
-        //     fontSize: '0.75rem',
-        //     lineHeight: '16px',
-        //     marginTop:'2%'
-
-        //   }),
-        //   ...(isTabletScreen &&{
-        //     fontSize:'1rem',
-        //     height:'80px',
-        //     width:'250px',
-        //     lineHeight:'26px',
-
-        //   }),
-
-        //   ...(isLaptopScreen && {
-        //    fontSize:'1.5rem',
-        //    width:'350px',
-        //    height:'90px',
-        //    lineHeight:'26px'
-
-
-        //   })
-        // }}
+       
         >
           Trendy handbags collection for your party animal
         </Typography>
@@ -421,8 +331,8 @@ const isBigScreen = useMediaQuery('(min-width:1600px)');
             textTransform: 'none',
             height:'44px',
             top: '20px',
-            marginLeft: isBigScreen?'3%':isXLScreen?'2%':'1%',
-            marginTop:isLaptopScreen?'2%':'0%',
+            marginLeft: isBigScreen?'3%':isXLScreen?'2.5%':'1%',
+            marginTop:isLaptopScreen?'2%':isXLScreen?'1.5%':'0%',
 
           }}>
             <svg

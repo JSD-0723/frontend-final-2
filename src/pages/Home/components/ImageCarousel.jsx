@@ -107,13 +107,14 @@ import { createTheme } from '@mui/material/styles';
        xs:0,
        sm:600,
        md:900,
-       lg:1200
-  
+       lg:1200,
+       xl:1600,
       }
     }
    });
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isXLScreen = useMediaQuery(theme.breakpoints.up('xl'));
   return (
     <ThemeProvider theme={theme}>
       <Grid container xs={12} md={12} >
@@ -138,13 +139,14 @@ import { createTheme } from '@mui/material/styles';
               position: 'relative',
               overflow: 'hidden',
               height: '400px',
-              borderRadius:'20px'
+              borderRadius:'20px',
+              objectFit:'cover',
+              
             }}>
 
             <img
               src={item.image}
               alt={item.title}
-
               style={{
                 width: '100%',
                 height: '400px', 
@@ -171,7 +173,9 @@ import { createTheme } from '@mui/material/styles';
                    top:'50%',
 
                   }),
-              
+                ...(isXLScreen && {
+                    height:'500px',
+                }),
               }}
             />
             <Grid container >

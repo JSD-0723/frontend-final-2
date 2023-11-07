@@ -8,14 +8,6 @@ import { Hidden } from '@mui/material';
 
 const MakeupAndSkinCare = () => {
     return (
-            // <Grid spacing={1} 
-            // sx={{
-            //     width: '100%',
-            //     backgroundColor:'red',
-            //     height:'300px'
-            // }}
-            // >
-                
                 <Grid container sx={MakeupStyles.makeupContainer}>
                 
                     <Grid item xs={12} md={12} sm={12}
@@ -31,12 +23,13 @@ const MakeupAndSkinCare = () => {
                              width: '350px',
                              height: '50px',
                              alignItems:'center',
-                             justifyContent:'center'
+                             justifyContent:'center',
+                             marginBottom:'12px'
                               }}>
                         <Typography 
                           sx=
-                          {{...MakeupStyles.MakeupText,  lineHeight:'70px',  alignItems:'center',
-                          justifyContent:'center'}}
+                          {{...MakeupStyles.MakeupText,  lineHeight:'70px', alignItems:'center',
+                          justifyContent:'center' }}
                             >
                             Makeup & Skincare
                         </Typography>
@@ -66,6 +59,7 @@ const MakeupAndSkinCare = () => {
                             </Grid>
 
                         </Grid>
+                        <Box sx={{height:'10px'}}></Box>
                     </Grid>
                 </Grid>
             // </Grid>
