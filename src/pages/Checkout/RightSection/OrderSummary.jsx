@@ -4,9 +4,11 @@ import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/material';
 const OrderSummary = () => {
     return (
-        <Grid container direction="column" sx={{ gap: '24px' }}>
+        <Grid container direction="column" sx={{ gap: '24px',height:'400px' }}>
             <Box sx={{width:'391px'}}>
-            <Typography sx={{fontFamily:'Inter, sans-serif',fontWeight:600, fontSize:'20px',lineHeight:'26px'}}>Order Summary</Typography>
+            <Typography sx={{fontFamily:'Inter, sans-serif',fontWeight:600, fontSize:'20px',lineHeight:'26px'}}>
+                Order Summary
+             </Typography>
             </Box>
             <hr style={{ BorderTop: '1px solid #626262', width: '100%' }} />
             {/* <Box sx={{gap:'24px', overflowY:'scroll'}}> */}
@@ -91,15 +93,7 @@ const OrderSummary = () => {
                 
             </Grid>
             {/* </Box> */}
-
         </Grid>
-
-
-
-
-
-
-
     )
 }
 export default OrderSummary;

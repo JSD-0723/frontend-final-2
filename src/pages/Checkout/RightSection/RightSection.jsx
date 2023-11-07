@@ -1,10 +1,11 @@
 import OrderSummary from './OrderSummary';
 import OrderDetails from './OrderDetails';
 import { Box } from '@mui/material';
+import { RightSectionStyle } from './Styles';
 const RightSection = () => {
 
     return (
-        <Box sx={{display:'grid',width:'412px', height:"545px", top:'236px', marginLeft:'868px', gap:'24px'}}>
+        <Box sx={RightSectionStyle.box}>
             <Box>
                 <OrderSummary />
             </Box>
