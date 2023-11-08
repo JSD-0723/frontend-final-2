@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Container, Grid, Pagination } from "@mui/material";
-import CardCategory from "./CardCategory";
+import CardCategory from "../Category/CardCategory";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import heroImage from "../../helper/Assets/hero.png";
@@ -8,15 +8,18 @@ import "./styles.css";
 
 const ITEMS_PER_PAGE = 9;
 
-const CategoryPage = () => {
+const BrandsPage = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const { categoryName } = useParams();
+  let { brandName } = useParams();
+  if (brandName === "h&m") {
+    brandName = "h%26m";
+  }
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = `https://estore-doxn.onrender.com/eStore/viewProductByCategory?name=${categoryName}&page=${currentPage}&limit=${ITEMS_PER_PAGE}`;
+      const url = `https://estore-doxn.onrender.com/eStore/viewProductBybrand?name=${brandName}&page=${currentPage}&limit=${ITEMS_PER_PAGE}`;
       try {
         const response = await axios.get(url);
         setData(response.data.products);
@@ -27,7 +30,7 @@ const CategoryPage = () => {
     };
 
     fetchData();
-  }, [categoryName, currentPage]);
+  }, [brandName, currentPage]);
 
   const handlePageChange = (event, page) => {
     setCurrentPage(page);
@@ -78,4 +81,4 @@ const CategoryPage = () => {
   );
 };
 
-export default CategoryPage;
+export default BrandsPage;
