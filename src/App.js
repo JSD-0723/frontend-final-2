@@ -13,6 +13,7 @@ import "./App.css";
 import SearchResult from "./components/SearchResult";
 import Checkout from "./pages/Checkout/Checkout";
 import ProductsPage from "./pages/Products/Products";
+import BrandsPage from "./pages/Brands/Brands";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -35,6 +36,8 @@ function App() {
             <Login setIsLoggedIn={setIsLoggedIn} setUserName={setUserName} />
           }
         />
+
+      
         <Route
           path="/frontend-final-2/category/:categoryName/:id"
           element={<ProductPage />}
@@ -51,12 +54,8 @@ function App() {
 
         <Route path="/frontend-final-2/checkout" element={<Checkout />} />
         <Route path="/frontend-final-2/products" element={<ProductsPage />} />
-      </Routes>
-
-      
-
-
-   
+        <Route path="/frontend-final-2/brands/:brandName" element={<BrandsPage />} />
+        </Routes>
       <Footer />
     </BrowserRouter>
   );
