@@ -25,14 +25,12 @@ const CardsGrid = (props) => {
           </Link>
         ) : (
           <Link
-          to={`/frontend-final-2/category/${product.name.replace(
-            / /g,
-            ""
-          )}/${product.id}`}
-        >
-        <NewArrivalsCard productData={product} />
-        </Link>
-        
+            to={`/frontend-final-2/category/${product.name.replace(/ /g, "")}/${
+              product.id
+            }`}
+          >
+            <NewArrivalsCard productData={product} />
+          </Link>
         )}
       </Grid>
     );

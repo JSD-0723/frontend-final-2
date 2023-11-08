@@ -12,6 +12,7 @@ import Login from "./pages/Registration/Login";
 import "./App.css";
 import SearchResult from "./components/SearchResult";
 import Checkout from "./pages/Checkout/Checkout";
+import ProductsPage from "./pages/Products/Products";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -49,7 +50,13 @@ function App() {
         />
 
         <Route path="/frontend-final-2/checkout" element={<Checkout />} />
+        <Route path="/frontend-final-2/products" element={<ProductsPage />} />
       </Routes>
+
+      
+
+
+   
       <Footer />
     </BrowserRouter>
   );

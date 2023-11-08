@@ -1,22 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { Box, Container, Grid, Pagination } from "@mui/material";
-import CardCategory from "./CardCategory";
+import CardCategory from "../Category/CardCategory";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import heroImage from "../../helper/Assets/hero.png";
 import "./styles.css";
+import { getNewArrivalsData } from "../../api/HomeAPI"; // Import the function that fetches new arrivals data
+
 const ITEMS_PER_PAGE = 9;
 
-const CategoryPage = () => {
+const ProductsPage = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const { categoryName } = useParams();
-  const url = `https://estore-doxn.onrender.com/eStore/viewProductByCategory?name=${categoryName}`;
+  const url = `https://estore-doxn.onrender.com/eStore/newArrival`;
 
   useEffect(() => {
-    axios.get(url).then((res) => {
-      setData(res.data.products);
-    });
+    axios
+      .get(url)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching new arrivals data: ", error);
+      });
   }, [url]);
 
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
@@ -70,4 +77,4 @@ const CategoryPage = () => {
   );
 };
 
-export default CategoryPage;
+export default ProductsPage;

@@ -7,7 +7,7 @@ import { newArrivasStyles } from "../../../styles/NewArrivalsStyles";
 
 const NewArrivals = () => {
   return (
-    <Box sx={{ ...newArrivasStyles.container, overflowX: "scroll" }}>
+    <Box sx={{ ...newArrivasStyles.container }}>
       <Typography variant="h4" component="h4" sx={newArrivasStyles.title}>
         New Arrivals
       </Typography>

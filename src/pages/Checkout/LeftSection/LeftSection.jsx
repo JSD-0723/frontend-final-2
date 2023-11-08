@@ -3,14 +3,19 @@ import UnstyledInputIntroduction from "./Form";
 
 const LeftSection = () => {
   return (
-    <Box sx={{ width: "50%" }}>
+    <Box>
       <Grid container spacing={1}>
         <Grid item md={6}>
           <UnstyledInputIntroduction text="Enter Name" label="Full Name" />
         </Grid>
 
-        <Grid item md={6}>
-          <UnstyledInputIntroduction text="Mobile Number" label="Full Name" />
+        <Grid container md={6}>
+          <Grid item md={4}>
+          <input></input>
+          </Grid>
+          <Grid item md={8}>
+         
+          </Grid>
         </Grid>
         <Grid item md={6}>
           <UnstyledInputIntroduction
@@ -24,7 +29,7 @@ const LeftSection = () => {
         <Grid item md={6}>
           <UnstyledInputIntroduction text="Enter State" label="State" />
         </Grid>
-        <Grid item>
+        <Grid item md={6}>
           <UnstyledInputIntroduction text="Enter Pin Code" label="Pin Code" />
         </Grid>
       </Grid>

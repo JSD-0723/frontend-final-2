@@ -9,7 +9,7 @@ const Input = React.forwardRef(function CustomInput(props, ref) {
 
 export default function UnstyledInputIntroduction(props) {
   return (
-    <Box item>
+    <Box>
       <label> {props.text} </label>
       <Input aria-label="Demo input" placeholder={props.text} />
     </Box>
@@ -41,7 +41,7 @@ const grey = {
 
 const InputElement = styled("input")(
   ({ theme }) => `
-  width: auto;
+  width: 95%;
   font-family: IBM Plex Sans, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;

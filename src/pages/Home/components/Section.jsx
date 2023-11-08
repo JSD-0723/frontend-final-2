@@ -48,7 +48,7 @@ const NewArrivals = (props) => {
 
 const ShopByBrand = (props) => {
   return (
-    <Box >
+    <Box>
       <Section
         title="Shop By Brands"
         gridComponent={<BrandsGrid brands={props.brands} />}

@@ -4,18 +4,17 @@ import "./styles.css";
 const BrandsGrid = (props) => {
   const logos = props.brands;
   return (
-    <Box>
-      <Grid container sx={{ marginLeft: 2, marginRight: 2 }}>
+    <Box sx={{ width: "98%", marginLeft: 2, marginRight: 2 }}>
+      <Grid container spacing={1}>
         {logos.map((item) => (
           <Grid item xs={4} md={2}>
             <Box
               sx={{
                 backgroundColor: "#F4F4F4",
-                width: "90%",
                 height: "168px",
                 display: "flex",
                 alignItems: "center",
-                marginTop: 2,
+                marginTop: 1,
                 borderRadius: 2,
                 justifyContent: "center",
               }}
