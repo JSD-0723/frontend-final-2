@@ -7,17 +7,14 @@ import "./SideScrollerStyles.css";
 const SideScroller = (props) => {
   const products1 = props.products;
   return (
-    <div
-      id="slider"
-      className=" w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
-    >
+    <Box>
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           marginRight: 2,
           marginLeft: 2,
-          marginTop:2
+          marginTop: 2,
         }}
       >
         <Typography variant="h4" component="h4">
@@ -26,32 +23,36 @@ const SideScroller = (props) => {
 
         <Link to="/frontend-final-2/products">View All</Link>
       </Box>
-
-      <Box
-        sx={{
-          display: "flex",
-          gap: 4,
-          marginRight: 2,
-          marginLeft: 2,
-          marginTop: 2,
-        }}
+      <div
+        id="slider"
+        className=" w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
       >
-        {products1.map((product) => {
-          return (
-            <Box>
-              <Link
-                to={`/frontend-final-2/category/${product.name.replace(
-                  / /g,
-                  ""
-                )}/${product.id}`}
-              >
-                <NewArrivalsCard productData={product} />
-              </Link>
-            </Box>
-          );
-        })}
-      </Box>
-    </div>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 4,
+            marginRight: 2,
+            marginLeft: 2,
+            marginTop: 2,
+          }}
+        >
+          {products1.map((product) => {
+            return (
+              <Box>
+                <Link
+                  to={`/frontend-final-2/category/${product.name.replace(
+                    / /g,
+                    ""
+                  )}/${product.id}`}
+                >
+                  <NewArrivalsCard productData={product} />
+                </Link>
+              </Box>
+            );
+          })}
+        </Box>
+      </div>
+    </Box>
   );
 };
 
