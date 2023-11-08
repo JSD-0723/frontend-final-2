@@ -23,7 +23,7 @@ function Login({ setIsLoggedIn,setUserName }) {
     password: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = async(e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -106,13 +106,13 @@ function Login({ setIsLoggedIn,setUserName }) {
               fullWidth
               variant="contained"
               color="primary"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 , ml:1.5}}
             >
               Login
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/frontend-final-2/signup" variant="body2">
+                <Link component={Link} to="/frontend-final-2/signup" variant="body2">
                   Don't have an account? Sign up
                 </Link>
               </Grid>

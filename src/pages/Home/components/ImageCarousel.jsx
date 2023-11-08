@@ -114,7 +114,9 @@ import { createTheme } from '@mui/material/styles';
    });
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const isXLScreen = useMediaQuery(theme.breakpoints.up('xl'));
+  const isLaptopScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isXLScreen = useMediaQuery(theme.breakpoints.down('xl'));
+  const isBigScreen = useMediaQuery(theme.breakpoints.up('xl'));
   return (
     <ThemeProvider theme={theme}>
       <Grid container xs={12} md={12} >
@@ -156,6 +158,7 @@ import { createTheme } from '@mui/material/styles';
                 position: 'absolute',
                 left: '50%',
                 top: '230px',
+                objectFit:'cover',
                 transform: 'translate(-50%, -50%)',
                 ...(isSmallScreen && {
                   width: '100%',
@@ -174,7 +177,8 @@ import { createTheme } from '@mui/material/styles';
 
                   }),
                 ...(isXLScreen && {
-                    height:'500px',
+                }),
+                ...(isBigScreen && {
                 }),
               }}
             />

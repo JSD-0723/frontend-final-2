@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      {isLoggedIn ? `${userDetails} is Logged in!` : `User is not logged in`}
+      {/* {isLoggedIn ? `${userDetails} is Logged in!` : `User is not logged in`} */}
 
       <HeaderforMobile />
       <Routes>
