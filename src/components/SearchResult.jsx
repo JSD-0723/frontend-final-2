@@ -6,22 +6,23 @@ import axios from 'axios';
 import { Grid } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import CardCategory from '../pages/Category/CardCategory';
-import NewArrivalsCard from '../pages/Home/components/NewArrivalsCard';
-import TextRating from './Stars';
 import {Box} from '@mui/material';
 const SearchResult = () => {
   const navigate = useNavigate();
-  const { search } = useParams();
+  let {search} = useParams();
   const [searchResult, setSearchResult] = useState([]);
+  console.log(search)
 
   useEffect(() => {
+    console.log("hello raya");
+    console.log(search);
     if (search) {
-      const apiUrl = `https://estore-doxn.onrender.com/eStore/searchProduct?name=${search}`;
+      const apiUrl = `https://estore-doxn.onrender.com/eStore/searchProduct?name=${search}&page=1`;
       axios.get(apiUrl)
         .then((response) => {
-          console.log(response.data)
-          const filter = response.data;
-          return setSearchResult(filter);
+          console.log(response.data )
+          const filter = response.data.products;
+           setSearchResult(filter);
         })
         .catch((error) => {
           console.error('Error fetching Category data:', error);
@@ -41,14 +42,10 @@ const SearchResult = () => {
         <Typography>No results found</Typography>
   
       ) : (
-        searchResult.map((result, index) => (
-          <Grid sx={{ width: '284px', gap: '32px', height: '412px' }}>
-
-            <NewArrivalsCard productData={result} />
-            <TextRating rating={result.rating} />
+        searchResult.map((result) => (
+          <Grid key={result.id}  sx={{ width: '284px', gap: '32px', height: '412px' }}>
+            <CardCategory hideDiscount={true} products={result} />
           </Grid>
-
-
         ))
       )}
     </div>

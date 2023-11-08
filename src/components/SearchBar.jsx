@@ -21,9 +21,8 @@ export default function SearchBar() {
       navigate(`/frontend-final-2/searchresult/${search}`);
     }
   }
-
   return (
-    <Grid container  justifyContent="flex-end" sx={SearchBarStyles.containerGrid}>
+    <Grid container justifyContent="flex-end" sx={SearchBarStyles.containerGrid}>
       <Paper
         component="form"
         sx={SearchBarStyles.paper}
@@ -40,8 +39,6 @@ export default function SearchBar() {
           value={search}
           onChange={(event) => {
             setSearch(event.target.value)
-
-
           }}
           onKeyDown={(event) => {
             if (event.key == 'Enter') {

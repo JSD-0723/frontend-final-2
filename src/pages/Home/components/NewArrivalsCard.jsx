@@ -3,7 +3,7 @@ import BojeeBag from "../../../data/Assets/BoujeeBag.png";
 import "../../Home/components/styles.css";
 const NewArrivalsCard = (props) => {
   // const productData = props.productData;
-  const { productData, width, height } = props;
+  const { productData } = props;
 
   return (
     <Paper elevation={0} sx={{ fontFamily: "inter" }}>

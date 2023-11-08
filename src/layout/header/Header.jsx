@@ -42,10 +42,12 @@ export default function Header() {
 
             >
               <Box item >
+                <Link to="/frontend-final-2">
                 <Typography variant='h4'
                   sx={{ color: '#17494D', fontFamily: 'Jost, sans-serif', fontWeight: 'bold' }}>
                   {headerIcons.Coral}
                 </Typography>
+                </Link>
               </Box>
               {/* <Hidden smDown> */}
               <Box item sx={{ display: 'flex', color: '#171520', gap: 2 }}>
