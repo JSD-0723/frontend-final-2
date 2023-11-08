@@ -29,7 +29,11 @@ const CategoryPage = () => {
 
   return (
     <Box sx={{ m: 2 }}>
-      <img src={heroImage} alt="" className="image" />
+      <img
+        src={heroImage}
+        alt=""
+        className="w-full h-[450px] object-cover pb-12"
+      />
 
       <Container maxWidth="lg">
         <Grid container spacing={15}>
