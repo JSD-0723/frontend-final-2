@@ -11,10 +11,20 @@ const SideScroller = (props) => {
       id="slider"
       className=" w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
     >
-      <Box sx={{ marginRight: 2, marginLeft: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginRight: 2,
+          marginLeft: 2,
+          marginTop:2
+        }}
+      >
         <Typography variant="h4" component="h4">
           New Arrivals
         </Typography>
+
+        <Link to="/frontend-final-2/products">View All</Link>
       </Box>
 
       <Box
