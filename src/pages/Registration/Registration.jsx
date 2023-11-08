@@ -122,7 +122,7 @@ function SignUp() {
               fullWidth
               variant="contained"
               color="primary"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 , ml:1.5 }}
             >
               Sign Up
             </Button>

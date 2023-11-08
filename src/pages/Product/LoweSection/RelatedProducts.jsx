@@ -45,21 +45,7 @@ const RelatedProducts = ({ id }) => {
   };
 
   return (
-    // <div style={{ display: 'flex' , width:'100%', gap:'32px' }}>
-    //   <ArrowBack onClick={handlePrevious} />
-
-    //   {related.map((image, index) => (
-    //     <Grid item showArrows={false} key={index} sx={{gap:'32px'}}>
-    //       <div index={currentIndex} style={{display:"flex", gap:'50px'}}>
-    //         <NewArrivalsCard productData={image } width="150px" height="20px" />
-
-    //       </div>
-
-    //     </Grid>
-    //   ))}
-    //   <ArrowForward onClick={handleNext} />
-
-    // </div>
+  
     <Box sx={{
       display: 'block',
       justifyContent: 'center',
@@ -78,9 +64,6 @@ const RelatedProducts = ({ id }) => {
         }}
       >
         {related.map((item, index) => (
-         
-        
-      
           <Box item key={item.id}
             sx={{
               display: "flex",
@@ -128,7 +111,7 @@ const RelatedProducts = ({ id }) => {
                   flexDirection: 'column',
 
                 }}>
-                {item.price}
+                {item.price}$
               </Typography>
               <Typography variant="caption" sx={{
                 display: 'flex',

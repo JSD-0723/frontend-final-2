@@ -211,10 +211,7 @@ const CarouselLabel = () => {
       }
     }
   });
-// const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-// const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
-// const isLaptopScreen= useMediaQuery(theme.breakpoints.down('lg'));
-// const isBigScreen = useMediaQuery(theme.breakpoints.down('xl'));
+
 const isSmallScreen = useMediaQuery('(max-width:600px)');
 const isTabletScreen = useMediaQuery('(max-width:900px)');
 const isLaptopScreen = useMediaQuery('(max-width:1200px)');
@@ -272,10 +269,10 @@ const isBigScreen = useMediaQuery('(min-width:1600px)');
         <Typography
         sx={{
           fontWeight: 800,
-          fontSize: isBigScreen ? '4rem' : isSmallScreen ? '1.5rem' :isTabletScreen?'2rem':isLaptopScreen?'2.5rem':'3.75rem',
+          fontSize: isBigScreen ? '4rem' : isSmallScreen ? '1rem' :isTabletScreen?'2rem':isLaptopScreen?'2.5rem':'3.75rem',
           lineHeight: isXLScreen ? '30px' : isLaptopScreen ? '26px' : '84px',
           marginLeft:isBigScreen?'3%':isXLScreen?'2%':'0%',
-          marginTop:isBigScreen?'.5%':isXLScreen?'2%':'0%',
+          marginTop:isBigScreen?'-0.5%':isXLScreen?'2%':isTabletScreen?'-2%':'0%',
           textAlign: 'left',
           letterSpacing: '0em',
           color: '#1B4B66',
@@ -296,10 +293,10 @@ const isBigScreen = useMediaQuery('(min-width:1600px)');
           height:'100%',
           flexWrap:'wrap',
           lineHeight:1,
-          width:isBigScreen?'900px':isSmallScreen?'250px':isTabletScreen?'400px':'500px',
-          fontSize: isSmallScreen ? '1.5rem' : isBigScreen ? '2.75rem':isTabletScreen?'2rem':'1.75rem',
-          marginLeft:isBigScreen?'3%':isXLScreen?'2.5%':isLaptopScreen? '3%':'0%',
-          marginTop:isXLScreen?'3%':'0%',
+          width:isBigScreen?'900px':isSmallScreen?'150px':isTabletScreen?'350px':'500px',
+          fontSize: isSmallScreen ? '1rem' : isBigScreen ? '2.5rem':isTabletScreen?'1.5rem':'1.75rem',
+          marginLeft:isBigScreen?'3.1%':isXLScreen?'2.5%':isLaptopScreen? '3%':'0%',
+          marginTop:isXLScreen?'3%':isSmallScreen?'15px':isTabletScreen?'-20px':isBigScreen?'0%':'0%',
           textAlign: 'left',
          
         
@@ -332,7 +329,7 @@ const isBigScreen = useMediaQuery('(min-width:1600px)');
             height:'44px',
             top: '20px',
             marginLeft: isBigScreen?'3%':isXLScreen?'2.5%':'1%',
-            marginTop:isLaptopScreen?'2%':isXLScreen?'1.5%':'0%',
+            marginTop:isLaptopScreen?'2%':isXLScreen?'0.75%':isBigScreen?'-0.3%':'0%',
 
           }}>
             <svg

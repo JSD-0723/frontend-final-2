@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
-import { Grid } from '@mui/material';
+import { Grid, Pagination } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import CardCategory from '../pages/Category/CardCategory';
 import {Box} from '@mui/material';
@@ -11,13 +11,15 @@ const SearchResult = () => {
   const navigate = useNavigate();
   let {search} = useParams();
   const [searchResult, setSearchResult] = useState([]);
+  const [page,setPage] = useState(1);
+  const ItemsPerPage = 10;
+  
   console.log(search)
 
   useEffect(() => {
-    console.log("hello raya");
     console.log(search);
     if (search) {
-      const apiUrl = `https://estore-doxn.onrender.com/eStore/searchProduct?name=${search}&page=1`;
+      const apiUrl = `https://estore-doxn.onrender.com/eStore/searchProduct?name=${search}&page=${page}`;
       axios.get(apiUrl)
         .then((response) => {
           console.log(response.data )
@@ -32,6 +34,10 @@ const SearchResult = () => {
       setSearchResult([]);
     }
   }, [search]);
+
+  // const handlePageChange =(newPage) =>{
+  //   setPage(newPage);
+  // };
   return (
     <Grid>
       <Box>
@@ -49,6 +55,11 @@ const SearchResult = () => {
         ))
       )}
     </div>
+    {/* <Pagination 
+      page={page}
+      count={totalPages}
+      onChange={(e , newPage)=> handlePageChange(newPage)}
+    /> */}
     </Box>
     </Grid>
   );
