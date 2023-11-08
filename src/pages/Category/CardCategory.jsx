@@ -3,7 +3,7 @@ import BasicRating from "../../components/Stars";
 const CardCategory = ( props) => {
   const productsData  = props.products;
   //rayah added this statement
-  // const hideDiscount = props.hideDiscount;
+  const hideDiscount = props.hideDiscount;
 
   console.log(productsData);
 
@@ -52,7 +52,7 @@ const CardCategory = ( props) => {
               fontWeight: "400",
               color: "#626262",
               //rayah added this statement
-              // display: hideDiscount ?'none':'block',
+              display: hideDiscount ?'none':'block',
             }}
           >
             $78.66
@@ -60,7 +60,7 @@ const CardCategory = ( props) => {
           <Typography sx={{ 
             color: "red",
             //added by rayah
-            // display : hideDiscount ? 'none':'block',
+            display : hideDiscount ? 'none':'block',
          }}> 50% OFF </Typography>
         </Box>
       </Box>
