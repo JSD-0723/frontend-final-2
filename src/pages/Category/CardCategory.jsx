@@ -1,9 +1,8 @@
 import { Paper, Typography, Box } from "@mui/material";
 import BasicRating from "../../components/Stars";
 
-const CardCategory = ( props ) => {
+const CardCategory = (props) => {
   const productsData = props.products;
-  console.log(productsData);
 
   return (
     <Paper elevation={0} sx={{ fontFamily: "inter" }}>

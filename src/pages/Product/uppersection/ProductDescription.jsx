@@ -3,8 +3,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 import ImagesSlider from "./ImagesSlider";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 const ProductDescription = ({ productData }) => {
   const imagesForSlider = [
     productData.img,
@@ -14,19 +13,21 @@ const ProductDescription = ({ productData }) => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentImage, setCurrentImage] = useState(imagesForSlider[currentIndex]);
+  const [currentImage, setCurrentImage] = useState(
+    imagesForSlider[currentIndex]
+  );
 
   const nextImage = () => {
-    setCurrentIndex(currentIndex+1);
-    setCurrentImage(imagesForSlider[currentIndex+1]);
+    setCurrentIndex(currentIndex + 1);
+    setCurrentImage(imagesForSlider[currentIndex + 1]);
     console.log("Next image Displayed!");
   };
 
   const previousImage = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex+1);
+      setCurrentIndex(currentIndex + 1);
       console.log("Previous Image activated");
-      setCurrentImage(imagesForSlider[currentIndex-1]);
+      setCurrentImage(imagesForSlider[currentIndex - 1]);
     }
   };
 
@@ -35,16 +36,17 @@ const ProductDescription = ({ productData }) => {
       <Box
         sx={{
           display: "flex",
-          gap: 2,
+          gap: 1,
           marginTop: 3,
           marginBottom: 3,
           color: "#1B4B66",
+          alignItems: "center",
         }}
       >
         <Link to="/frontend-final-2">Home </Link>
-        <ArrowBackIosNewIcon />
+        <ArrowForwardIosIcon fontSize="5px" />
         <Link to="/frontend-final-2">Handbag</Link>
-        <ArrowBackIosNewIcon />
+        <ArrowForwardIosIcon fontSize="5px" />
         <Link to="">Label</Link>
       </Box>
       <Grid container spacing={2}>
