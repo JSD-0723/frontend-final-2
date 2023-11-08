@@ -1,8 +1,11 @@
 import { Paper, Typography, Box } from "@mui/material";
 import BasicRating from "../../components/Stars";
+const CardCategory = ( props) => {
+  const productsData  = props.products;
+  //rayah added this statement
+  const hideDiscount = props.hideDiscount;
 
-const CardCategory = (props) => {
-  const productsData = props.products;
+  console.log(productsData);
 
   return (
     <Paper elevation={0} sx={{ fontFamily: "inter" }}>
@@ -48,11 +51,17 @@ const CardCategory = (props) => {
               textDecoration: "line-through",
               fontWeight: "400",
               color: "#626262",
+              //rayah added this statement
+              display: hideDiscount ?'none':'block',
             }}
           >
             $78.66
           </Typography>
-          <Typography sx={{ color: "red" }}> 50% OFF </Typography>
+          <Typography sx={{ 
+            color: "red",
+            //added by rayah
+            display : hideDiscount ? 'none':'block',
+         }}> 50% OFF </Typography>
         </Box>
       </Box>
     </Paper>

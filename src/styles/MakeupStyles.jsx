@@ -5,7 +5,7 @@ export const MakeupStyles = {
         justifyContent: 'center',
         alignItems: 'center',
         position:'relative',
-        height:'auto'
+        height:'auto',
     },
     MakeupText: {  
         fontFamily: 'Inter, sans-serif',

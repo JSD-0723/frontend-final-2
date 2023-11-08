@@ -1,7 +1,12 @@
 import { Paper, Typography, Box } from "@mui/material";
 import "../../Home/components/styles.css";
 const NewArrivalsCard = (props) => {
+<<<<<<< HEAD
   const { productData, width, height, cardStyles } = props;
+=======
+  // const productData = props.productData;
+  const { productData } = props;
+>>>>>>> d1704ce8b2df70677754bb6a4660269cd3e3aa64
 
   return (
     <Paper

@@ -8,6 +8,8 @@ import { Card } from "@mui/material";
 import { Grid } from "@mui/material";
 import { TopCategoryStyles } from "../../../styles/TopCategoryStyles";
 import TextRating from "../../../components/Stars";
+import CardCategory from "../../Category/CardCategory";
+import { Link } from "react-router-dom";
 const RelatedProducts = ({ id }) => {
   const [related, setRelated] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -66,11 +68,7 @@ const RelatedProducts = ({ id }) => {
       height: '250px'
     }}>
 
-      {/* <Carousel
-      animation="slider"
-      autoPlay={true}
-      interval={1000}
-    > */}
+     
       <Grid container spacing={2}
         sx={{
           flexWrap: "nowrap",
@@ -80,8 +78,10 @@ const RelatedProducts = ({ id }) => {
         }}
       >
         {related.map((item, index) => (
-
-          <Box
+         
+        
+      
+          <Box item key={item.id}
             sx={{
               display: "flex",
               width: "100%",
@@ -96,7 +96,10 @@ const RelatedProducts = ({ id }) => {
 
             }}
           >
-
+           <Link
+           to={`/frontend-final-2/category/${item.name.replace( / /g,""
+           )}/${item.id}`}
+         >
             <Box
               sx={{
                 justifyContent: 'center',
@@ -137,14 +140,14 @@ const RelatedProducts = ({ id }) => {
 
 
             </Box>
-
+            </Link>
           </Box>
+          
+         ))}
 
-        ))}
+       </Grid>
+</Box>
 
-      </Grid>
-      {/* </Carousel> */}
-    </Box>
   )
 };
 export default RelatedProducts;
