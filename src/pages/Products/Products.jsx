@@ -5,7 +5,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import heroImage from "../../helper/Assets/hero.png";
 import "./styles.css";
-import { getNewArrivalsData } from "../../api/HomeAPI"; // Import the function that fetches new arrivals data
+import { getNewArrivalsData } from "../../api/HomeAPI";
 
 const ITEMS_PER_PAGE = 9;
 

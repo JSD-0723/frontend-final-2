@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
-function Login({ setIsLoggedIn,setUserName }) {
+function Login({ setIsLoggedIn, setUserName }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -40,13 +40,13 @@ function Login({ setIsLoggedIn,setUserName }) {
       console.log("Login successful:", response.data);
 
       setIsLoggedIn(true);
-      setUserName(formData.name); 
+      setUserName(formData.name);
 
       setFormData({
         name: "",
         password: "",
       });
-      navigate("/frontend-final-2");
+      navigate("/frontend-final-2/category/Coach/2");
     } catch (error) {
       console.error("Login failed:", error);
     }
@@ -113,6 +113,7 @@ function Login({ setIsLoggedIn,setUserName }) {
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link component={Link} to="/frontend-final-2/signup" variant="body2">
+
                   Don't have an account? Sign up
                 </Link>
               </Grid>
@@ -125,4 +126,3 @@ function Login({ setIsLoggedIn,setUserName }) {
 }
 
 export default Login;
-
