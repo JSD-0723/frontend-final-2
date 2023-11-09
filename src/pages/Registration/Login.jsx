@@ -45,10 +45,14 @@ function Login({ setIsLoggedIn, setUserName }) {
       setFormData({
         name: "",
         password: "",
+        
       });
-      navigate("/frontend-final-2/category/Coach/2");
+      alert("Login successful!");
+
+      navigate("/frontend-final-2");
     } catch (error) {
       console.error("Login failed:", error);
+      alert("Login failed. Please check your credentials.");
     }
   };
 
@@ -112,7 +116,7 @@ function Login({ setIsLoggedIn, setUserName }) {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link component={Link} to="/frontend-final-2/signup" variant="body2">
+                <Link component={Link} href="/frontend-final-2/signup" variant="body2">
 
                   Don't have an account? Sign up
                 </Link>

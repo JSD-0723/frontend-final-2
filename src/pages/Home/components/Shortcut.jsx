@@ -8,7 +8,7 @@ const Shortcut = () => {
       <Grid container xs={12} sm={12} md={12}
       
         sx={{ 
-          width:'97%',
+          width:'95%',
           marginLeft:2,
           marginRight:2,
          
