@@ -125,7 +125,9 @@ import { IconButton } from '@mui/material';
 import { Popover } from '@mui/material';
 import { Avatar } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-export default function Header() {
+
+export default function Header({setIsLoggedIn, isLoggedIn, setUserName}) {
+
   const [categoryName, setCategoryName] = useState('');
   const [Loading, setLoading] = useState(true);
   const [isPopoverOpen, setPopoverOpen] = useState(false);
@@ -159,6 +161,15 @@ export default function Header() {
     setAnchorEl(null);
     setPopoverOpen(false);
   };
+  const handleLogout =()=>{
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    setIsLoggedIn(false);
+    setUserName("");
+    closePopover();
+
+  }
+  const username = localStorage.getItem("username");
 
   return (
     <Hidden smDown>
@@ -231,8 +242,27 @@ export default function Header() {
                     width: '200px',
                     height: '300px',
                   }}>
+                   
+                   {localStorage.getItem("token") ? (
+                    <>
+                    <Avatar sx={{ m: 1, bgcolor: "secondary.main"}}>
+                      <LockOutlinedIcon/>
+                    </Avatar>
+                    <Typography>
+                      Hello {localStorage.getItem("username")}
+                    </Typography>
+                    <Button onClick={()=>{
+                      handleLogout();
+                      closePopover();
+                    }
 
-
+                    }
+                    sx={{ m: 1, borderColor: '#626262', width: '120px', backgroundColor: '#F1F1F1', color: 'black'}}>
+                      Logout
+                    </Button>
+                    </>
+                   ):(
+                   <>
                     <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
                       <LockOutlinedIcon />
                     </Avatar>
@@ -251,12 +281,10 @@ export default function Header() {
                       to="/frontend-final-2/login" variant="outlined" onClick={closePopover}>
                       Login
                     </Button>
-                    <Button
-                      sx={{ m: 1, borderColor: '#626262', width: '120px', backgroundColor: '#F1F1F1', color: 'black' }}
-                      variant="outlined" onClick={closePopover}>
-                      Logout
-                    </Button>
+                    </>
+                   )}
                   </div>
+                  
                 </Popover>
               </Box>
             </Grid>

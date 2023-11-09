@@ -8,10 +8,9 @@ const Shortcut = () => {
       <Grid container xs={12} sm={12} md={12}
       
         sx={{ 
-          width:'95%',
+          width:'97%',
           marginLeft:2,
-          marginRight:2,
-         
+          marginRight:2,         
         }}
       >
           <Typography 
@@ -28,11 +27,13 @@ const Shortcut = () => {
           </Typography>
         <img
           style={{
-            width: '100%',
+            width: '97%',
             height: 'auto',
             alignItems: 'center',
             marginLeft: 2,
             marginRight: 2,
+            justifyContent:'center',
+            alignItems:'center'
           }}
           src={shortcut}
           alt="shortcut image"
