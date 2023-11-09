@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
-function Login({ setIsLoggedIn, setUserName }) {
+function Login({ setIsLoggedIn, isLoggedIn, closePopover,setUserName }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -36,6 +36,10 @@ function Login({ setIsLoggedIn, setUserName }) {
         "https://estore-doxn.onrender.com/eStore/login",
         formData
       );
+      const {token , refreshToken , name}= response.data;
+      localStorage.setItem("token", token);
+      localStorage.setItem("username", formData.name);
+    
 
       console.log("Login successful:", response.data);
 
@@ -51,7 +55,7 @@ function Login({ setIsLoggedIn, setUserName }) {
 
       navigate("/frontend-final-2");
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error ("Login failed:", error);
       alert("Login failed. Please check your credentials.");
     }
   };

@@ -20,7 +20,7 @@ function App() {
   const [userDetails, setUserName] = useState(null);
   return (
     <BrowserRouter>
-      <Header />
+      <Header setIsLoggedIn={setIsLoggedIn} isloggedIn={isLoggedIn} setUserName={setUserName}/>
       {/* {isLoggedIn ? `${userDetails} is Logged in!` : `User is not logged in`} */}
 
       <HeaderforMobile />
@@ -33,7 +33,7 @@ function App() {
         <Route
           path="/frontend-final-2/login"
           element={
-            <Login setIsLoggedIn={setIsLoggedIn} setUserName={setUserName} />
+            <Login setIsLoggedIn={setIsLoggedIn} isloggedIn={isLoggedIn} setUserName={setUserName} />
           }
         />
 

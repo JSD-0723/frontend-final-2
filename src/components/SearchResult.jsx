@@ -5,13 +5,14 @@ import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import { Grid, Pagination } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
-import CardCategory from '../pages/Category/CardCategory';
 import {Box} from '@mui/material';
+import CardCategory from '../pages/Category/CardCategory';
 const SearchResult = () => {
   const navigate = useNavigate();
   let {search} = useParams();
   const [searchResult, setSearchResult] = useState([]);
   const [page,setPage] = useState(1);
+  const ItemPerRow =4;
   const ItemsPerPage = 10;
   
   console.log(search)
@@ -25,6 +26,8 @@ const SearchResult = () => {
           console.log(response.data )
           const filter = response.data.products;
            setSearchResult(filter);
+           setPage(Math.ceil(response.data.Products / ItemsPerPage));
+
         })
         .catch((error) => {
           console.error('Error fetching Category data:', error);
@@ -33,11 +36,17 @@ const SearchResult = () => {
     else {
       setSearchResult([]);
     }
-  }, [search]);
+  }, [search , page]);
+  const totalItems = Math.ceil(searchResult.lenght/ItemPerRow);
+  const totalPages = Math.ceil(searchResult.length / ItemsPerPage);
+  const  startIndex = (page - 1 ) * ItemsPerPage;
+  const endInex = startIndex + ItemsPerPage;
 
-  // const handlePageChange =(newPage) =>{
-  //   setPage(newPage);
-  // };
+  const displayResults = searchResult.slice(startIndex , endInex);
+
+  const handlePageChange =(newPage) =>{
+    setPage(newPage);
+  };
   return (
     <Grid>
       <Box>
@@ -49,17 +58,17 @@ const SearchResult = () => {
   
       ) : (
         searchResult.map((result) => (
-          <Grid key={result.id}  sx={{ width: '284px', gap: '32px', height: '412px' }}>
-            <CardCategory hideDiscount={true} products={result} />
+          <Grid item xs={12} sm={6} md={4} lg={3} key={result.id}  sx={{ width: '284px',flexWrap:'nowrap', gap: '32px', height: '412px' }}>
+            <CardCategory  products={result} />
           </Grid>
         ))
       )}
     </div>
-    {/* <Pagination 
+    <Pagination 
       page={page}
       count={totalPages}
       onChange={(e , newPage)=> handlePageChange(newPage)}
-    /> */}
+    />
     </Box>
     </Grid>
   );
