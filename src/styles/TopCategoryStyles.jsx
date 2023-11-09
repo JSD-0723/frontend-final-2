@@ -1,10 +1,9 @@
 export const TopCategoryStyles = {
 
     itemsBox: {
-        left: '16px',
         display:'block',
-        margin:'0px',
-        padding:'0px'
+        marginRight:2,
+        marginLeft:2
     },
 
     containerGrid: {
