@@ -13,7 +13,7 @@ import Shortcut from "../Home/components/Shortcut";
 import TopCategory from "../Home/components/TopCategory";
 import SideScroller from "../../components/SideScrollCards";
 import { HandPicked, ShopByBrand } from "./components/Section";
-
+import CircularProgress from "@mui/material/CircularProgress";
 const Home = () => {
   const [handPickedCollectionData, setHandPickedCollectionData] = useState([]);
   const [isLoadingHandPicked, setIsLoadingHandPicked] = useState(true);
@@ -59,17 +59,17 @@ const Home = () => {
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
         {isLoadingNewArrivals ? (
-          <p>Loading New Arrivals...</p>
+          <CircularProgress />
         ) : (
           <SideScroller products={newArrivalsData} />
         )}
         {isLoadingHandPicked ? (
-          <p>Loading HandPicked...</p>
+          <CircularProgress />
         ) : (
           <HandPicked products={handPickedCollectionData} />
         )}
         {isLoadingShopByBrands ? (
-          <p>Loading ShopByBrands...</p>
+          <CircularProgress />
         ) : (
           <ShopByBrand brands={shopByBrandsData} />
         )}

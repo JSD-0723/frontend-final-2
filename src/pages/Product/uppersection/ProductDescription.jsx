@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 import ImagesSlider from "./ImagesSlider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+
 const ProductDescription = ({ productData }) => {
   const imagesForSlider = [
     productData.img,

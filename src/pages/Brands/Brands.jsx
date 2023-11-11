@@ -54,6 +54,7 @@ const BrandsPage = () => {
                   ""
                 )}/${categoryItem.id}`}
               >
+              
                 <CardCategory products={categoryItem} />
               </Link>
             </Grid>
