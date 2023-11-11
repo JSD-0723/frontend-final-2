@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const BrandsGrid = (props) => {
   const logos = props.brands;
-  console.log("props.brands is this:", props.brands);
   return (
     <Box sx={{ width: "100%", marginLeft: 2, marginRight: 2 }}>
       <Grid container spacing={1}>

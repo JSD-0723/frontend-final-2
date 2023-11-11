@@ -3,6 +3,7 @@ import "./SideScrollerStyles.css";
 import { Link } from "react-router-dom";
 import NewArrivalsCard from "../pages/Home/components/NewArrivalsCard";
 import "./SideScrollerStyles.css";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const SideScroller = (props) => {
   const products1 = props.products;
@@ -15,13 +16,38 @@ const SideScroller = (props) => {
           marginRight: 2,
           marginLeft: 2,
           marginTop: 2,
+
+          alignItems: "center",
         }}
       >
-        <Typography variant="h4" component="h4">
+        <Typography
+          variant="h4"
+          component="h4"
+          sx={{
+            color: "#13101E",
+
+            fontFamily: "Inter",
+            fontWeight: 600,
+          }}
+        >
           New Arrivals
         </Typography>
 
-        <Link to="/frontend-final-2/products">View All</Link>
+        <Link to="/frontend-final-2/products">
+          <Box
+            sx={{
+              display: "flex",
+              gap: 0.5,
+              alignItems: "center",
+            }}
+          >
+            <Typography sx={{ color: "#1B4B66", fontWeight: "600" }}>
+              View All
+            </Typography>
+
+            <ArrowForwardIosIcon fontSize="5px" />
+          </Box>
+        </Link>
       </Box>
       <div
         id="slider"
