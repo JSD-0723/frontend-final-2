@@ -12,7 +12,7 @@ const ITEMS_PER_PAGE = 9;
 const ProductsPage = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const { categoryName } = useParams();
+  const {categoryName} = useParams();
   const url = `https://estore-doxn.onrender.com/eStore/newArrival`;
 
   useEffect(() => {

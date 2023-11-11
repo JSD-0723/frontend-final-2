@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material"
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Carousel from "react-material-ui-carousel"
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Card } from "@mui/material";
@@ -13,7 +12,6 @@ import { Link } from "react-router-dom";
 const RelatedProducts = ({ id }) => {
   const [related, setRelated] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const params = useParams();
   useEffect(() => {
 
@@ -30,20 +28,7 @@ const RelatedProducts = ({ id }) => {
 
 
   }, []);
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? related.length - 1 : prevIndex - 1
-    );
-    console.log("previous image");
-
-  };
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === related.length - 1 ? 0 : prevIndex + 1
-    );
-    console.log("next image");
-  };
-
+ 
   return (
   
     <Box sx={{
