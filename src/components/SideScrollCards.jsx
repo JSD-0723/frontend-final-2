@@ -25,7 +25,6 @@ const SideScroller = (props) => {
           component="h4"
           sx={{
             color: "#13101E",
-
             fontFamily: "Inter",
             fontWeight: 600,
           }}
@@ -71,6 +70,7 @@ const SideScroller = (props) => {
                     ""
                   )}/${product.id}`}
                 >
+                  {" "}
                   <NewArrivalsCard productData={product} />
                 </Link>
               </Box>
