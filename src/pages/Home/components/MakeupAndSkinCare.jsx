@@ -13,8 +13,9 @@ const MakeupAndSkinCare = () => {
                     <Grid item xs={12} md={12} sm={12}
                         sx={{
                             alignItems:'center',
-                            marginLeft: 2,
-                            marginRight: 2,
+                            marginLeft: '2%',
+                            marginRight: '2%',
+                        
                         }}>
                        <Hidden mdUp>
                     <Box
@@ -24,7 +25,9 @@ const MakeupAndSkinCare = () => {
                              height: '50px',
                              alignItems:'center',
                              justifyContent:'center',
-                             marginBottom:'12px'
+                             marginBottom:'12px',
+                             marginLeft:'2% ! important',
+                             marginRight:'2% ! important'
                               }}>
                         <Typography 
                           sx=
@@ -42,7 +45,7 @@ const MakeupAndSkinCare = () => {
                             style={{ ...MakeupStyles.hero1Styles }}
                         />
                           <Box sx={{ width: '10px', height: '10px' }}></Box>
-                           <Grid container spacing={2}>
+                           <Grid container spacing={1}>
                             <Grid item xs={6} >  
                                 <img
                                     src={image2}

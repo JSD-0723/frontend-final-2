@@ -10,7 +10,7 @@ export const MakeupStyles = {
     MakeupText: {  
         fontFamily: 'Inter, sans-serif',
         fontWeight: 800,
-        fontSize: '25px',
+        fontSize: '20px',
         color: '#171520',
        
     },

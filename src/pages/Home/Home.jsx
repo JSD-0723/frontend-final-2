@@ -57,7 +57,7 @@ const Home = () => {
       <ImageCarousel data={carouselData} />
       <TopCategory />
 
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap:3 }}>
         {isLoadingNewArrivals ? (
           <p>Loading New Arrivals...</p>
         ) : (

@@ -51,24 +51,24 @@ const SearchResult = () => {
     <Grid>
       <Box>
       {/* <Typography variant='h5'> Search Results for: {search}</Typography> */}
-    <div style={{ display: 'flex', gap: '32px' }}>
+    <Grid container sx={{ display: 'flex', flexWrap:'wrap', marginLeft:2,marginRight:2}}>
       {searchResult.length === 0 ? (
 
         <Typography>No results found</Typography>
   
       ) : (
         searchResult.map((result) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={result.id}  sx={{ width: '284px',flexWrap:'nowrap', gap: '32px', height: '412px' }}>
-            <CardCategory  products={result} />
+          <Grid item xs={12} sm={6} md={4} lg={3} key={result.id}  sx={{ width: '284px',flexWrap:'wrap', gap: '32px', height: '412px' }}>
+            <CardCategory  hideDiscount={true} products={result} />
           </Grid>
         ))
       )}
-    </div>
-    <Pagination 
+    </Grid>
+    {/* <Pagination 
       page={page}
       count={totalPages}
       onChange={(e , newPage)=> handlePageChange(newPage)}
-    />
+    /> */}
     </Box>
     </Grid>
   );

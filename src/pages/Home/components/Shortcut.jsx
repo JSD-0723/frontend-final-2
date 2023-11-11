@@ -1,43 +1,47 @@
 import { Hidden } from "@mui/material";
 import shortcut from "../../../data/Assets/shortcut.png";
-import { Grid } from "@mui/material";
+import { Grid , Box} from "@mui/material";
 import {Typography} from "@mui/material";
 const Shortcut = () => {
   return (
     <Hidden mdUp>
+      <Grid container xs={12} sm={12} md={12}>
+       
       <Grid container xs={12} sm={12} md={12}
-      
         sx={{ 
-          width:'97%',
+          width:'100%',
           marginLeft:2,
-          marginRight:2,         
+          marginRight:2      
         }}
       >
-          <Typography 
+        <Typography 
               sx=
               {{ 
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 800,
-                fontSize: '25px',
+                fontSize: '20px',
                 color: '#171520',
-                lineHeight:'70px'
+                lineHeight:'50px',
+                marginLeft:2,
+                margin:0,
+                padding:0,
+                
                }}
               >
                Shortcut
           </Typography>
         <img
           style={{
-            width: '97%',
+            width: '100%',
             height: 'auto',
             alignItems: 'center',
-            marginLeft: 2,
-            marginRight: 2,
             justifyContent:'center',
             alignItems:'center'
           }}
           src={shortcut}
           alt="shortcut image"
-        />
+        />   
+      </Grid>
       </Grid>
     </Hidden>
   );
