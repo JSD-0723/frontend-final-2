@@ -8,13 +8,13 @@ const Card = (props) => {
   const backgroundStyles = {
     backgroundImage: `url(${productData.img})`,
     backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    height: "auto",
+    height: "410px",
   };
 
   return (
     <Box>
-    
       <Paper sx={{ ...cardStyles, ...backgroundStyles }}>
         <Box sx={textStyles}>
           <Typography variant="h5" sx={categoryText}>

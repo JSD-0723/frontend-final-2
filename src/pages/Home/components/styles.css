@@ -5,10 +5,11 @@
 .card-new-arrivals-image {
   width: 100%;
   object-fit: fill;
+  border-radius: 1em;
 }
 
 @media (min-width: 960px) {
   .logo-image {
-    width: 100px;
+    max-width: 100px;
   }
 }

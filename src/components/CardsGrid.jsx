@@ -23,6 +23,7 @@ const CardsGrid = (props) => {
           <Link to={categoryNavigationLink} style={{ textDecoration: "none" }}>
             <Card styles={cardStyles} productData={product} />
           </Link>
+   
         ) : (
           <Link
             to={`/frontend-final-2/category/${product.name.replace(/ /g, "")}/${
